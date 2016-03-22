@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <inttypes.h>
+#include "drivers/mss_spi/mss_spi.h"
+
+#define Vref 3.3
+#define Vmax 2
+
+int main()
+{
+
+	const uint8_t frame_size = 16;
+	const int config = 0x3000;
+
+	MSS_SPI_init( &g_mss_spi1 );
+	MSS_SPI_configure_master_mode
+	(
+		&g_mss_spi1,
+		MSS_SPI_SLAVE_0,
+		MSS_SPI_MODE1,
+		MSS_SPI_PCLK_DIV_256,
+		frame_size
+	);
+	MSS_SPI_set_slave_select( &g_mss_spi1, MSS_SPI_SLAVE_0 );
+
+
+
+	// OUR CODE BELOW
+	int up = 1;
+	int max_val = Vmax/Vref * 4096;
+	max_val += config;
+	uint32_t master_tx_frame = config;
+
+	while (1) {
+
+		if (master_tx_frame == max_val) {
+			up = 0;
+		}
+		else if (master_tx_frame == config) {
+			up = 1;
+		}
+
+		if (up) master_tx_frame += 1;
+		else 	master_tx_frame -= 1;
+
+		// Transfer data
+		MSS_SPI_transfer_frame( &g_mss_spi1, master_tx_frame );
+
+	}
+
+	// OUR CODE ENDS
+
+
+
+	MSS_SPI_clear_slave_select( &g_mss_spi1, MSS_SPI_SLAVE_0 );
+	return(0);
+}

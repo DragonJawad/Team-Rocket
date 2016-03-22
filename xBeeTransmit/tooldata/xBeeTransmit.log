@@ -1,0 +1,16 @@
+Project Name: xBeeTransmit
+Location: C:\Users\Ben\Desktop\xBeeTransmit
+Description: 
+Preferred HDL Type: Verilog
+
+#-----------------------------------------------------
+                  Device Details
+#-----------------------------------------------------
+
+Part Number    : A2F200M3F-FG484
+Family         : SmartFusion
+Die            : A2F200M3F
+Package        : 484 FBGA
+Speed          : STD
+Core Voltage   : 1.5
+Range          : COM

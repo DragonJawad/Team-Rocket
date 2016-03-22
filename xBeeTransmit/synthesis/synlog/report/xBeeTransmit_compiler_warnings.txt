@@ -1,0 +1,19 @@
+@W: CL157 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":62:7:62:18|*Output RCOSC_CLKOUT has undriven bits -- simulation mismatch possible.
+@W: CL157 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":63:7:63:20|*Output MAINXIN_CLKOUT has undriven bits -- simulation mismatch possible.
+@W: CL157 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":64:7:64:18|*Output LPXIN_CLKOUT has undriven bits -- simulation mismatch possible.
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":36:7:36:10|Input CLKA is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":37:7:37:14|Input CLKA_PAD is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":38:7:38:15|Input CLKA_PADP is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":39:7:39:15|Input CLKA_PADN is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":40:7:40:10|Input CLKB is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":41:7:41:14|Input CLKB_PAD is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":42:7:42:15|Input CLKB_PADP is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":43:7:43:15|Input CLKB_PADN is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":44:7:44:10|Input CLKC is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":45:7:45:14|Input CLKC_PAD is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":46:7:46:15|Input CLKC_PADP is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":47:7:47:15|Input CLKC_PADN is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":48:7:48:13|Input MAINXIN is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":49:7:49:11|Input LPXIN is unused
+@W: CL159 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":50:7:50:13|Input MAC_CLK is unused
+

@@ -1,0 +1,48 @@
+FlashPro
+Version: 11.5.3.10
+Release: v11.5 SP3
+
+Software Version: 11.5.3.10
+PDB file 'C:\Users\Ben\Desktop\xBeeTransmit\designer\impl1\xBeeTransmit_fp\xBeeTransmit.pdb' has
+been loaded successfully.
+DESIGN : xBeeTransmit;  CHECKSUM : 7226;  PDB_VERSION : 1.9
+Driver : 3.0.0 build 1
+programmer '79974' : FlashPro3
+Opened 'C:/Users/Ben/Desktop/xBeeTransmit/designer/impl1/xBeeTransmit_fp/xBeeTransmit.pro'
+The 'open_project' command succeeded.
+The 'set_programming_file' command succeeded.
+The 'set_device_type' command succeeded.
+The 'set_device_package' command succeeded.
+Info: Adding Flash Memory data from file
+      C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_ENVM_0\MSS_ENVM_0.e\
+      fc.
+Info: Adding FPGA Array data from file
+      C:\Users\Ben\Desktop\xBeeTransmit\designer\impl1\xBeeTransmit.fdb.
+PDB file 'C:\Users\Ben\Desktop\xBeeTransmit\designer\impl1\xBeeTransmit_fp\xBeeTransmit.pdb' has
+been loaded successfully.
+DESIGN : xBeeTransmit;  CHECKSUM : 7226;  PDB_VERSION : 1.9
+The 'update_programming_file' command succeeded.
+The 'set_programming_action' command succeeded.
+programmer '79974' : Scan Chain...
+Warning: programmer '79974' : Vpump has been selected on programmer AND an externally provided
+         Vpump has also been detected. Using externally provided Vpump voltage source.
+programmer '79974' : Scan Chain PASSED.
+programmer '79974' : Executing action PROGRAM
+programmer '79974' : EXPORT FSN[48] = 014b3e58b078
+programmer '79974' : Erase ...
+programmer '79974' : Completed erase
+programmer '79974' : EXPORT CHECKSUM: [16] = 7226
+programmer '79974' : Programming FPGA Array
+programmer '79974' : Verifying FPGA Array
+programmer '79974' :         Verifying FPGA Array -- pass
+programmer '79974' : Program System Init and Boot Clients...
+programmer '79974' : Verify System Init and Boot Clients...
+programmer '79974' : Finished: Tue Mar 22 14:44:05 2016 (Elapsed time 00:00:34)
+programmer '79974' : Executing action PROGRAM PASSED.
+
+                        o - o - o - o - o - o
+
+The 'run_selected_actions' command succeeded.
+Project saved.
+The 'save_project' command succeeded.
+Project closed.

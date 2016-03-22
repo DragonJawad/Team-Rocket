@@ -1,0 +1,85 @@
+Microsemi Libero Software
+Version: 11.5.3.10
+Release: v11.5 SP3
+
+Info: The design xBeeTransmit.adb was last modified by software version 11.5.3.10.
+Opened an existing Libero design xBeeTransmit.adb.
+'BA_NAME' set to 'xBeeTransmit_ba'
+'IDE_DESIGNERVIEW_NAME' set to 'Impl1'
+'IDE_DESIGNERVIEW_COUNT' set to '1'
+'IDE_DESIGNERVIEW_REV0' set to 'Impl1'
+'IDE_DESIGNERVIEW_REVNUM0' set to '1'
+'IDE_DESIGNERVIEW_ROOTDIR' set to 'C:\Users\Ben\Desktop\xBeeTransmit\designer'
+'IDE_DESIGNERVIEW_LASTREV' set to '1'
+***** Layout Variables *********************************************
+
+Mode: TIMING_DRIVEN
+Power-driven Layout: OFF
+Incremental Placement: OFF
+Incremental Route: OFF
+
+
+Info: I/O Bank Assigner detected (1) out of (6) I/O Bank(s) with locked I/O technologies.
+
+Running I/O Bank Assigner.
+
+I/O Bank Assigner completed successfully.
+ 
+
+Planning global net placement...
+
+
+Global net placement completed successfully.
+
+                        o - o - o - o - o - o
+
+Timing-driven Placer Started: Sun Mar 20 22:59:21 2016
+
+Placer Finished: Sun Mar 20 22:59:22 2016
+Total Placer CPU Time:     00:00:01
+
+                        o - o - o - o - o - o
+
+
+Timing-driven Router 
+Design: xBeeTransmit                    Started: Sun Mar 20 22:59:24 2016
+
+ 
+
+Timing-driven Router completed successfully.
+
+Design: xBeeTransmit                    
+Finished: Sun Mar 20 22:59:28 2016
+Total CPU Time:     00:00:03            Total Elapsed Time: 00:00:04
+Total Memory Usage: 158.2 Mbytes
+                        o - o - o - o - o - o
+
+Loading the Timing data for the design.
+Finished loading the Timing data.
+TIMER: Max delay timing requirements have been met.
+TIMER: Min delay timing requirements have been met.
+
+The Layout command succeeded ( 00:00:11 )
+Wrote status report to file: xBeeTransmit_place_and_route_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote globalnet report to file: xBeeTransmit_globalnet_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote globalusage report to file: xBeeTransmit_globalusage_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote iobank report to file: xBeeTransmit_iobank_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote pin report to file: xBeeTransmit_report_pin_byname.txt
+
+The Report command succeeded ( 00:00:01 )
+Wrote pin report to file: xBeeTransmit_report_pin_bynumber.txt
+
+The Report command succeeded ( 00:00:01 )
+Design saved to file C:\Users\Ben\Desktop\xBeeTransmit\designer\impl1\xBeeTransmit.adb.
+
+The Execute Script command succeeded ( 00:00:15 )
+Design closed.
+

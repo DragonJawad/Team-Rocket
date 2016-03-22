@@ -1,0 +1,22 @@
+Microsemi Libero Software
+Version: 11.5.3.10
+Release: v11.5 SP3
+
+'IDE_DESIGNERVIEW_ROOTDIR' set to 'C:\Users\Ben\Desktop\xBeeTransmit\designer'
+Info: The design xBeeTransmit.adb was last modified by software version 11.5.3.10.
+Opened an existing Libero design xBeeTransmit.adb.
+
+The Execute Script command succeeded ( 00:00:29 )
+Design saved to file C:\Users\Ben\Desktop\xBeeTransmit\designer\impl1\xBeeTransmit.adb.
+Wrote pin report to file:
+C:\Users\Ben\Desktop\xBeeTransmit\designer\impl1\xBeeTransmit_report_pin_byname.txt
+
+The Report command succeeded ( 00:00:01 )
+Wrote pin report to file:
+C:\Users\Ben\Desktop\xBeeTransmit\designer\impl1\xBeeTransmit_report_pin_bynumber.txt
+
+The Report command succeeded ( 00:00:01 )
+
+The Execute Script command succeeded ( 00:00:02 )
+Design closed.
+

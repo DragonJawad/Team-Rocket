@@ -1,0 +1,12 @@
+@N|Running in 64-bit mode
+@N: CG364 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\mss_tshell.v":1:7:1:13|Synthesizing module MSS_APB
+@N: CG364 :"C:\Users\Ben\Desktop\xBeeTransmit\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v":151:7:151:13|Synthesizing module MSS_CCC
+@N: CG364 :"C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v":2620:7:2620:11|Synthesizing module RCOSC
+@N: CG364 :"C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v":1141:7:1141:9|Synthesizing module GND
+@N: CG364 :"C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v":1868:7:1868:9|Synthesizing module VCC
+@N: CG364 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\MSS_CCC_0\xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC.v":5:7:5:44|Synthesizing module xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC
+@N: CG364 :"C:\Users\Ben\Desktop\xBeeTransmit\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v":23:7:23:15|Synthesizing module INBUF_MSS
+@N: CG364 :"C:\Users\Ben\Desktop\xBeeTransmit\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v":37:7:37:16|Synthesizing module OUTBUF_MSS
+@N: CG364 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit_MSS\xBeeTransmit_MSS.v":9:7:9:22|Synthesizing module xBeeTransmit_MSS
+@N: CG364 :"C:\Users\Ben\Desktop\xBeeTransmit\component\work\xBeeTransmit\xBeeTransmit.v":9:7:9:18|Synthesizing module xBeeTransmit
+

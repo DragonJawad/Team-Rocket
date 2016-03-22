@@ -1,0 +1,1886 @@
+(edif xBeeTransmit
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timeStamp 2016 3 20 22 59 3)
+      (author "Synopsys, Inc.")
+      (program "Synplify Pro" (version "I-2014.03M-SP1, mapper mapact, Build 1346R"))
+     )
+   )
+  (library smartfusion
+    (edifLevel 0)
+    (technology (numberDefinition ))
+    (cell MSS_APB (cellType GENERIC)
+      (property ACT_PKG (string ""))
+      (property ACT_DIE (string ""))
+      (property ACT_FCLK (integer 0))
+      (property ACT_CONFIG (integer 0))
+       (view prim (viewType NETLIST)
+         (interface
+           (port EMCRWn (direction OUTPUT))
+           (port EMCDBOE (direction OUTPUT))
+           (port EMCCLKRTN (direction INPUT))
+           (port EMCCLK (direction OUTPUT))
+           (port F2MRESETn (direction INPUT))
+           (port SYNCCLKFDBK (direction INPUT))
+           (port CALIBOUT (direction OUTPUT))
+           (port CALIBIN (direction INPUT))
+           (port FABINT (direction INPUT))
+           (port WDINT (direction OUTPUT))
+           (port RXEV (direction INPUT))
+           (port VRON (direction INPUT))
+           (port M2FRESETn (direction OUTPUT))
+           (port DEEPSLEEP (direction OUTPUT))
+           (port SLEEP (direction OUTPUT))
+           (port TXEV (direction OUTPUT))
+           (port UART0CTSn (direction INPUT))
+           (port UART0DSRn (direction INPUT))
+           (port UART0RTSn (direction OUTPUT))
+           (port UART0DTRn (direction OUTPUT))
+           (port UART0RIn (direction INPUT))
+           (port UART0DCDn (direction INPUT))
+           (port UART1CTSn (direction INPUT))
+           (port UART1DSRn (direction INPUT))
+           (port UART1RTSn (direction OUTPUT))
+           (port UART1DTRn (direction OUTPUT))
+           (port UART1RIn (direction INPUT))
+           (port UART1DCDn (direction INPUT))
+           (port I2C0SMBUSNO (direction OUTPUT))
+           (port I2C1SMBUSNO (direction OUTPUT))
+           (port I2C0SMBALERTNO (direction OUTPUT))
+           (port I2C1SMBALERTNO (direction OUTPUT))
+           (port I2C0BCLK (direction INPUT))
+           (port I2C1BCLK (direction INPUT))
+           (port I2C0SMBUSNI (direction INPUT))
+           (port I2C1SMBUSNI (direction INPUT))
+           (port I2C0SMBALERTNI (direction INPUT))
+           (port I2C1SMBALERTNI (direction INPUT))
+           (port FCLK (direction INPUT))
+           (port MACCLKCCC (direction INPUT))
+           (port RCOSC (direction INPUT))
+           (port MACCLK (direction INPUT))
+           (port PLLLOCK (direction INPUT))
+           (port MSSRESETn (direction INPUT))
+           (port SPI0DO (direction OUTPUT))
+           (port SPI0DOE (direction OUTPUT))
+           (port SPI0DI (direction INPUT))
+           (port SPI0CLKI (direction INPUT))
+           (port SPI0CLKO (direction OUTPUT))
+           (port SPI0MODE (direction OUTPUT))
+           (port SPI0SSI (direction INPUT))
+           (port UART0TXD (direction OUTPUT))
+           (port UART0RXD (direction INPUT))
+           (port I2C0SDAI (direction INPUT))
+           (port I2C0SDAO (direction OUTPUT))
+           (port I2C0SCLI (direction INPUT))
+           (port I2C0SCLO (direction OUTPUT))
+           (port SPI1DO (direction OUTPUT))
+           (port SPI1DOE (direction OUTPUT))
+           (port SPI1DI (direction INPUT))
+           (port SPI1CLKI (direction INPUT))
+           (port SPI1CLKO (direction OUTPUT))
+           (port SPI1MODE (direction OUTPUT))
+           (port SPI1SSI (direction INPUT))
+           (port UART1TXD (direction OUTPUT))
+           (port UART1RXD (direction INPUT))
+           (port I2C1SDAI (direction INPUT))
+           (port I2C1SDAO (direction OUTPUT))
+           (port I2C1SCLI (direction INPUT))
+           (port I2C1SCLO (direction OUTPUT))
+           (port MACTXEN (direction OUTPUT))
+           (port MACCRSDV (direction INPUT))
+           (port MACRXER (direction INPUT))
+           (port MACMDI (direction INPUT))
+           (port MACMDO (direction OUTPUT))
+           (port MACMDEN (direction OUTPUT))
+           (port MACMDC (direction OUTPUT))
+           (port (array (rename macm2ftxd "MACM2FTXD[1:0]") 2) (direction OUTPUT))
+           (port (array (rename macf2mrxd "MACF2MRXD[1:0]") 2) (direction INPUT))
+           (port MACM2FTXEN (direction OUTPUT))
+           (port MACF2MCRSDV (direction INPUT))
+           (port MACF2MRXER (direction INPUT))
+           (port MACF2MMDI (direction INPUT))
+           (port MACM2FMDO (direction OUTPUT))
+           (port MACM2FMDEN (direction OUTPUT))
+           (port MACM2FMDC (direction OUTPUT))
+           (port PUFABn (direction OUTPUT))
+           (port FABSDD0D (direction INPUT))
+           (port FABSDD1D (direction INPUT))
+           (port FABSDD2D (direction INPUT))
+           (port FABSDD2CLK (direction INPUT))
+           (port FABSDD1CLK (direction INPUT))
+           (port FABSDD0CLK (direction INPUT))
+           (port FABACETRIG (direction INPUT))
+           (port LVTTL3 (direction OUTPUT))
+           (port LVTTL6 (direction OUTPUT))
+           (port VAREFOUT (direction OUTPUT))
+           (port LVTTL1 (direction OUTPUT))
+           (port SDD2 (direction OUTPUT))
+           (port LVTTL9 (direction OUTPUT))
+           (port LVTTL2 (direction OUTPUT))
+           (port SDD1 (direction OUTPUT))
+           (port LVTTL5 (direction OUTPUT))
+           (port SDD0 (direction OUTPUT))
+           (port LVTTL10 (direction OUTPUT))
+           (port LVTTL8 (direction OUTPUT))
+           (port LVTTL0 (direction OUTPUT))
+           (port LVTTL7 (direction OUTPUT))
+           (port LVTTL4 (direction OUTPUT))
+           (port LVTTL11 (direction OUTPUT))
+           (port CM5 (direction INPUT))
+           (port CM3 (direction INPUT))
+           (port ADC6 (direction INPUT))
+           (port TM3 (direction INPUT))
+           (port TM5 (direction INPUT))
+           (port ADC2 (direction INPUT))
+           (port ABPS8 (direction INPUT))
+           (port LVTTL6EN (direction INPUT))
+           (port VAREF0 (direction INPUT))
+           (port ABPS2 (direction INPUT))
+           (port TM4 (direction INPUT))
+           (port ADC7 (direction INPUT))
+           (port ADC3 (direction INPUT))
+           (port ABPS4 (direction INPUT))
+           (port CM2 (direction INPUT))
+           (port CM4 (direction INPUT))
+           (port ABPS10 (direction INPUT))
+           (port ABPS1 (direction INPUT))
+           (port LVTTL7EN (direction INPUT))
+           (port LVTTL2EN (direction INPUT))
+           (port TM0 (direction INPUT))
+           (port ADC8 (direction INPUT))
+           (port GNDTM1 (direction INPUT))
+           (port CM0 (direction INPUT))
+           (port ADC5 (direction INPUT))
+           (port LVTTL4EN (direction INPUT))
+           (port GNDTM2 (direction INPUT))
+           (port ABPS7 (direction INPUT))
+           (port TM2 (direction INPUT))
+           (port ABPS6 (direction INPUT))
+           (port CM1 (direction INPUT))
+           (port LVTTL3EN (direction INPUT))
+           (port GNDTM0 (direction INPUT))
+           (port VAREF2 (direction INPUT))
+           (port LVTTL5EN (direction INPUT))
+           (port ADC9 (direction INPUT))
+           (port ADC10 (direction INPUT))
+           (port ADC1 (direction INPUT))
+           (port ABPS0 (direction INPUT))
+           (port GNDVAREF (direction INPUT))
+           (port TM1 (direction INPUT))
+           (port LVTTL9EN (direction INPUT))
+           (port ADC4 (direction INPUT))
+           (port LVTTL11EN (direction INPUT))
+           (port LVTTL0EN (direction INPUT))
+           (port ABPS3 (direction INPUT))
+           (port VAREF1 (direction INPUT))
+           (port LVTTL8EN (direction INPUT))
+           (port ABPS11 (direction INPUT))
+           (port LVTTL10EN (direction INPUT))
+           (port ABPS5 (direction INPUT))
+           (port ABPS9 (direction INPUT))
+           (port ADC11 (direction INPUT))
+           (port ADC0 (direction INPUT))
+           (port LVTTL1EN (direction INPUT))
+           (port CMP0 (direction OUTPUT))
+           (port CMP1 (direction OUTPUT))
+           (port CMP2 (direction OUTPUT))
+           (port CMP3 (direction OUTPUT))
+           (port CMP4 (direction OUTPUT))
+           (port CMP5 (direction OUTPUT))
+           (port CMP6 (direction OUTPUT))
+           (port CMP7 (direction OUTPUT))
+           (port CMP8 (direction OUTPUT))
+           (port CMP9 (direction OUTPUT))
+           (port CMP10 (direction OUTPUT))
+           (port CMP11 (direction OUTPUT))
+           (port PUn (direction INPUT))
+           (port FABPSEL (direction INPUT))
+           (port FABPENABLE (direction INPUT))
+           (port FABPWRITE (direction INPUT))
+           (port FABPREADY (direction OUTPUT))
+           (port FABPSLVERR (direction OUTPUT))
+           (port MSSPSEL (direction OUTPUT))
+           (port MSSPENABLE (direction OUTPUT))
+           (port MSSPWRITE (direction OUTPUT))
+           (port MSSPREADY (direction INPUT))
+           (port MSSPSLVERR (direction INPUT))
+           (port VCC15GOOD (direction OUTPUT))
+           (port VCC33GOOD (direction OUTPUT))
+           (port (array (rename emcbyten "EMCBYTEN[1:0]") 2) (direction OUTPUT))
+           (port (array (rename emcab "EMCAB[25:0]") 26) (direction OUTPUT))
+           (port EMCOEN0n (direction OUTPUT))
+           (port EMCOEN1n (direction OUTPUT))
+           (port (array (rename emcwdb "EMCWDB[15:0]") 16) (direction OUTPUT))
+           (port EMCCS0n (direction OUTPUT))
+           (port EMCCS1n (direction OUTPUT))
+           (port (array (rename emcrdb "EMCRDB[15:0]") 16) (direction INPUT))
+           (port (array (rename gpi "GPI[31:0]") 32) (direction INPUT))
+           (port (array (rename gpoe "GPOE[31:0]") 32) (direction OUTPUT))
+           (port (array (rename gpo "GPO[31:0]") 32) (direction OUTPUT))
+           (port (array (rename mssint "MSSINT[7:0]") 8) (direction OUTPUT))
+           (port (array (rename dmaready "DMAREADY[1:0]") 2) (direction INPUT))
+           (port (array (rename spi0sso "SPI0SSO[7:0]") 8) (direction OUTPUT))
+           (port (array (rename spi1sso "SPI1SSO[7:0]") 8) (direction OUTPUT))
+           (port (array (rename mactxd "MACTXD[1:0]") 2) (direction OUTPUT))
+           (port (array (rename macrxd "MACRXD[1:0]") 2) (direction INPUT))
+           (port (array (rename aceflags "ACEFLAGS[31:0]") 32) (direction OUTPUT))
+           (port (array (rename fabpaddr "FABPADDR[31:0]") 32) (direction INPUT))
+           (port (array (rename fabpwdata "FABPWDATA[31:0]") 32) (direction INPUT))
+           (port (array (rename fabprdata "FABPRDATA[31:0]") 32) (direction OUTPUT))
+           (port (array (rename msspaddr "MSSPADDR[19:0]") 20) (direction OUTPUT))
+           (port (array (rename msspwdata "MSSPWDATA[31:0]") 32) (direction OUTPUT))
+           (port (array (rename mssprdata "MSSPRDATA[31:0]") 32) (direction INPUT))
+         )
+        (property area (integer 0))
+       )
+    )
+    (cell MSS_CCC (cellType GENERIC)
+      (property dont_touch (string "true"))
+      (property dont_use (integer 1))
+       (view prim (viewType NETLIST)
+         (interface
+           (port GLA (direction OUTPUT))
+           (port GLAMSS (direction OUTPUT))
+           (port GLB (direction OUTPUT))
+           (port GLC (direction OUTPUT))
+           (port LOCK (direction OUTPUT))
+           (port LOCKMSS (direction OUTPUT))
+           (port MACCLK (direction OUTPUT))
+           (port YB (direction OUTPUT))
+           (port YC (direction OUTPUT))
+           (port BYPASSA (direction INPUT))
+           (port BYPASSB (direction INPUT))
+           (port BYPASSC (direction INPUT))
+           (port CLKA (direction INPUT))
+           (port CLKB (direction INPUT))
+           (port CLKC (direction INPUT))
+           (port (array (rename dlygla "DLYGLA[4:0]") 5) (direction INPUT))
+           (port (array (rename dlyglafab "DLYGLAFAB[4:0]") 5) (direction INPUT))
+           (port (array (rename dlyglamss "DLYGLAMSS[4:0]") 5) (direction INPUT))
+           (port (array (rename dlyglb "DLYGLB[4:0]") 5) (direction INPUT))
+           (port (array (rename dlyglc "DLYGLC[4:0]") 5) (direction INPUT))
+           (port EXTFB (direction INPUT))
+           (port (array (rename fbdiv "FBDIV[6:0]") 7) (direction INPUT))
+           (port (array (rename fbdly "FBDLY[4:0]") 5) (direction INPUT))
+           (port (array (rename fbsel "FBSEL[1:0]") 2) (direction INPUT))
+           (port (array (rename findiv "FINDIV[6:0]") 7) (direction INPUT))
+           (port (array (rename glmuxcfg "GLMUXCFG[1:0]") 2) (direction INPUT))
+           (port (array (rename glmuxsel "GLMUXSEL[1:0]") 2) (direction INPUT))
+           (port (array (rename oadiv "OADIV[4:0]") 5) (direction INPUT))
+           (port OADIVHALF (direction INPUT))
+           (port (array (rename oamux "OAMUX[2:0]") 3) (direction INPUT))
+           (port (array (rename obdiv "OBDIV[4:0]") 5) (direction INPUT))
+           (port OBDIVHALF (direction INPUT))
+           (port (array (rename obmux "OBMUX[2:0]") 3) (direction INPUT))
+           (port (array (rename ocdiv "OCDIV[4:0]") 5) (direction INPUT))
+           (port OCDIVHALF (direction INPUT))
+           (port (array (rename ocmux "OCMUX[2:0]") 3) (direction INPUT))
+           (port XDLYSEL (direction INPUT))
+         )
+       )
+    )
+    (cell OUTBUF_MSS (cellType GENERIC)
+      (property ACT_CONFIG (integer 0))
+      (property ACT_PIN (string ""))
+      (property preferred (string "true"))
+      (property pad_cell (string "true"))
+      (property dont_touch (string "false"))
+       (view prim (viewType NETLIST)
+         (interface
+           (port PAD (direction OUTPUT)
+           (property function (string "D"))
+           (property is_pad (string "true"))
+ )
+           (port D (direction INPUT))
+         )
+       )
+    )
+    (cell INBUF_MSS (cellType GENERIC)
+      (property ACT_CONFIG (integer 0))
+      (property ACT_PIN (string ""))
+      (property preferred (string "true"))
+      (property pad_cell (string "true"))
+      (property dont_touch (string "false"))
+       (view prim (viewType NETLIST)
+         (interface
+           (port Y (direction OUTPUT)
+           (property function (string "PAD"))
+ )
+           (port PAD (direction INPUT)
+           (property is_pad (string "true"))
+ )
+         )
+       )
+    )
+    (cell RCOSC (cellType GENERIC)
+      (property dont_touch (string "true"))
+      (property dont_use (integer 1))
+       (view prim (viewType NETLIST)
+         (interface
+           (port CLKOUT (direction OUTPUT))
+         )
+       )
+    )
+    (cell VCC (cellType GENERIC)
+      (property dont_touch (string "false"))
+       (view prim (viewType NETLIST)
+         (interface
+           (port Y (direction OUTPUT)
+           (property function (string "1"))
+ )
+         )
+        (property is_pwr (integer 1))
+       )
+    )
+    (cell GND (cellType GENERIC)
+      (property dont_touch (string "false"))
+       (view prim (viewType NETLIST)
+         (interface
+           (port Y (direction OUTPUT)
+           (property function (string "0"))
+ )
+         )
+        (property is_pwr (integer 1))
+       )
+    )
+  )
+  (library work
+    (edifLevel 0)
+    (technology (numberDefinition ))
+    (cell xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC (cellType GENERIC)
+       (view netlist (viewType NETLIST)
+         (interface
+           (port MSS_ADLIB_INST_FCLK (direction OUTPUT))
+         )
+         (contents
+          (instance I_RCOSC (viewRef prim (cellRef RCOSC (libraryRef smartfusion)))
+           (property is_instantiated (integer 1))
+          )
+          (instance I_MSSCCC (viewRef prim (cellRef MSS_CCC (libraryRef smartfusion)))
+           (property is_instantiated (integer 1))
+           (property VCOFREQUENCY (string "-1.000000"))
+          )
+          (instance VCC_i (viewRef prim (cellRef VCC (libraryRef smartfusion)))          )
+          (instance GND_i (viewRef prim (cellRef GND (libraryRef smartfusion)))          )
+          (net N_CLKA_RCOSC (joined
+           (portRef CLKOUT (instanceRef I_RCOSC))
+           (portRef CLKA (instanceRef I_MSSCCC))
+          ))
+          (net I_MSSCCC_GLA (joined
+           (portRef GLA (instanceRef I_MSSCCC))
+          ))
+          (net MSS_ADLIB_INST_FCLK (joined
+           (portRef GLAMSS (instanceRef I_MSSCCC))
+           (portRef MSS_ADLIB_INST_FCLK)
+          ))
+          (net I_MSSCCC_GLB (joined
+           (portRef GLB (instanceRef I_MSSCCC))
+          ))
+          (net I_MSSCCC_GLC (joined
+           (portRef GLC (instanceRef I_MSSCCC))
+          ))
+          (net I_MSSCCC_LOCK (joined
+           (portRef LOCK (instanceRef I_MSSCCC))
+          ))
+          (net I_MSSCCC_LOCKMSS (joined
+           (portRef LOCKMSS (instanceRef I_MSSCCC))
+          ))
+          (net I_MSSCCC_MACCLK (joined
+           (portRef MACCLK (instanceRef I_MSSCCC))
+          ))
+          (net I_MSSCCC_YB (joined
+           (portRef YB (instanceRef I_MSSCCC))
+          ))
+          (net I_MSSCCC_YC (joined
+           (portRef YC (instanceRef I_MSSCCC))
+          ))
+          (net xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC_VCC (joined
+           (portRef Y (instanceRef VCC_i))
+           (portRef (member ocdiv 3) (instanceRef I_MSSCCC))
+           (portRef (member ocdiv 4) (instanceRef I_MSSCCC))
+           (portRef (member obdiv 3) (instanceRef I_MSSCCC))
+           (portRef (member obdiv 4) (instanceRef I_MSSCCC))
+           (portRef (member findiv 4) (instanceRef I_MSSCCC))
+           (portRef (member findiv 5) (instanceRef I_MSSCCC))
+           (portRef (member fbsel 1) (instanceRef I_MSSCCC))
+           (portRef (member fbdly 4) (instanceRef I_MSSCCC))
+           (portRef (member fbdiv 4) (instanceRef I_MSSCCC))
+           (portRef (member fbdiv 5) (instanceRef I_MSSCCC))
+           (portRef BYPASSC (instanceRef I_MSSCCC))
+           (portRef BYPASSB (instanceRef I_MSSCCC))
+           (portRef BYPASSA (instanceRef I_MSSCCC))
+          ))
+          (net xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC_GND (joined
+           (portRef Y (instanceRef GND_i))
+           (portRef XDLYSEL (instanceRef I_MSSCCC))
+           (portRef (member ocmux 0) (instanceRef I_MSSCCC))
+           (portRef (member ocmux 1) (instanceRef I_MSSCCC))
+           (portRef (member ocmux 2) (instanceRef I_MSSCCC))
+           (portRef OCDIVHALF (instanceRef I_MSSCCC))
+           (portRef (member ocdiv 0) (instanceRef I_MSSCCC))
+           (portRef (member ocdiv 1) (instanceRef I_MSSCCC))
+           (portRef (member ocdiv 2) (instanceRef I_MSSCCC))
+           (portRef (member obmux 0) (instanceRef I_MSSCCC))
+           (portRef (member obmux 1) (instanceRef I_MSSCCC))
+           (portRef (member obmux 2) (instanceRef I_MSSCCC))
+           (portRef OBDIVHALF (instanceRef I_MSSCCC))
+           (portRef (member obdiv 0) (instanceRef I_MSSCCC))
+           (portRef (member obdiv 1) (instanceRef I_MSSCCC))
+           (portRef (member obdiv 2) (instanceRef I_MSSCCC))
+           (portRef (member oamux 0) (instanceRef I_MSSCCC))
+           (portRef (member oamux 1) (instanceRef I_MSSCCC))
+           (portRef (member oamux 2) (instanceRef I_MSSCCC))
+           (portRef OADIVHALF (instanceRef I_MSSCCC))
+           (portRef (member oadiv 0) (instanceRef I_MSSCCC))
+           (portRef (member oadiv 1) (instanceRef I_MSSCCC))
+           (portRef (member oadiv 2) (instanceRef I_MSSCCC))
+           (portRef (member oadiv 3) (instanceRef I_MSSCCC))
+           (portRef (member oadiv 4) (instanceRef I_MSSCCC))
+           (portRef (member glmuxsel 0) (instanceRef I_MSSCCC))
+           (portRef (member glmuxsel 1) (instanceRef I_MSSCCC))
+           (portRef (member glmuxcfg 0) (instanceRef I_MSSCCC))
+           (portRef (member glmuxcfg 1) (instanceRef I_MSSCCC))
+           (portRef (member findiv 0) (instanceRef I_MSSCCC))
+           (portRef (member findiv 1) (instanceRef I_MSSCCC))
+           (portRef (member findiv 2) (instanceRef I_MSSCCC))
+           (portRef (member findiv 3) (instanceRef I_MSSCCC))
+           (portRef (member findiv 6) (instanceRef I_MSSCCC))
+           (portRef (member fbsel 0) (instanceRef I_MSSCCC))
+           (portRef (member fbdly 0) (instanceRef I_MSSCCC))
+           (portRef (member fbdly 1) (instanceRef I_MSSCCC))
+           (portRef (member fbdly 2) (instanceRef I_MSSCCC))
+           (portRef (member fbdly 3) (instanceRef I_MSSCCC))
+           (portRef (member fbdiv 0) (instanceRef I_MSSCCC))
+           (portRef (member fbdiv 1) (instanceRef I_MSSCCC))
+           (portRef (member fbdiv 2) (instanceRef I_MSSCCC))
+           (portRef (member fbdiv 3) (instanceRef I_MSSCCC))
+           (portRef (member fbdiv 6) (instanceRef I_MSSCCC))
+           (portRef EXTFB (instanceRef I_MSSCCC))
+           (portRef (member dlyglc 0) (instanceRef I_MSSCCC))
+           (portRef (member dlyglc 1) (instanceRef I_MSSCCC))
+           (portRef (member dlyglc 2) (instanceRef I_MSSCCC))
+           (portRef (member dlyglc 3) (instanceRef I_MSSCCC))
+           (portRef (member dlyglc 4) (instanceRef I_MSSCCC))
+           (portRef (member dlyglb 0) (instanceRef I_MSSCCC))
+           (portRef (member dlyglb 1) (instanceRef I_MSSCCC))
+           (portRef (member dlyglb 2) (instanceRef I_MSSCCC))
+           (portRef (member dlyglb 3) (instanceRef I_MSSCCC))
+           (portRef (member dlyglb 4) (instanceRef I_MSSCCC))
+           (portRef (member dlyglamss 0) (instanceRef I_MSSCCC))
+           (portRef (member dlyglamss 1) (instanceRef I_MSSCCC))
+           (portRef (member dlyglamss 2) (instanceRef I_MSSCCC))
+           (portRef (member dlyglamss 3) (instanceRef I_MSSCCC))
+           (portRef (member dlyglamss 4) (instanceRef I_MSSCCC))
+           (portRef (member dlyglafab 0) (instanceRef I_MSSCCC))
+           (portRef (member dlyglafab 1) (instanceRef I_MSSCCC))
+           (portRef (member dlyglafab 2) (instanceRef I_MSSCCC))
+           (portRef (member dlyglafab 3) (instanceRef I_MSSCCC))
+           (portRef (member dlyglafab 4) (instanceRef I_MSSCCC))
+           (portRef (member dlygla 0) (instanceRef I_MSSCCC))
+           (portRef (member dlygla 1) (instanceRef I_MSSCCC))
+           (portRef (member dlygla 2) (instanceRef I_MSSCCC))
+           (portRef (member dlygla 3) (instanceRef I_MSSCCC))
+           (portRef (member dlygla 4) (instanceRef I_MSSCCC))
+           (portRef CLKC (instanceRef I_MSSCCC))
+           (portRef CLKB (instanceRef I_MSSCCC))
+          ))
+         )
+        (property orig_inst_of (string "xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC"))
+       )
+    )
+    (cell xBeeTransmit_MSS (cellType GENERIC)
+       (view netlist (viewType NETLIST)
+         (interface
+           (port UART_1_TXD (direction OUTPUT))
+           (port UART_1_RXD (direction INPUT))
+           (port UART_0_TXD (direction OUTPUT))
+           (port UART_0_RXD (direction INPUT))
+           (port MSS_RESET_N (direction INPUT))
+         )
+         (contents
+          (instance MSS_UART_1_TXD (viewRef prim (cellRef OUTBUF_MSS (libraryRef smartfusion)))
+           (property is_instantiated (integer 1))
+           (property ACT_CONFIG (integer 0))
+           (property ACT_PIN (string "V20"))
+          )
+          (instance MSS_UART_1_RXD (viewRef prim (cellRef INBUF_MSS (libraryRef smartfusion)))
+           (property is_instantiated (integer 1))
+           (property ACT_CONFIG (integer 0))
+           (property ACT_PIN (string "W22"))
+          )
+          (instance MSS_UART_0_TXD (viewRef prim (cellRef OUTBUF_MSS (libraryRef smartfusion)))
+           (property is_instantiated (integer 1))
+           (property ACT_CONFIG (integer 0))
+           (property ACT_PIN (string "Y22"))
+          )
+          (instance MSS_UART_0_RXD (viewRef prim (cellRef INBUF_MSS (libraryRef smartfusion)))
+           (property is_instantiated (integer 1))
+           (property ACT_CONFIG (integer 0))
+           (property ACT_PIN (string "U18"))
+          )
+          (instance MSS_RESET_0_MSS_RESET_N (viewRef prim (cellRef INBUF_MSS (libraryRef smartfusion)))
+           (property is_instantiated (integer 1))
+           (property ACT_CONFIG (integer 0))
+           (property ACT_PIN (string "R1"))
+          )
+          (instance MSS_ADLIB_INST (viewRef prim (cellRef MSS_APB (libraryRef smartfusion)))
+           (property is_instantiated (integer 1))
+           (property ACT_CONFIG (integer 0))
+           (property ACT_DIE (string "IP4X3M1"))
+           (property ACT_FCLK (integer 100000000))
+           (property ACT_PKG (string "fg484"))
+          )
+          (instance MSS_CCC_0 (viewRef netlist (cellRef xBeeTransmit_MSS_tmp_MSS_CCC_0_MSS_CCC))
+          )
+          (instance VCC_i (viewRef prim (cellRef VCC (libraryRef smartfusion)))          )
+          (instance GND_i (viewRef prim (cellRef GND (libraryRef smartfusion)))          )
+          (net UART_1_TXD (joined
+           (portRef PAD (instanceRef MSS_UART_1_TXD))
+           (portRef UART_1_TXD)
+          ))
+          (net MSS_UART_1_TXD_D (joined
+           (portRef UART1TXD (instanceRef MSS_ADLIB_INST))
+           (portRef D (instanceRef MSS_UART_1_TXD))
+          ))
+          (net MSS_UART_1_RXD_Y (joined
+           (portRef Y (instanceRef MSS_UART_1_RXD))
+           (portRef UART1RXD (instanceRef MSS_ADLIB_INST))
+          ))
+          (net UART_1_RXD (joined
+           (portRef UART_1_RXD)
+           (portRef PAD (instanceRef MSS_UART_1_RXD))
+          ))
+          (net UART_0_TXD (joined
+           (portRef PAD (instanceRef MSS_UART_0_TXD))
+           (portRef UART_0_TXD)
+          ))
+          (net MSS_UART_0_TXD_D (joined
+           (portRef UART0TXD (instanceRef MSS_ADLIB_INST))
+           (portRef D (instanceRef MSS_UART_0_TXD))
+          ))
+          (net MSS_UART_0_RXD_Y (joined
+           (portRef Y (instanceRef MSS_UART_0_RXD))
+           (portRef UART0RXD (instanceRef MSS_ADLIB_INST))
+          ))
+          (net UART_0_RXD (joined
+           (portRef UART_0_RXD)
+           (portRef PAD (instanceRef MSS_UART_0_RXD))
+          ))
+          (net MSS_RESET_0_MSS_RESET_N_Y (joined
+           (portRef Y (instanceRef MSS_RESET_0_MSS_RESET_N))
+           (portRef MSSRESETn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_RESET_N (joined
+           (portRef MSS_RESET_N)
+           (portRef PAD (instanceRef MSS_RESET_0_MSS_RESET_N))
+          ))
+          (net MSS_ADLIB_INST_EMCRWn (joined
+           (portRef EMCRWn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_EMCDBOE (joined
+           (portRef EMCDBOE (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_EMCCLK (joined
+           (portRef EMCCLK (instanceRef MSS_ADLIB_INST))
+           (portRef EMCCLKRTN (instanceRef MSS_ADLIB_INST))
+          ))
+          (net xBeeTransmit_MSS_VCC (joined
+           (portRef Y (instanceRef VCC_i))
+           (portRef MSSPREADY (instanceRef MSS_ADLIB_INST))
+           (portRef F2MRESETn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net xBeeTransmit_MSS_GND (joined
+           (portRef Y (instanceRef GND_i))
+           (portRef (member mssprdata 0) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 1) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 2) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 3) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 4) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 5) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 6) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 7) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 8) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 9) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 10) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 11) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 12) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 13) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 14) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 15) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 16) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 17) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 18) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 19) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 20) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 21) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 22) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 23) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 24) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 25) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 26) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 27) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 28) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 29) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 30) (instanceRef MSS_ADLIB_INST))
+           (portRef (member mssprdata 31) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 0) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 1) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 2) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 3) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 4) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 5) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 6) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 7) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 8) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 9) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 10) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 11) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 12) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 13) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 14) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 15) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 16) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 17) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 18) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 19) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 20) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 21) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 22) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 23) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 24) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 25) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 26) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 27) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 28) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 29) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 30) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpwdata 31) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 0) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 1) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 2) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 3) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 4) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 5) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 6) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 7) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 8) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 9) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 10) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 11) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 12) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 13) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 14) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 15) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 16) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 17) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 18) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 19) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 20) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 21) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 22) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 23) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 24) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 25) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 26) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 27) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 28) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 29) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 30) (instanceRef MSS_ADLIB_INST))
+           (portRef (member fabpaddr 31) (instanceRef MSS_ADLIB_INST))
+           (portRef (member macrxd 0) (instanceRef MSS_ADLIB_INST))
+           (portRef (member macrxd 1) (instanceRef MSS_ADLIB_INST))
+           (portRef (member dmaready 0) (instanceRef MSS_ADLIB_INST))
+           (portRef (member dmaready 1) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 0) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 1) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 2) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 3) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 4) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 5) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 6) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 7) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 8) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 9) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 10) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 11) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 12) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 13) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 14) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 15) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 16) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 17) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 18) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 19) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 20) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 21) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 22) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 23) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 24) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 25) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 26) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 27) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 28) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 29) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 30) (instanceRef MSS_ADLIB_INST))
+           (portRef (member gpi 31) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 0) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 1) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 2) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 3) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 4) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 5) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 6) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 7) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 8) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 9) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 10) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 11) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 12) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 13) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 14) (instanceRef MSS_ADLIB_INST))
+           (portRef (member emcrdb 15) (instanceRef MSS_ADLIB_INST))
+           (portRef MSSPSLVERR (instanceRef MSS_ADLIB_INST))
+           (portRef FABPWRITE (instanceRef MSS_ADLIB_INST))
+           (portRef FABPENABLE (instanceRef MSS_ADLIB_INST))
+           (portRef FABPSEL (instanceRef MSS_ADLIB_INST))
+           (portRef PUn (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL1EN (instanceRef MSS_ADLIB_INST))
+           (portRef ADC0 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC11 (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS9 (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS5 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL10EN (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS11 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL8EN (instanceRef MSS_ADLIB_INST))
+           (portRef VAREF1 (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS3 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL0EN (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL11EN (instanceRef MSS_ADLIB_INST))
+           (portRef ADC4 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL9EN (instanceRef MSS_ADLIB_INST))
+           (portRef TM1 (instanceRef MSS_ADLIB_INST))
+           (portRef GNDVAREF (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS0 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC1 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC10 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC9 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL5EN (instanceRef MSS_ADLIB_INST))
+           (portRef VAREF2 (instanceRef MSS_ADLIB_INST))
+           (portRef GNDTM0 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL3EN (instanceRef MSS_ADLIB_INST))
+           (portRef CM1 (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS6 (instanceRef MSS_ADLIB_INST))
+           (portRef TM2 (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS7 (instanceRef MSS_ADLIB_INST))
+           (portRef GNDTM2 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL4EN (instanceRef MSS_ADLIB_INST))
+           (portRef ADC5 (instanceRef MSS_ADLIB_INST))
+           (portRef CM0 (instanceRef MSS_ADLIB_INST))
+           (portRef GNDTM1 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC8 (instanceRef MSS_ADLIB_INST))
+           (portRef TM0 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL2EN (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL7EN (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS1 (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS10 (instanceRef MSS_ADLIB_INST))
+           (portRef CM4 (instanceRef MSS_ADLIB_INST))
+           (portRef CM2 (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS4 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC3 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC7 (instanceRef MSS_ADLIB_INST))
+           (portRef TM4 (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS2 (instanceRef MSS_ADLIB_INST))
+           (portRef VAREF0 (instanceRef MSS_ADLIB_INST))
+           (portRef LVTTL6EN (instanceRef MSS_ADLIB_INST))
+           (portRef ABPS8 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC2 (instanceRef MSS_ADLIB_INST))
+           (portRef TM5 (instanceRef MSS_ADLIB_INST))
+           (portRef TM3 (instanceRef MSS_ADLIB_INST))
+           (portRef ADC6 (instanceRef MSS_ADLIB_INST))
+           (portRef CM3 (instanceRef MSS_ADLIB_INST))
+           (portRef CM5 (instanceRef MSS_ADLIB_INST))
+           (portRef FABACETRIG (instanceRef MSS_ADLIB_INST))
+           (portRef FABSDD0CLK (instanceRef MSS_ADLIB_INST))
+           (portRef FABSDD1CLK (instanceRef MSS_ADLIB_INST))
+           (portRef FABSDD2CLK (instanceRef MSS_ADLIB_INST))
+           (portRef FABSDD2D (instanceRef MSS_ADLIB_INST))
+           (portRef FABSDD1D (instanceRef MSS_ADLIB_INST))
+           (portRef FABSDD0D (instanceRef MSS_ADLIB_INST))
+           (portRef MACF2MMDI (instanceRef MSS_ADLIB_INST))
+           (portRef MACF2MRXER (instanceRef MSS_ADLIB_INST))
+           (portRef MACF2MCRSDV (instanceRef MSS_ADLIB_INST))
+           (portRef (member macf2mrxd 0) (instanceRef MSS_ADLIB_INST))
+           (portRef (member macf2mrxd 1) (instanceRef MSS_ADLIB_INST))
+           (portRef MACMDI (instanceRef MSS_ADLIB_INST))
+           (portRef MACRXER (instanceRef MSS_ADLIB_INST))
+           (portRef MACCRSDV (instanceRef MSS_ADLIB_INST))
+           (portRef I2C1SCLI (instanceRef MSS_ADLIB_INST))
+           (portRef I2C1SDAI (instanceRef MSS_ADLIB_INST))
+           (portRef SPI1SSI (instanceRef MSS_ADLIB_INST))
+           (portRef SPI1CLKI (instanceRef MSS_ADLIB_INST))
+           (portRef SPI1DI (instanceRef MSS_ADLIB_INST))
+           (portRef I2C0SCLI (instanceRef MSS_ADLIB_INST))
+           (portRef I2C0SDAI (instanceRef MSS_ADLIB_INST))
+           (portRef SPI0SSI (instanceRef MSS_ADLIB_INST))
+           (portRef SPI0CLKI (instanceRef MSS_ADLIB_INST))
+           (portRef SPI0DI (instanceRef MSS_ADLIB_INST))
+           (portRef PLLLOCK (instanceRef MSS_ADLIB_INST))
+           (portRef MACCLK (instanceRef MSS_ADLIB_INST))
+           (portRef RCOSC (instanceRef MSS_ADLIB_INST))
+           (portRef MACCLKCCC (instanceRef MSS_ADLIB_INST))
+           (portRef I2C1SMBALERTNI (instanceRef MSS_ADLIB_INST))
+           (portRef I2C0SMBALERTNI (instanceRef MSS_ADLIB_INST))
+           (portRef I2C1SMBUSNI (instanceRef MSS_ADLIB_INST))
+           (portRef I2C0SMBUSNI (instanceRef MSS_ADLIB_INST))
+           (portRef I2C1BCLK (instanceRef MSS_ADLIB_INST))
+           (portRef I2C0BCLK (instanceRef MSS_ADLIB_INST))
+           (portRef UART1DCDn (instanceRef MSS_ADLIB_INST))
+           (portRef UART1RIn (instanceRef MSS_ADLIB_INST))
+           (portRef UART1DSRn (instanceRef MSS_ADLIB_INST))
+           (portRef UART1CTSn (instanceRef MSS_ADLIB_INST))
+           (portRef UART0DCDn (instanceRef MSS_ADLIB_INST))
+           (portRef UART0RIn (instanceRef MSS_ADLIB_INST))
+           (portRef UART0DSRn (instanceRef MSS_ADLIB_INST))
+           (portRef UART0CTSn (instanceRef MSS_ADLIB_INST))
+           (portRef VRON (instanceRef MSS_ADLIB_INST))
+           (portRef RXEV (instanceRef MSS_ADLIB_INST))
+           (portRef FABINT (instanceRef MSS_ADLIB_INST))
+           (portRef CALIBIN (instanceRef MSS_ADLIB_INST))
+           (portRef SYNCCLKFDBK (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CALIBOUT (joined
+           (portRef CALIBOUT (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_WDINT (joined
+           (portRef WDINT (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_M2FRESETn (joined
+           (portRef M2FRESETn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_DEEPSLEEP (joined
+           (portRef DEEPSLEEP (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SLEEP (joined
+           (portRef SLEEP (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_TXEV (joined
+           (portRef TXEV (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_UART0RTSn (joined
+           (portRef UART0RTSn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_UART0DTRn (joined
+           (portRef UART0DTRn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_UART1RTSn (joined
+           (portRef UART1RTSn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_UART1DTRn (joined
+           (portRef UART1DTRn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_I2C0SMBUSNO (joined
+           (portRef I2C0SMBUSNO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_I2C1SMBUSNO (joined
+           (portRef I2C1SMBUSNO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_I2C0SMBALERTNO (joined
+           (portRef I2C0SMBALERTNO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_I2C1SMBALERTNO (joined
+           (portRef I2C1SMBALERTNO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_FCLK (joined
+           (portRef MSS_ADLIB_INST_FCLK (instanceRef MSS_CCC_0))
+           (portRef FCLK (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SPI0DO (joined
+           (portRef SPI0DO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SPI0DOE (joined
+           (portRef SPI0DOE (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SPI0CLKO (joined
+           (portRef SPI0CLKO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SPI0MODE (joined
+           (portRef SPI0MODE (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_I2C0SDAO (joined
+           (portRef I2C0SDAO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_I2C0SCLO (joined
+           (portRef I2C0SCLO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SPI1DO (joined
+           (portRef SPI1DO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SPI1DOE (joined
+           (portRef SPI1DOE (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SPI1CLKO (joined
+           (portRef SPI1CLKO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SPI1MODE (joined
+           (portRef SPI1MODE (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_I2C1SDAO (joined
+           (portRef I2C1SDAO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_I2C1SCLO (joined
+           (portRef I2C1SCLO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MACTXEN (joined
+           (portRef MACTXEN (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MACMDO (joined
+           (portRef MACMDO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MACMDEN (joined
+           (portRef MACMDEN (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MACMDC (joined
+           (portRef MACMDC (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MACM2FTXD_0 "MSS_ADLIB_INST_MACM2FTXD[0]") (joined
+           (portRef (member macm2ftxd 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MACM2FTXD_1 "MSS_ADLIB_INST_MACM2FTXD[1]") (joined
+           (portRef (member macm2ftxd 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MACM2FTXEN (joined
+           (portRef MACM2FTXEN (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MACM2FMDO (joined
+           (portRef MACM2FMDO (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MACM2FMDEN (joined
+           (portRef MACM2FMDEN (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MACM2FMDC (joined
+           (portRef MACM2FMDC (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_PUFABn (joined
+           (portRef PUFABn (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL3 (joined
+           (portRef LVTTL3 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL6 (joined
+           (portRef LVTTL6 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_VAREFOUT (joined
+           (portRef VAREFOUT (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL1 (joined
+           (portRef LVTTL1 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SDD2 (joined
+           (portRef SDD2 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL9 (joined
+           (portRef LVTTL9 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL2 (joined
+           (portRef LVTTL2 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SDD1 (joined
+           (portRef SDD1 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL5 (joined
+           (portRef LVTTL5 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_SDD0 (joined
+           (portRef SDD0 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL10 (joined
+           (portRef LVTTL10 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL8 (joined
+           (portRef LVTTL8 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL0 (joined
+           (portRef LVTTL0 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL7 (joined
+           (portRef LVTTL7 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL4 (joined
+           (portRef LVTTL4 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_LVTTL11 (joined
+           (portRef LVTTL11 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP0 (joined
+           (portRef CMP0 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP1 (joined
+           (portRef CMP1 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP2 (joined
+           (portRef CMP2 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP3 (joined
+           (portRef CMP3 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP4 (joined
+           (portRef CMP4 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP5 (joined
+           (portRef CMP5 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP6 (joined
+           (portRef CMP6 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP7 (joined
+           (portRef CMP7 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP8 (joined
+           (portRef CMP8 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP9 (joined
+           (portRef CMP9 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP10 (joined
+           (portRef CMP10 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_CMP11 (joined
+           (portRef CMP11 (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_FABPREADY (joined
+           (portRef FABPREADY (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_FABPSLVERR (joined
+           (portRef FABPSLVERR (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MSSPSEL (joined
+           (portRef MSSPSEL (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MSSPENABLE (joined
+           (portRef MSSPENABLE (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_MSSPWRITE (joined
+           (portRef MSSPWRITE (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_VCC15GOOD (joined
+           (portRef VCC15GOOD (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_VCC33GOOD (joined
+           (portRef VCC33GOOD (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCBYTEN_0 "MSS_ADLIB_INST_EMCBYTEN[0]") (joined
+           (portRef (member emcbyten 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCBYTEN_1 "MSS_ADLIB_INST_EMCBYTEN[1]") (joined
+           (portRef (member emcbyten 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_0 "MSS_ADLIB_INST_EMCAB[0]") (joined
+           (portRef (member emcab 25) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_1 "MSS_ADLIB_INST_EMCAB[1]") (joined
+           (portRef (member emcab 24) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_2 "MSS_ADLIB_INST_EMCAB[2]") (joined
+           (portRef (member emcab 23) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_3 "MSS_ADLIB_INST_EMCAB[3]") (joined
+           (portRef (member emcab 22) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_4 "MSS_ADLIB_INST_EMCAB[4]") (joined
+           (portRef (member emcab 21) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_5 "MSS_ADLIB_INST_EMCAB[5]") (joined
+           (portRef (member emcab 20) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_6 "MSS_ADLIB_INST_EMCAB[6]") (joined
+           (portRef (member emcab 19) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_7 "MSS_ADLIB_INST_EMCAB[7]") (joined
+           (portRef (member emcab 18) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_8 "MSS_ADLIB_INST_EMCAB[8]") (joined
+           (portRef (member emcab 17) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_9 "MSS_ADLIB_INST_EMCAB[9]") (joined
+           (portRef (member emcab 16) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_10 "MSS_ADLIB_INST_EMCAB[10]") (joined
+           (portRef (member emcab 15) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_11 "MSS_ADLIB_INST_EMCAB[11]") (joined
+           (portRef (member emcab 14) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_12 "MSS_ADLIB_INST_EMCAB[12]") (joined
+           (portRef (member emcab 13) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_13 "MSS_ADLIB_INST_EMCAB[13]") (joined
+           (portRef (member emcab 12) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_14 "MSS_ADLIB_INST_EMCAB[14]") (joined
+           (portRef (member emcab 11) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_15 "MSS_ADLIB_INST_EMCAB[15]") (joined
+           (portRef (member emcab 10) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_16 "MSS_ADLIB_INST_EMCAB[16]") (joined
+           (portRef (member emcab 9) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_17 "MSS_ADLIB_INST_EMCAB[17]") (joined
+           (portRef (member emcab 8) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_18 "MSS_ADLIB_INST_EMCAB[18]") (joined
+           (portRef (member emcab 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_19 "MSS_ADLIB_INST_EMCAB[19]") (joined
+           (portRef (member emcab 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_20 "MSS_ADLIB_INST_EMCAB[20]") (joined
+           (portRef (member emcab 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_21 "MSS_ADLIB_INST_EMCAB[21]") (joined
+           (portRef (member emcab 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_22 "MSS_ADLIB_INST_EMCAB[22]") (joined
+           (portRef (member emcab 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_23 "MSS_ADLIB_INST_EMCAB[23]") (joined
+           (portRef (member emcab 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_24 "MSS_ADLIB_INST_EMCAB[24]") (joined
+           (portRef (member emcab 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCAB_25 "MSS_ADLIB_INST_EMCAB[25]") (joined
+           (portRef (member emcab 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_EMCOEN0n (joined
+           (portRef EMCOEN0n (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_EMCOEN1n (joined
+           (portRef EMCOEN1n (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_0 "MSS_ADLIB_INST_EMCWDB[0]") (joined
+           (portRef (member emcwdb 15) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_1 "MSS_ADLIB_INST_EMCWDB[1]") (joined
+           (portRef (member emcwdb 14) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_2 "MSS_ADLIB_INST_EMCWDB[2]") (joined
+           (portRef (member emcwdb 13) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_3 "MSS_ADLIB_INST_EMCWDB[3]") (joined
+           (portRef (member emcwdb 12) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_4 "MSS_ADLIB_INST_EMCWDB[4]") (joined
+           (portRef (member emcwdb 11) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_5 "MSS_ADLIB_INST_EMCWDB[5]") (joined
+           (portRef (member emcwdb 10) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_6 "MSS_ADLIB_INST_EMCWDB[6]") (joined
+           (portRef (member emcwdb 9) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_7 "MSS_ADLIB_INST_EMCWDB[7]") (joined
+           (portRef (member emcwdb 8) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_8 "MSS_ADLIB_INST_EMCWDB[8]") (joined
+           (portRef (member emcwdb 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_9 "MSS_ADLIB_INST_EMCWDB[9]") (joined
+           (portRef (member emcwdb 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_10 "MSS_ADLIB_INST_EMCWDB[10]") (joined
+           (portRef (member emcwdb 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_11 "MSS_ADLIB_INST_EMCWDB[11]") (joined
+           (portRef (member emcwdb 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_12 "MSS_ADLIB_INST_EMCWDB[12]") (joined
+           (portRef (member emcwdb 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_13 "MSS_ADLIB_INST_EMCWDB[13]") (joined
+           (portRef (member emcwdb 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_14 "MSS_ADLIB_INST_EMCWDB[14]") (joined
+           (portRef (member emcwdb 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_EMCWDB_15 "MSS_ADLIB_INST_EMCWDB[15]") (joined
+           (portRef (member emcwdb 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_EMCCS0n (joined
+           (portRef EMCCS0n (instanceRef MSS_ADLIB_INST))
+          ))
+          (net MSS_ADLIB_INST_EMCCS1n (joined
+           (portRef EMCCS1n (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_0 "MSS_ADLIB_INST_GPOE[0]") (joined
+           (portRef (member gpoe 31) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_1 "MSS_ADLIB_INST_GPOE[1]") (joined
+           (portRef (member gpoe 30) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_2 "MSS_ADLIB_INST_GPOE[2]") (joined
+           (portRef (member gpoe 29) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_3 "MSS_ADLIB_INST_GPOE[3]") (joined
+           (portRef (member gpoe 28) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_4 "MSS_ADLIB_INST_GPOE[4]") (joined
+           (portRef (member gpoe 27) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_5 "MSS_ADLIB_INST_GPOE[5]") (joined
+           (portRef (member gpoe 26) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_6 "MSS_ADLIB_INST_GPOE[6]") (joined
+           (portRef (member gpoe 25) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_7 "MSS_ADLIB_INST_GPOE[7]") (joined
+           (portRef (member gpoe 24) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_8 "MSS_ADLIB_INST_GPOE[8]") (joined
+           (portRef (member gpoe 23) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_9 "MSS_ADLIB_INST_GPOE[9]") (joined
+           (portRef (member gpoe 22) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_10 "MSS_ADLIB_INST_GPOE[10]") (joined
+           (portRef (member gpoe 21) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_11 "MSS_ADLIB_INST_GPOE[11]") (joined
+           (portRef (member gpoe 20) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_12 "MSS_ADLIB_INST_GPOE[12]") (joined
+           (portRef (member gpoe 19) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_13 "MSS_ADLIB_INST_GPOE[13]") (joined
+           (portRef (member gpoe 18) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_14 "MSS_ADLIB_INST_GPOE[14]") (joined
+           (portRef (member gpoe 17) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_15 "MSS_ADLIB_INST_GPOE[15]") (joined
+           (portRef (member gpoe 16) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_16 "MSS_ADLIB_INST_GPOE[16]") (joined
+           (portRef (member gpoe 15) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_17 "MSS_ADLIB_INST_GPOE[17]") (joined
+           (portRef (member gpoe 14) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_18 "MSS_ADLIB_INST_GPOE[18]") (joined
+           (portRef (member gpoe 13) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_19 "MSS_ADLIB_INST_GPOE[19]") (joined
+           (portRef (member gpoe 12) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_20 "MSS_ADLIB_INST_GPOE[20]") (joined
+           (portRef (member gpoe 11) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_21 "MSS_ADLIB_INST_GPOE[21]") (joined
+           (portRef (member gpoe 10) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_22 "MSS_ADLIB_INST_GPOE[22]") (joined
+           (portRef (member gpoe 9) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_23 "MSS_ADLIB_INST_GPOE[23]") (joined
+           (portRef (member gpoe 8) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_24 "MSS_ADLIB_INST_GPOE[24]") (joined
+           (portRef (member gpoe 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_25 "MSS_ADLIB_INST_GPOE[25]") (joined
+           (portRef (member gpoe 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_26 "MSS_ADLIB_INST_GPOE[26]") (joined
+           (portRef (member gpoe 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_27 "MSS_ADLIB_INST_GPOE[27]") (joined
+           (portRef (member gpoe 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_28 "MSS_ADLIB_INST_GPOE[28]") (joined
+           (portRef (member gpoe 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_29 "MSS_ADLIB_INST_GPOE[29]") (joined
+           (portRef (member gpoe 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_30 "MSS_ADLIB_INST_GPOE[30]") (joined
+           (portRef (member gpoe 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPOE_31 "MSS_ADLIB_INST_GPOE[31]") (joined
+           (portRef (member gpoe 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_0 "MSS_ADLIB_INST_GPO[0]") (joined
+           (portRef (member gpo 31) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_1 "MSS_ADLIB_INST_GPO[1]") (joined
+           (portRef (member gpo 30) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_2 "MSS_ADLIB_INST_GPO[2]") (joined
+           (portRef (member gpo 29) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_3 "MSS_ADLIB_INST_GPO[3]") (joined
+           (portRef (member gpo 28) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_4 "MSS_ADLIB_INST_GPO[4]") (joined
+           (portRef (member gpo 27) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_5 "MSS_ADLIB_INST_GPO[5]") (joined
+           (portRef (member gpo 26) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_6 "MSS_ADLIB_INST_GPO[6]") (joined
+           (portRef (member gpo 25) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_7 "MSS_ADLIB_INST_GPO[7]") (joined
+           (portRef (member gpo 24) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_8 "MSS_ADLIB_INST_GPO[8]") (joined
+           (portRef (member gpo 23) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_9 "MSS_ADLIB_INST_GPO[9]") (joined
+           (portRef (member gpo 22) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_10 "MSS_ADLIB_INST_GPO[10]") (joined
+           (portRef (member gpo 21) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_11 "MSS_ADLIB_INST_GPO[11]") (joined
+           (portRef (member gpo 20) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_12 "MSS_ADLIB_INST_GPO[12]") (joined
+           (portRef (member gpo 19) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_13 "MSS_ADLIB_INST_GPO[13]") (joined
+           (portRef (member gpo 18) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_14 "MSS_ADLIB_INST_GPO[14]") (joined
+           (portRef (member gpo 17) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_15 "MSS_ADLIB_INST_GPO[15]") (joined
+           (portRef (member gpo 16) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_16 "MSS_ADLIB_INST_GPO[16]") (joined
+           (portRef (member gpo 15) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_17 "MSS_ADLIB_INST_GPO[17]") (joined
+           (portRef (member gpo 14) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_18 "MSS_ADLIB_INST_GPO[18]") (joined
+           (portRef (member gpo 13) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_19 "MSS_ADLIB_INST_GPO[19]") (joined
+           (portRef (member gpo 12) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_20 "MSS_ADLIB_INST_GPO[20]") (joined
+           (portRef (member gpo 11) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_21 "MSS_ADLIB_INST_GPO[21]") (joined
+           (portRef (member gpo 10) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_22 "MSS_ADLIB_INST_GPO[22]") (joined
+           (portRef (member gpo 9) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_23 "MSS_ADLIB_INST_GPO[23]") (joined
+           (portRef (member gpo 8) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_24 "MSS_ADLIB_INST_GPO[24]") (joined
+           (portRef (member gpo 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_25 "MSS_ADLIB_INST_GPO[25]") (joined
+           (portRef (member gpo 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_26 "MSS_ADLIB_INST_GPO[26]") (joined
+           (portRef (member gpo 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_27 "MSS_ADLIB_INST_GPO[27]") (joined
+           (portRef (member gpo 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_28 "MSS_ADLIB_INST_GPO[28]") (joined
+           (portRef (member gpo 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_29 "MSS_ADLIB_INST_GPO[29]") (joined
+           (portRef (member gpo 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_30 "MSS_ADLIB_INST_GPO[30]") (joined
+           (portRef (member gpo 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_GPO_31 "MSS_ADLIB_INST_GPO[31]") (joined
+           (portRef (member gpo 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSINT_0 "MSS_ADLIB_INST_MSSINT[0]") (joined
+           (portRef (member mssint 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSINT_1 "MSS_ADLIB_INST_MSSINT[1]") (joined
+           (portRef (member mssint 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSINT_2 "MSS_ADLIB_INST_MSSINT[2]") (joined
+           (portRef (member mssint 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSINT_3 "MSS_ADLIB_INST_MSSINT[3]") (joined
+           (portRef (member mssint 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSINT_4 "MSS_ADLIB_INST_MSSINT[4]") (joined
+           (portRef (member mssint 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSINT_5 "MSS_ADLIB_INST_MSSINT[5]") (joined
+           (portRef (member mssint 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSINT_6 "MSS_ADLIB_INST_MSSINT[6]") (joined
+           (portRef (member mssint 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSINT_7 "MSS_ADLIB_INST_MSSINT[7]") (joined
+           (portRef (member mssint 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI0SSO_0 "MSS_ADLIB_INST_SPI0SSO[0]") (joined
+           (portRef (member spi0sso 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI0SSO_1 "MSS_ADLIB_INST_SPI0SSO[1]") (joined
+           (portRef (member spi0sso 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI0SSO_2 "MSS_ADLIB_INST_SPI0SSO[2]") (joined
+           (portRef (member spi0sso 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI0SSO_3 "MSS_ADLIB_INST_SPI0SSO[3]") (joined
+           (portRef (member spi0sso 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI0SSO_4 "MSS_ADLIB_INST_SPI0SSO[4]") (joined
+           (portRef (member spi0sso 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI0SSO_5 "MSS_ADLIB_INST_SPI0SSO[5]") (joined
+           (portRef (member spi0sso 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI0SSO_6 "MSS_ADLIB_INST_SPI0SSO[6]") (joined
+           (portRef (member spi0sso 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI0SSO_7 "MSS_ADLIB_INST_SPI0SSO[7]") (joined
+           (portRef (member spi0sso 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI1SSO_0 "MSS_ADLIB_INST_SPI1SSO[0]") (joined
+           (portRef (member spi1sso 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI1SSO_1 "MSS_ADLIB_INST_SPI1SSO[1]") (joined
+           (portRef (member spi1sso 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI1SSO_2 "MSS_ADLIB_INST_SPI1SSO[2]") (joined
+           (portRef (member spi1sso 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI1SSO_3 "MSS_ADLIB_INST_SPI1SSO[3]") (joined
+           (portRef (member spi1sso 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI1SSO_4 "MSS_ADLIB_INST_SPI1SSO[4]") (joined
+           (portRef (member spi1sso 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI1SSO_5 "MSS_ADLIB_INST_SPI1SSO[5]") (joined
+           (portRef (member spi1sso 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI1SSO_6 "MSS_ADLIB_INST_SPI1SSO[6]") (joined
+           (portRef (member spi1sso 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_SPI1SSO_7 "MSS_ADLIB_INST_SPI1SSO[7]") (joined
+           (portRef (member spi1sso 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MACTXD_0 "MSS_ADLIB_INST_MACTXD[0]") (joined
+           (portRef (member mactxd 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MACTXD_1 "MSS_ADLIB_INST_MACTXD[1]") (joined
+           (portRef (member mactxd 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_0 "MSS_ADLIB_INST_ACEFLAGS[0]") (joined
+           (portRef (member aceflags 31) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_1 "MSS_ADLIB_INST_ACEFLAGS[1]") (joined
+           (portRef (member aceflags 30) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_2 "MSS_ADLIB_INST_ACEFLAGS[2]") (joined
+           (portRef (member aceflags 29) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_3 "MSS_ADLIB_INST_ACEFLAGS[3]") (joined
+           (portRef (member aceflags 28) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_4 "MSS_ADLIB_INST_ACEFLAGS[4]") (joined
+           (portRef (member aceflags 27) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_5 "MSS_ADLIB_INST_ACEFLAGS[5]") (joined
+           (portRef (member aceflags 26) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_6 "MSS_ADLIB_INST_ACEFLAGS[6]") (joined
+           (portRef (member aceflags 25) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_7 "MSS_ADLIB_INST_ACEFLAGS[7]") (joined
+           (portRef (member aceflags 24) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_8 "MSS_ADLIB_INST_ACEFLAGS[8]") (joined
+           (portRef (member aceflags 23) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_9 "MSS_ADLIB_INST_ACEFLAGS[9]") (joined
+           (portRef (member aceflags 22) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_10 "MSS_ADLIB_INST_ACEFLAGS[10]") (joined
+           (portRef (member aceflags 21) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_11 "MSS_ADLIB_INST_ACEFLAGS[11]") (joined
+           (portRef (member aceflags 20) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_12 "MSS_ADLIB_INST_ACEFLAGS[12]") (joined
+           (portRef (member aceflags 19) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_13 "MSS_ADLIB_INST_ACEFLAGS[13]") (joined
+           (portRef (member aceflags 18) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_14 "MSS_ADLIB_INST_ACEFLAGS[14]") (joined
+           (portRef (member aceflags 17) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_15 "MSS_ADLIB_INST_ACEFLAGS[15]") (joined
+           (portRef (member aceflags 16) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_16 "MSS_ADLIB_INST_ACEFLAGS[16]") (joined
+           (portRef (member aceflags 15) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_17 "MSS_ADLIB_INST_ACEFLAGS[17]") (joined
+           (portRef (member aceflags 14) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_18 "MSS_ADLIB_INST_ACEFLAGS[18]") (joined
+           (portRef (member aceflags 13) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_19 "MSS_ADLIB_INST_ACEFLAGS[19]") (joined
+           (portRef (member aceflags 12) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_20 "MSS_ADLIB_INST_ACEFLAGS[20]") (joined
+           (portRef (member aceflags 11) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_21 "MSS_ADLIB_INST_ACEFLAGS[21]") (joined
+           (portRef (member aceflags 10) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_22 "MSS_ADLIB_INST_ACEFLAGS[22]") (joined
+           (portRef (member aceflags 9) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_23 "MSS_ADLIB_INST_ACEFLAGS[23]") (joined
+           (portRef (member aceflags 8) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_24 "MSS_ADLIB_INST_ACEFLAGS[24]") (joined
+           (portRef (member aceflags 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_25 "MSS_ADLIB_INST_ACEFLAGS[25]") (joined
+           (portRef (member aceflags 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_26 "MSS_ADLIB_INST_ACEFLAGS[26]") (joined
+           (portRef (member aceflags 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_27 "MSS_ADLIB_INST_ACEFLAGS[27]") (joined
+           (portRef (member aceflags 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_28 "MSS_ADLIB_INST_ACEFLAGS[28]") (joined
+           (portRef (member aceflags 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_29 "MSS_ADLIB_INST_ACEFLAGS[29]") (joined
+           (portRef (member aceflags 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_30 "MSS_ADLIB_INST_ACEFLAGS[30]") (joined
+           (portRef (member aceflags 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_ACEFLAGS_31 "MSS_ADLIB_INST_ACEFLAGS[31]") (joined
+           (portRef (member aceflags 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_0 "MSS_ADLIB_INST_FABPRDATA[0]") (joined
+           (portRef (member fabprdata 31) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_1 "MSS_ADLIB_INST_FABPRDATA[1]") (joined
+           (portRef (member fabprdata 30) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_2 "MSS_ADLIB_INST_FABPRDATA[2]") (joined
+           (portRef (member fabprdata 29) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_3 "MSS_ADLIB_INST_FABPRDATA[3]") (joined
+           (portRef (member fabprdata 28) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_4 "MSS_ADLIB_INST_FABPRDATA[4]") (joined
+           (portRef (member fabprdata 27) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_5 "MSS_ADLIB_INST_FABPRDATA[5]") (joined
+           (portRef (member fabprdata 26) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_6 "MSS_ADLIB_INST_FABPRDATA[6]") (joined
+           (portRef (member fabprdata 25) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_7 "MSS_ADLIB_INST_FABPRDATA[7]") (joined
+           (portRef (member fabprdata 24) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_8 "MSS_ADLIB_INST_FABPRDATA[8]") (joined
+           (portRef (member fabprdata 23) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_9 "MSS_ADLIB_INST_FABPRDATA[9]") (joined
+           (portRef (member fabprdata 22) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_10 "MSS_ADLIB_INST_FABPRDATA[10]") (joined
+           (portRef (member fabprdata 21) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_11 "MSS_ADLIB_INST_FABPRDATA[11]") (joined
+           (portRef (member fabprdata 20) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_12 "MSS_ADLIB_INST_FABPRDATA[12]") (joined
+           (portRef (member fabprdata 19) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_13 "MSS_ADLIB_INST_FABPRDATA[13]") (joined
+           (portRef (member fabprdata 18) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_14 "MSS_ADLIB_INST_FABPRDATA[14]") (joined
+           (portRef (member fabprdata 17) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_15 "MSS_ADLIB_INST_FABPRDATA[15]") (joined
+           (portRef (member fabprdata 16) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_16 "MSS_ADLIB_INST_FABPRDATA[16]") (joined
+           (portRef (member fabprdata 15) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_17 "MSS_ADLIB_INST_FABPRDATA[17]") (joined
+           (portRef (member fabprdata 14) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_18 "MSS_ADLIB_INST_FABPRDATA[18]") (joined
+           (portRef (member fabprdata 13) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_19 "MSS_ADLIB_INST_FABPRDATA[19]") (joined
+           (portRef (member fabprdata 12) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_20 "MSS_ADLIB_INST_FABPRDATA[20]") (joined
+           (portRef (member fabprdata 11) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_21 "MSS_ADLIB_INST_FABPRDATA[21]") (joined
+           (portRef (member fabprdata 10) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_22 "MSS_ADLIB_INST_FABPRDATA[22]") (joined
+           (portRef (member fabprdata 9) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_23 "MSS_ADLIB_INST_FABPRDATA[23]") (joined
+           (portRef (member fabprdata 8) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_24 "MSS_ADLIB_INST_FABPRDATA[24]") (joined
+           (portRef (member fabprdata 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_25 "MSS_ADLIB_INST_FABPRDATA[25]") (joined
+           (portRef (member fabprdata 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_26 "MSS_ADLIB_INST_FABPRDATA[26]") (joined
+           (portRef (member fabprdata 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_27 "MSS_ADLIB_INST_FABPRDATA[27]") (joined
+           (portRef (member fabprdata 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_28 "MSS_ADLIB_INST_FABPRDATA[28]") (joined
+           (portRef (member fabprdata 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_29 "MSS_ADLIB_INST_FABPRDATA[29]") (joined
+           (portRef (member fabprdata 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_30 "MSS_ADLIB_INST_FABPRDATA[30]") (joined
+           (portRef (member fabprdata 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_FABPRDATA_31 "MSS_ADLIB_INST_FABPRDATA[31]") (joined
+           (portRef (member fabprdata 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_0 "MSS_ADLIB_INST_MSSPADDR[0]") (joined
+           (portRef (member msspaddr 19) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_1 "MSS_ADLIB_INST_MSSPADDR[1]") (joined
+           (portRef (member msspaddr 18) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_2 "MSS_ADLIB_INST_MSSPADDR[2]") (joined
+           (portRef (member msspaddr 17) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_3 "MSS_ADLIB_INST_MSSPADDR[3]") (joined
+           (portRef (member msspaddr 16) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_4 "MSS_ADLIB_INST_MSSPADDR[4]") (joined
+           (portRef (member msspaddr 15) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_5 "MSS_ADLIB_INST_MSSPADDR[5]") (joined
+           (portRef (member msspaddr 14) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_6 "MSS_ADLIB_INST_MSSPADDR[6]") (joined
+           (portRef (member msspaddr 13) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_7 "MSS_ADLIB_INST_MSSPADDR[7]") (joined
+           (portRef (member msspaddr 12) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_8 "MSS_ADLIB_INST_MSSPADDR[8]") (joined
+           (portRef (member msspaddr 11) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_9 "MSS_ADLIB_INST_MSSPADDR[9]") (joined
+           (portRef (member msspaddr 10) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_10 "MSS_ADLIB_INST_MSSPADDR[10]") (joined
+           (portRef (member msspaddr 9) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_11 "MSS_ADLIB_INST_MSSPADDR[11]") (joined
+           (portRef (member msspaddr 8) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_12 "MSS_ADLIB_INST_MSSPADDR[12]") (joined
+           (portRef (member msspaddr 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_13 "MSS_ADLIB_INST_MSSPADDR[13]") (joined
+           (portRef (member msspaddr 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_14 "MSS_ADLIB_INST_MSSPADDR[14]") (joined
+           (portRef (member msspaddr 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_15 "MSS_ADLIB_INST_MSSPADDR[15]") (joined
+           (portRef (member msspaddr 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_16 "MSS_ADLIB_INST_MSSPADDR[16]") (joined
+           (portRef (member msspaddr 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_17 "MSS_ADLIB_INST_MSSPADDR[17]") (joined
+           (portRef (member msspaddr 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_18 "MSS_ADLIB_INST_MSSPADDR[18]") (joined
+           (portRef (member msspaddr 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPADDR_19 "MSS_ADLIB_INST_MSSPADDR[19]") (joined
+           (portRef (member msspaddr 0) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_0 "MSS_ADLIB_INST_MSSPWDATA[0]") (joined
+           (portRef (member msspwdata 31) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_1 "MSS_ADLIB_INST_MSSPWDATA[1]") (joined
+           (portRef (member msspwdata 30) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_2 "MSS_ADLIB_INST_MSSPWDATA[2]") (joined
+           (portRef (member msspwdata 29) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_3 "MSS_ADLIB_INST_MSSPWDATA[3]") (joined
+           (portRef (member msspwdata 28) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_4 "MSS_ADLIB_INST_MSSPWDATA[4]") (joined
+           (portRef (member msspwdata 27) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_5 "MSS_ADLIB_INST_MSSPWDATA[5]") (joined
+           (portRef (member msspwdata 26) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_6 "MSS_ADLIB_INST_MSSPWDATA[6]") (joined
+           (portRef (member msspwdata 25) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_7 "MSS_ADLIB_INST_MSSPWDATA[7]") (joined
+           (portRef (member msspwdata 24) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_8 "MSS_ADLIB_INST_MSSPWDATA[8]") (joined
+           (portRef (member msspwdata 23) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_9 "MSS_ADLIB_INST_MSSPWDATA[9]") (joined
+           (portRef (member msspwdata 22) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_10 "MSS_ADLIB_INST_MSSPWDATA[10]") (joined
+           (portRef (member msspwdata 21) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_11 "MSS_ADLIB_INST_MSSPWDATA[11]") (joined
+           (portRef (member msspwdata 20) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_12 "MSS_ADLIB_INST_MSSPWDATA[12]") (joined
+           (portRef (member msspwdata 19) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_13 "MSS_ADLIB_INST_MSSPWDATA[13]") (joined
+           (portRef (member msspwdata 18) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_14 "MSS_ADLIB_INST_MSSPWDATA[14]") (joined
+           (portRef (member msspwdata 17) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_15 "MSS_ADLIB_INST_MSSPWDATA[15]") (joined
+           (portRef (member msspwdata 16) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_16 "MSS_ADLIB_INST_MSSPWDATA[16]") (joined
+           (portRef (member msspwdata 15) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_17 "MSS_ADLIB_INST_MSSPWDATA[17]") (joined
+           (portRef (member msspwdata 14) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_18 "MSS_ADLIB_INST_MSSPWDATA[18]") (joined
+           (portRef (member msspwdata 13) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_19 "MSS_ADLIB_INST_MSSPWDATA[19]") (joined
+           (portRef (member msspwdata 12) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_20 "MSS_ADLIB_INST_MSSPWDATA[20]") (joined
+           (portRef (member msspwdata 11) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_21 "MSS_ADLIB_INST_MSSPWDATA[21]") (joined
+           (portRef (member msspwdata 10) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_22 "MSS_ADLIB_INST_MSSPWDATA[22]") (joined
+           (portRef (member msspwdata 9) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_23 "MSS_ADLIB_INST_MSSPWDATA[23]") (joined
+           (portRef (member msspwdata 8) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_24 "MSS_ADLIB_INST_MSSPWDATA[24]") (joined
+           (portRef (member msspwdata 7) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_25 "MSS_ADLIB_INST_MSSPWDATA[25]") (joined
+           (portRef (member msspwdata 6) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_26 "MSS_ADLIB_INST_MSSPWDATA[26]") (joined
+           (portRef (member msspwdata 5) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_27 "MSS_ADLIB_INST_MSSPWDATA[27]") (joined
+           (portRef (member msspwdata 4) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_28 "MSS_ADLIB_INST_MSSPWDATA[28]") (joined
+           (portRef (member msspwdata 3) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_29 "MSS_ADLIB_INST_MSSPWDATA[29]") (joined
+           (portRef (member msspwdata 2) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_30 "MSS_ADLIB_INST_MSSPWDATA[30]") (joined
+           (portRef (member msspwdata 1) (instanceRef MSS_ADLIB_INST))
+          ))
+          (net (rename MSS_ADLIB_INST_MSSPWDATA_31 "MSS_ADLIB_INST_MSSPWDATA[31]") (joined
+           (portRef (member msspwdata 0) (instanceRef MSS_ADLIB_INST))
+          ))
+         )
+        (property orig_inst_of (string "xBeeTransmit_MSS"))
+       )
+    )
+    (cell xBeeTransmit (cellType GENERIC)
+       (view verilog (viewType NETLIST)
+         (interface
+           (port MSS_RESET_N (direction INPUT))
+           (port UART_0_RXD (direction INPUT))
+           (port UART_1_RXD (direction INPUT))
+           (port UART_0_TXD (direction OUTPUT))
+           (port UART_1_TXD (direction OUTPUT))
+         )
+         (contents
+          (instance xBeeTransmit_MSS_0 (viewRef netlist (cellRef xBeeTransmit_MSS))
+          )
+          (instance VCC_i (viewRef prim (cellRef VCC (libraryRef smartfusion)))          )
+          (instance GND_i (viewRef prim (cellRef GND (libraryRef smartfusion)))          )
+          (net MSS_RESET_N (joined
+           (portRef MSS_RESET_N)
+           (portRef MSS_RESET_N (instanceRef xBeeTransmit_MSS_0))
+          ))
+          (net UART_0_RXD (joined
+           (portRef UART_0_RXD)
+           (portRef UART_0_RXD (instanceRef xBeeTransmit_MSS_0))
+          ))
+          (net UART_1_RXD (joined
+           (portRef UART_1_RXD)
+           (portRef UART_1_RXD (instanceRef xBeeTransmit_MSS_0))
+          ))
+          (net UART_0_TXD (joined
+           (portRef UART_0_TXD (instanceRef xBeeTransmit_MSS_0))
+           (portRef UART_0_TXD)
+          ))
+          (net UART_1_TXD (joined
+           (portRef UART_1_TXD (instanceRef xBeeTransmit_MSS_0))
+           (portRef UART_1_TXD)
+          ))
+          (net VCC (joined
+           (portRef Y (instanceRef VCC_i))
+          ))
+          (net GND (joined
+           (portRef Y (instanceRef GND_i))
+          ))
+         )
+        (property orig_inst_of (string "xBeeTransmit"))
+       )
+    )
+  )
+  (design xBeeTransmit (cellRef xBeeTransmit (libraryRef work)))
+)

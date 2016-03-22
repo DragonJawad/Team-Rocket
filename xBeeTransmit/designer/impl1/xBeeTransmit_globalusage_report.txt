@@ -1,0 +1,14 @@
+********************************************************************
+                            Global Usage Report
+********************************************************************
+  
+Product: Designer
+Release: v11.5 SP3
+Version: 11.5.3.10
+Date: Sun Mar 20 22:59:31 2016
+Design Name: xBeeTransmit  Family: SmartFusion  Die: A2F200M3F  Package: 484 FBGA
+Design State: Post-Layout
+
+
+
+

@@ -1,0 +1,7 @@
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin64\syn_nfilter.exe  -link  -top  xBeeTransmit  -multisrs  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synwork\xBeeTransmit_comp.srs  -osyn  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synwork\xBeeTransmit_mult.srs  -log  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synlog\xBeeTransmit_multi_srs_gen.srr 
+rc:0 success:1
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synwork\xBeeTransmit_comp.srs|i|1458529141|32271
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synwork\xBeeTransmit_mult.srs|o|1458529142|2356
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synlog\xBeeTransmit_multi_srs_gen.srr|o|1458529142|479
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin\syn_nfilter.exe|i|1412907262|2743296
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin64\syn_nfilter.exe|i|1412907456|6340608

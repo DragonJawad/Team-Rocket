@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <inttypes.h>
+#include "drivers/mss_uart/mss_uart.h"
+
+
+#define RX_BUFF_SIZE    64
+
+uint8_t g_rx_buff[RX_BUFF_SIZE];
+uint8_t g_rx_idx = 0;
+
+
+void uart1_rx_handler( mss_uart_instance_t * this_uart ){
+      MSS_UART_get_rx( this_uart, &g_rx_buff[g_rx_idx], sizeof(g_rx_buff) );
+      printf("Data received! %x\r\n", g_rx_buff[g_rx_idx]);
+
+}
+
+
+int main()
+{
+	 //uint8_t tx_buff[10] = "Transmit\r\n";
+
+	 /* initialize the UART */
+	 MSS_UART_init
+	 (
+		 &g_mss_uart1,
+		 MSS_UART_9600_BAUD,
+		 (MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT)
+	 );
+
+	// printf("test\r\n");
+	 MSS_UART_set_rx_handler
+	 (
+	     &g_mss_uart1,
+	     uart1_rx_handler,
+	     MSS_UART_FIFO_EIGHT_BYTES
+	 );
+
+
+	 while(1){
+		 /* transmit the message Go Blue */
+			/* MSS_UART_polled_tx
+			 (
+				 &g_mss_uart1,
+				 tx_buff,
+				 sizeof(tx_buff)
+			 );
+
+			 printf("Transmit\r\n");
+			 int i = 0;
+			 while(i < 100000000) i += 1; */
+	 }
+
+	 return 0;
+}

@@ -1,0 +1,15 @@
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin64\m_proasic.exe  -prodtype  synplify_pro   -encrypt  -pro  -rundir  C:\Users\Ben\Desktop\xBeeTransmit\synthesis   -part A2F200M3F  -package FBGA484  -grade STD    -globalthreshold 50 -maxfan 24 -opcond COMWC -report_path 0 -RWCheckOnRam 0 -summaryfile C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synlog\report\xBeeTransmit_fpga_mapper.xml  -top_level_module  xBeeTransmit  -flow mapping  -mp  1  -prjfile  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\scratchproject.prs  -implementation  synthesis  -licensetype  synplifypro_actel  -multisrs  -oedif  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.edn   -freq 100.000   C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synwork\xBeeTransmit_prem.srd  -sap  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.sap  -otap  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.tap  -omap  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.map  -devicelib  C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v  -sap  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.sap  -ologparam  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\syntmp\xBeeTransmit.plg  -osyn  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.srm  -prjdir  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\  -prjname  xBeeTransmit_syn  -log  C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synlog\xBeeTransmit_fpga_mapper.srr 
+rc:1 success:1
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\scratchproject.prs|o|1458507085|2082
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.edn|o|1458529143|98211
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synwork\xBeeTransmit_prem.srd|i|1458529143|13096
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.sap|o|1458529143|90
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.tap|o|0|0
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.map|o|1458529143|28
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v|i|1412951262|72817
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.sap|o|1458529143|90
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\syntmp\xBeeTransmit.plg|o|1458529143|664
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\xBeeTransmit.srm|o|1458529143|63354
+C:\Users\Ben\Desktop\xBeeTransmit\synthesis\synlog\xBeeTransmit_fpga_mapper.srr|o|1458529143|12368
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin\m_proasic.exe|i|1412952226|12576768
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin64\m_proasic.exe|i|1412954416|15337984
