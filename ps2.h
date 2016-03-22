@@ -4,36 +4,52 @@
 #ifndef PS2_H
 #define PS2_H
 
-#include "inttypes.h"
-#include "drivers/mss_spi/mss_spi.h"
+#include <inttypes.h>
+#include "drivers/mss_gpio/mss_gpio.h"
 
+#define MAX_BUFFER_SIZE 21
+
+
+/***************************************/
+/********** CONTROLLER STRUCT **********/
+/***************************************/
+
+typedef struct controller {
+	int counter;
+	mss_gpio_id_t select;
+	uint8_t vibration;
+	uint8_t slave_buffer[MAX_BUFFER_SIZE];
+} controller_t;
+
+
+// Initialize the controller struct
+void controller_init(controller_t * controller, mss_gpio_id_t select);
+
+
+/**************************************/
 /********** HELPER FUNCTIONS **********/
+/**************************************/
 
 // Flip the bits of an 8-bit value
 uint8_t flip(uint8_t value);
 
 
+/***************************************/
 /********** COMMAND FUNCTIONS **********/
+/***************************************/
 
-// Poll PS2 controller for digital button values
-void simple_poll(uint8_t * slave_buffer);
+// Poll for digital button values
+void digital_capture(controller_t * controller);
 
-// Poll PS2 controller for digital button values
-void full_poll(uint8_t * slave_buffer);
+// Poll for all values
+void full_capture(controller_t * controller);
 
-// Enter configuration mode
-void enter_config(uint8_t * slave_buffer);
+// Perform all setup tasks needed to read analog buttons and control motors
+void setup_all(controller_t * controller);
 
-// Exit configuration mode
-void exit_config(uint8_t * slave_buffer);
+// Set the controller to vibrate for a certain amount of time
+void set_vibration(controller_t * controller, uint8_t vibration, int counter);
 
-// Turn on analog mode
-void enable_analog(uint8_t * slave_buffer);
 
-// Map motors to correct bytes
-void motor_setup(uint8_t * slave_buffer);
-
-// Setup analog buttons
-void button_setup(uint8_t * slave_buffer);
 
 #endif /* PS2_H */
