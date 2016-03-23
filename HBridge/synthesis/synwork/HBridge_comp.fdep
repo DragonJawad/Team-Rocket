@@ -1,0 +1,70 @@
+#OPTIONS:"|-top|HBridge|-prodtype|synplify_pro|-nram|-fixsmult|-divnmod|-I|C:\\Users\\jawadmn\\TeamRocket\\HBridge\\synthesis\\|-I|C:\\Microsemi\\Libero_v11.5\\Synopsys\\synplify_I201403MSP1\\lib|-v2001|-devicelib|C:\\Microsemi\\Libero_v11.5\\Synopsys\\synplify_I201403MSP1\\lib\\proasic\\smartfusion.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|COREAPB3_LIB|-lib|COREAPB3_LIB|-lib|COREAPB3_LIB|-lib|work"
+#CUR:"C:\\Microsemi\\Libero_v11.5\\Synopsys\\synplify_I201403MSP1\\bin64\\c_ver.exe":1412907378
+#CUR:"C:\\Microsemi\\Libero_v11.5\\Synopsys\\synplify_I201403MSP1\\lib\\proasic\\smartfusion.v":1412951262
+#CUR:"C:\\Microsemi\\Libero_v11.5\\Synopsys\\synplify_I201403MSP1\\lib\\vlog\\umr_capim.v":1412907298
+#CUR:"C:\\Microsemi\\Libero_v11.5\\Synopsys\\synplify_I201403MSP1\\lib\\vlog\\scemi_objects.v":1412907044
+#CUR:"C:\\Microsemi\\Libero_v11.5\\Synopsys\\synplify_I201403MSP1\\lib\\vlog\\scemi_pipes.svh":1412907044
+#CUR:"C:\\Microsemi\\Libero_v11.5\\Synopsys\\synplify_I201403MSP1\\lib\\vlog\\hypermods.v":1412907044
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\hdl\\Controllerv2.v":1458764380
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\component\\work\\HBridge_MSS\\mss_tshell.v":1458753065
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\component\\Actel\\SmartFusionMSS\\MSS\\2.5.106\\mss_comps.v":1358982149
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\component\\work\\HBridge_MSS\\MSS_CCC_0\\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":1458753062
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\component\\work\\HBridge_MSS\\HBridge_MSS.v":1458753082
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\component\\Actel\\DirectCore\\CoreAPB3\\4.1.100\\rtl\\vlog\\core\\coreapb3_muxptob3.v":1443038025
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\component\\Actel\\DirectCore\\CoreAPB3\\4.1.100\\rtl\\vlog\\core\\coreapb3_iaddr_reg.v":1443038025
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\component\\Actel\\DirectCore\\CoreAPB3\\4.1.100\\rtl\\vlog\\core\\coreapb3.v":1443038025
+#CUR:"C:\\Users\\jawadmn\\TeamRocket\\HBridge\\component\\work\\HBridge\\HBridge.v":1458764391
+#numinternalfiles:5
+#defaultlanguage:verilog
+0			"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v" verilog
+1			"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\mss_tshell.v" verilog
+2			"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v" verilog
+3			"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v" verilog
+4			"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\HBridge_MSS.v" verilog
+5			"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3_muxptob3.v" verilog
+6			"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3_iaddr_reg.v" verilog
+7			"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v" verilog
+8			"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge\HBridge.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+1 -1
+2 -1
+3 -1
+4 3
+5 -1
+6 -1
+7 5 6
+8 0 7 4
+#Dependency Lists(Users Of)
+0 8
+1 -1
+2 -1
+3 4
+4 8
+5 7
+6 7
+7 8
+8 -1
+#Design Unit to File Association
+module work handler 0
+module work controllerV2 0
+module work MSS_APB 1
+module work MSS_XTLOSC 2
+module work MSS_LPXTLOSC 2
+module work INBUF_MSS 2
+module work OUTBUF_MSS 2
+module work TRIBUFF_MSS 2
+module work BIBUF_MSS 2
+module work BIBUF_OPEND_MSS 2
+module work INBUF_MCCC 2
+module work INBUF_LVPECL_MCCC 2
+module work INBUF_LVDS_MCCC 2
+module work MSSINT 2
+module work MSS_CCC 2
+module work MSS_ALL 2
+module work HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC 3
+module work HBridge_MSS 4
+module work HBridge 8
+module COREAPB3_LIB COREAPB3_MUXPTOB3 5
+module COREAPB3_LIB coreapb3_iaddr_reg 6
+module COREAPB3_LIB CoreAPB3 7

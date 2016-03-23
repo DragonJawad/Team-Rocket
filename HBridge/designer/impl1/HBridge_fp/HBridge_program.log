@@ -1,0 +1,47 @@
+FlashPro
+Version: 11.5.3.10
+Release: v11.5 SP3
+
+Software Version: 11.5.3.10
+PDB file 'C:\Users\jawadmn\TeamRocket\HBridge\designer\impl1\HBridge_fp\HBridge.pdb' has been
+loaded successfully.
+DESIGN : HBridge;  CHECKSUM : 66C9;  PDB_VERSION : 1.9
+Driver : 3.0.0 build 1
+programmer '79761' : FlashPro3
+Opened 'C:/Users/jawadmn/TeamRocket/HBridge/designer/impl1/HBridge_fp/HBridge.pro'
+The 'open_project' command succeeded.
+The 'set_programming_file' command succeeded.
+The 'set_device_type' command succeeded.
+The 'set_device_package' command succeeded.
+Info: Adding Flash Memory data from file
+      C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_ENVM_0\MSS_ENVM_0.efc.
+Info: Adding FPGA Array data from file
+      C:\Users\jawadmn\TeamRocket\HBridge\designer\impl1\HBridge.fdb.
+PDB file 'C:\Users\jawadmn\TeamRocket\HBridge\designer\impl1\HBridge_fp\HBridge.pdb' has been
+loaded successfully.
+DESIGN : HBridge;  CHECKSUM : E4AF;  PDB_VERSION : 1.9
+The 'update_programming_file' command succeeded.
+The 'set_programming_action' command succeeded.
+programmer '79761' : Scan Chain...
+Warning: programmer '79761' : Vpump has been selected on programmer AND an externally provided
+         Vpump has also been detected. Using externally provided Vpump voltage source.
+programmer '79761' : Scan Chain PASSED.
+programmer '79761' : Executing action PROGRAM
+programmer '79761' : EXPORT FSN[48] = 0114ab58643c
+programmer '79761' : Erase ...
+programmer '79761' : Completed erase
+programmer '79761' : EXPORT CHECKSUM: [16] = e4af
+programmer '79761' : Programming FPGA Array
+programmer '79761' : Verifying FPGA Array
+programmer '79761' :         Verifying FPGA Array -- pass
+programmer '79761' : Program System Init and Boot Clients...
+programmer '79761' : Verify System Init and Boot Clients...
+programmer '79761' : Finished: Wed Mar 23 16:23:06 2016 (Elapsed time 00:00:39)
+programmer '79761' : Executing action PROGRAM PASSED.
+
+                        o - o - o - o - o - o
+
+The 'run_selected_actions' command succeeded.
+Project saved.
+The 'save_project' command succeeded.
+Project closed.

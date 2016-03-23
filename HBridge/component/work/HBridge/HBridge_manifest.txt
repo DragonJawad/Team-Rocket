@@ -1,0 +1,17 @@
+Microsemi Corporation - Microsemi Libero Software Release v11.5 SP3 (Version 11.5.3.10)
+
+Date      :  Wed Mar 23 16:19:59 2016
+Project   :  C:\Users\jawadmn\TeamRocket\HBridge
+Component :  HBridge
+Family    :  SmartFusion
+
+
+HDL source files for all Synthesis and Simulation tools:
+    C:/Users/jawadmn/TeamRocket/HBridge/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3.v
+    C:/Users/jawadmn/TeamRocket/HBridge/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_iaddr_reg.v
+    C:/Users/jawadmn/TeamRocket/HBridge/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_muxptob3.v
+    C:/Users/jawadmn/TeamRocket/HBridge/component/work/HBridge/HBridge.v
+
+Stimulus files for all Simulation tools:
+    C:/Users/jawadmn/TeamRocket/HBridge/component/work/HBridge/subsystem.bfm
+

@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main()
+{
+
+	NVIC_EnableIRQ(Fabric_IRQn);
+
+	while( 1 )
+	{
+	}
+}

@@ -1,0 +1,75 @@
+#--  Synopsys, Inc.
+#--  Version I-2014.03M-SP1
+#--  Project file C:\Users\jawadmn\TeamRocket\HBridge\synthesis\scratchproject.prs
+
+#project files
+add_file -verilog "C:/Users/jawadmn/TeamRocket/HBridge/hdl/Controllerv2.v"
+add_file -verilog "C:/Users/jawadmn/TeamRocket/HBridge/component/work/HBridge_MSS/mss_tshell.v"
+add_file -verilog "C:/Users/jawadmn/TeamRocket/HBridge/component/Actel/SmartFusionMSS/MSS/2.5.106/mss_comps.v"
+add_file -verilog "C:/Users/jawadmn/TeamRocket/HBridge/component/work/HBridge_MSS/MSS_CCC_0/HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v"
+add_file -verilog "C:/Users/jawadmn/TeamRocket/HBridge/component/work/HBridge_MSS/HBridge_MSS.v"
+add_file -verilog -lib COREAPB3_LIB "C:/Users/jawadmn/TeamRocket/HBridge/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_muxptob3.v"
+add_file -verilog -lib COREAPB3_LIB "C:/Users/jawadmn/TeamRocket/HBridge/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3_iaddr_reg.v"
+add_file -verilog -lib COREAPB3_LIB "C:/Users/jawadmn/TeamRocket/HBridge/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core/coreapb3.v"
+add_file -verilog "C:/Users/jawadmn/TeamRocket/HBridge/component/work/HBridge/HBridge.v"
+add_file -constraint "C:/Users/jawadmn/TeamRocket/HBridge/component/work/HBridge_MSS/mss_tshell_syn.sdc"
+
+
+
+#implementation: "synthesis"
+impl -add C:\Users\jawadmn\TeamRocket\HBridge\synthesis -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+
+#device options
+set_option -technology SmartFusion
+set_option -part A2F200M3F
+set_option -package FBGA484
+set_option -speed_grade STD
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -use_fsm_explorer 0
+set_option -top_module "HBridge"
+
+# mapper_options
+set_option -frequency 100.000
+set_option -write_verilog 0
+set_option -write_vhdl 0
+set_option -srs_instrumentation 1
+
+# actel_options
+set_option -RWCheckOnRam 0
+
+# Microsemi 500K
+set_option -run_prop_extract 1
+set_option -maxfan 24
+set_option -disable_io_insertion 0
+set_option -retiming 0
+set_option -report_path 0
+set_option -opcond COMWC
+set_option -update_models_cp 0
+set_option -preserve_registers 0
+
+# Microsemi 500K
+set_option -globalthreshold 50
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "C:/Users/jawadmn/TeamRocket/HBridge/synthesis/HBridge.edn"
+impl -active "synthesis"

@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+__attribute__ ((interrupt)) void Fabric_IRQHandler( void )
+{
+    //uint32_t time = MYTIMER_getCounterVal();
+    uint32_t status = MYTIMER_getInterrupt_status();
+
+    //printf("Interrupt occurred at %lu FABINT \n\r", time);
+    if(status & 0x01)
+    {
+        //printf("Overflow latency %ld\n\r", 0-time);
+
+    	// Set output to 0
+    	output = 0;
+
+    	// Change the duty cycle as appropriate
+    	if(dutyVal < 100)
+    		dutyVal += 1;
+    	else
+    		dutyVal = 0;
+
+    	//MYTIMER_setDuty(dutyVal);
+    }
+    else if(status & 0x02)
+    {
+        //printf("Compare latency %ld\n\r", (1<<27) - time);
+
+    	// Set output to high
+    	output = 1;
+    }
+    // Just assuming to be a capture interrupt
+    else {
+    	uint32_t syncCap = MYTIMER_get_sync_capture();
+    	uint32_t asyncCap = MYTIMER_get_async_capture();
+
+    	printf("Sync Cap: %lu \n\r", syncCap);
+    	printf("Async Cap: %lu \n\r", asyncCap);
+    	printf("Difference: %ld \n\n\r", syncCap-asyncCap);
+    }
+
+    NVIC_ClearPendingIRQ( Fabric_IRQn );
+}
+
+int main()
+{
+
+	NVIC_EnableIRQ(Fabric_IRQn);
+
+	while( 1 )
+	{
+	}
+}

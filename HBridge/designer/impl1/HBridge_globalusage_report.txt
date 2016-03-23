@@ -1,0 +1,21 @@
+********************************************************************
+                            Global Usage Report
+********************************************************************
+  
+Product: Designer
+Release: v11.5 SP3
+Version: 11.5.3.10
+Date: Wed Mar 23 16:21:40 2016
+Design Name: HBridge  Family: SmartFusion  Die: A2F200M3F  Package: 484 FBGA
+Design State: Post-Layout
+
+The following nets have been routed to a chip global resource:
+
+    Fanout            Name
+    ----------------------
+    44                Net   : FAB_CLK
+                      Driver: HBridge_MSS_0/MSS_CCC_0/I_MSSCCC/U_TILE1
+
+
+
+

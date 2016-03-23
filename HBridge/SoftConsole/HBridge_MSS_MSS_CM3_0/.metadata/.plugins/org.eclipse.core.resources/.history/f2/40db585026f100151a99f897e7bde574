@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+static volatile uint32_t REG_BASE = 0x40050000;
+
+__attribute__ ((interrupt)) void Fabric_IRQHandler( void )
+{
+    uint32_t status = MYTIMER_getInterrupt_status();
+
+    NVIC_ClearPendingIRQ( Fabric_IRQn );
+}
+
+// Duty should be between 0 and 100
+void setPWMDuty(uint32_t duty) {
+
+}
+
+uint32_t getPWMDuty() {
+
+}
+
+void setHBridgeInputs(uint32_t in1,) {
+ volatile uint32_t writeAddr= *((uint32_t *)(REG_BASE + 0x01));
+
+}
+
+int main()
+{
+
+	NVIC_EnableIRQ(Fabric_IRQn);
+
+	while( 1 )
+	{
+	}
+}

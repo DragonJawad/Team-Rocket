@@ -1,0 +1,151 @@
+----------------------------------------------------------------------
+Report for cell HBridge.verilog
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1         1       1.0        1.0
+                               AO18         1       1.0        1.0
+                        CoreAPB3_Z1         1       8.0        8.0
+                                GND         1       0.0        0.0
+                        HBridge_MSS         1       0.0        0.0
+                                MX2         2       1.0        2.0
+                               MX2B         1       1.0        1.0
+                              NOR2A         4       1.0        4.0
+                              NOR3B         1       1.0        1.0
+                               OR2A         1       1.0        1.0
+                               OR3B         1       1.0        1.0
+                             OUTBUF         5       0.0        0.0
+                                VCC         1       0.0        0.0
+                                XA1         1       1.0        1.0
+                              XNOR2         5       1.0        5.0
+                               XOR2         3       1.0        3.0
+                               XOR3         1       1.0        1.0
+                       controllerV2         1     685.0      685.0
+                            
+                         TOTAL             32                715.0
+----------------------------------------------------------------------
+Report for cell HBridge_MSS.netlist
+     Instance path:  HBridge_MSS_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+          HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC         1       0.0        0.0
+                          INBUF_MSS         3       0.0        0.0
+                            MSS_APB         1       0.0        0.0
+                         OUTBUF_MSS         2       0.0        0.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              9                  0.0
+----------------------------------------------------------------------
+Report for cell HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.netlist
+     Instance path:  HBridge_MSS_0.MSS_CCC_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                            MSS_CCC         1       0.0        0.0
+                              RCOSC         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              4                  0.0
+----------------------------------------------------------------------
+Report for cell CoreAPB3_Z1.netlist
+     Instance path:  CoreAPB3_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                  COREAPB3_MUXPTOB3         1       6.0        6.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR3A         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              5                  8.0
+----------------------------------------------------------------------
+Report for cell COREAPB3_MUXPTOB3.netlist
+     Instance path:  CoreAPB3_0.u_mux_p_to_b3
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                              NOR3C         6       1.0        6.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              8                  6.0
+----------------------------------------------------------------------
+Report for cell controllerV2.netlist
+     Instance path:  controllerV2_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            handler         1     684.0      684.0
+                            
+                         TOTAL              4                685.0
+----------------------------------------------------------------------
+Report for cell handler.netlist
+     Instance path:  controllerV2_0.handler_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         6       1.0        6.0
+                              AND2A         2       1.0        2.0
+                               AND3        19       1.0       19.0
+                                AO1        14       1.0       14.0
+                               AO13         9       1.0        9.0
+                               AO16         6       1.0        6.0
+                               AO18         5       1.0        5.0
+                               AO1A         5       1.0        5.0
+                               AO1B         1       1.0        1.0
+                               AO1C         6       1.0        6.0
+                               AO1D         3       1.0        3.0
+                               AOI1         3       1.0        3.0
+                              AOI1A         2       1.0        2.0
+                              AOI1B         4       1.0        4.0
+                                AX1         8       1.0        8.0
+                               AX1A         4       1.0        4.0
+                               AX1B         6       1.0        6.0
+                               AX1C         1       1.0        1.0
+                               AX1D        17       1.0       17.0
+                               AX1E         2       1.0        2.0
+                               AXO1         5       1.0        5.0
+                               AXO3         1       1.0        1.0
+                               AXO7         1       1.0        1.0
+                              AXOI1         1       1.0        1.0
+                              AXOI5         1       1.0        1.0
+                               DFN1        33       1.0       33.0
+                             DFN1E0         6       1.0        6.0
+                             DFN1E1         4       1.0        4.0
+                                GND         1       0.0        0.0
+                               MAJ3         5       1.0        5.0
+                              MAJ3X         1       1.0        1.0
+                                MX2        29       1.0       29.0
+                               MX2A         8       1.0        8.0
+                               MX2B         9       1.0        9.0
+                               MX2C         6       1.0        6.0
+                               NOR2        17       1.0       17.0
+                              NOR2A        46       1.0       46.0
+                              NOR2B        53       1.0       53.0
+                               NOR3         8       1.0        8.0
+                              NOR3A        13       1.0       13.0
+                              NOR3B        25       1.0       25.0
+                              NOR3C        19       1.0       19.0
+                                OA1        27       1.0       27.0
+                               OA1A         9       1.0        9.0
+                               OA1B         4       1.0        4.0
+                               OA1C         5       1.0        5.0
+                               OAI1         4       1.0        4.0
+                                OR2        16       1.0       16.0
+                               OR2A        18       1.0       18.0
+                               OR2B         5       1.0        5.0
+                                OR3        16       1.0       16.0
+                               OR3A         2       1.0        2.0
+                               OR3B         4       1.0        4.0
+                                VCC         1       0.0        0.0
+                                XA1         9       1.0        9.0
+                               XA1A        10       1.0       10.0
+                               XA1B         4       1.0        4.0
+                              XAI1A         1       1.0        1.0
+                              XNOR2        33       1.0       33.0
+                              XNOR3        10       1.0       10.0
+                               XO1A         2       1.0        2.0
+                               XOR2        72       1.0       72.0
+                               XOR3        19       1.0       19.0
+                            
+                         TOTAL            686                684.0

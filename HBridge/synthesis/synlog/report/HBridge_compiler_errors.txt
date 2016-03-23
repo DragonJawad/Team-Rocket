@@ -1,0 +1,2 @@
+@E: CL172 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":82:11:82:15|Only one always block can assign a given variable h_in1
+

@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+__attribute__ ((interrupt)) void Fabric_IRQHandler( void )
+{
+    uint32_t status = MYTIMER_getInterrupt_status();
+
+    NVIC_ClearPendingIRQ( Fabric_IRQn );
+}
+
+// Duty should be between 0 and 100
+void setPWMDuty(uint32_t duty) {
+
+}
+
+uint32_t getPWMDuty() {
+
+}
+
+int main()
+{
+
+	NVIC_EnableIRQ(Fabric_IRQn);
+
+	while( 1 )
+	{
+	}
+}

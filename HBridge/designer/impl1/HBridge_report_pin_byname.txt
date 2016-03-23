@@ -1,0 +1,22 @@
+*****************************************************************
+Pin Report - Date: Wed Mar 23 16:21:40 2016 Pinchecksum: NOT-AVAILABLE
+Product: Designer
+Release: v11.5 SP3
+Version: 11.5.3.10
+Design Name: HBridge
+Family: SmartFusion
+Die: A2F200M3F
+Package: 484 FBGA
+*****************************************************************
+Port        |Pin |Fixed |Function           |I/O Std |Output Drive (mA) |Slew |Resistor Pull |Schmitt Trigger |Skew |Output Load (pF) |Use I/O Reg |Hot Swappable |
+------------|----|------|-------------------|--------|------------------|-----|--------------|----------------|-----|-----------------|------------|--------------|
+H_IN1        F3   Yes    GFB2/IO68NDB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+H_IN2        G4   Yes    GFC1/IO66PPB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+H_IN3        H5   Yes    GFC0/IO66NPB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+H_IN4        H6   Yes    GFA1/IO64PDB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+MSS_RESET_N  R1   Yes    MSS_RESET_N         LVTTL    ---                ---   None           No               ---   ---               No           Yes
+PWM1         E3   Yes    GFA2/IO68PDB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+UART_0_RXD   U18  Yes    UART_0_RXD/GPIO_21  LVTTL    ---                ---   None           No               ---   ---               No           Yes
+UART_0_TXD   Y22  Yes    UART_0_TXD/GPIO_20  LVTTL    8                  High  None           ---              No    35                No           Yes
+UART_1_RXD   W22  Yes    UART_1_RXD/GPIO_29  LVTTL    ---                ---   None           No               ---   ---               No           Yes
+UART_1_TXD   V20  Yes    UART_1_TXD/GPIO_28  LVTTL    8                  High  None           ---              No    35                No           Yes

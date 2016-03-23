@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+__attribute__ ((interrupt)) void Fabric_IRQHandler( void )
+{
+    uint32_t status = MYTIMER_getInterrupt_status();
+
+    NVIC_ClearPendingIRQ( Fabric_IRQn );
+}
+
+int main()
+{
+
+	NVIC_EnableIRQ(Fabric_IRQn);
+
+	while( 1 )
+	{
+	}
+}

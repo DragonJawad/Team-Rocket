@@ -1,0 +1,1416 @@
+#Build: Synplify Pro I-2014.03M-SP1, Build 097R, Oct  9 2014
+#install: C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1
+#OS: Windows 7 6.1
+#Hostname: EECS373-10
+
+#Implementation: synthesis
+
+Synopsys Verilog Compiler, version comp201403sp1p1, Build 095R, built Oct  9 2014
+@N|Running in 64-bit mode
+Copyright (C) 1994-2014 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+@I::"C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v"
+@I::"C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\vlog\umr_capim.v"
+@I::"C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\vlog\scemi_objects.v"
+@I::"C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\vlog\scemi_pipes.svh"
+@I::"C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\vlog\hypermods.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\mss_tshell.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\HBridge_MSS.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3_muxptob3.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3_iaddr_reg.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v"
+@I::"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge\HBridge.v"
+@W: CG775 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":31:7:31:14|Found Component CoreAPB3 in library COREAPB3_LIB
+Verilog syntax check successful!
+Selecting top level module HBridge
+@W: CG775 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":31:7:31:14|Found Component CoreAPB3 in library COREAPB3_LIB
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":58:7:58:13|Synthesizing module handler
+
+@W: CG133 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":91:10:91:12|No assignment to ins
+@W: CG133 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":97:10:97:22|No assignment to switch_syncer
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":1:7:1:18|Synthesizing module controllerV2
+
+@W: CG775 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":31:7:31:14|Found Component CoreAPB3 in library COREAPB3_LIB
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3_muxptob3.v":30:7:30:23|Synthesizing module COREAPB3_MUXPTOB3
+
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":31:7:31:14|Synthesizing module CoreAPB3
+
+	APB_DWIDTH=6'b100000
+	IADDR_OPTION=32'b00000000000000000000000000000000
+	APBSLOT0ENABLE=1'b1
+	APBSLOT1ENABLE=1'b0
+	APBSLOT2ENABLE=1'b0
+	APBSLOT3ENABLE=1'b0
+	APBSLOT4ENABLE=1'b0
+	APBSLOT5ENABLE=1'b0
+	APBSLOT6ENABLE=1'b0
+	APBSLOT7ENABLE=1'b0
+	APBSLOT8ENABLE=1'b0
+	APBSLOT9ENABLE=1'b0
+	APBSLOT10ENABLE=1'b0
+	APBSLOT11ENABLE=1'b0
+	APBSLOT12ENABLE=1'b0
+	APBSLOT13ENABLE=1'b0
+	APBSLOT14ENABLE=1'b0
+	APBSLOT15ENABLE=1'b0
+	SC_0=1'b0
+	SC_1=1'b0
+	SC_2=1'b0
+	SC_3=1'b0
+	SC_4=1'b0
+	SC_5=1'b0
+	SC_6=1'b0
+	SC_7=1'b0
+	SC_8=1'b0
+	SC_9=1'b0
+	SC_10=1'b0
+	SC_11=1'b0
+	SC_12=1'b0
+	SC_13=1'b0
+	SC_14=1'b0
+	SC_15=1'b0
+	MADDR_BITS=6'b001100
+	UPR_NIBBLE_POSN=4'b0010
+	FAMILY=32'b00000000000000000000000000010010
+	SYNC_RESET=32'b00000000000000000000000000000000
+	IADDR_NOTINUSE=32'b00000000000000000000000000000000
+	IADDR_EXTERNAL=32'b00000000000000000000000000000001
+	IADDR_SLOT0=32'b00000000000000000000000000000010
+	IADDR_SLOT1=32'b00000000000000000000000000000011
+	IADDR_SLOT2=32'b00000000000000000000000000000100
+	IADDR_SLOT3=32'b00000000000000000000000000000101
+	IADDR_SLOT4=32'b00000000000000000000000000000110
+	IADDR_SLOT5=32'b00000000000000000000000000000111
+	IADDR_SLOT6=32'b00000000000000000000000000001000
+	IADDR_SLOT7=32'b00000000000000000000000000001001
+	IADDR_SLOT8=32'b00000000000000000000000000001010
+	IADDR_SLOT9=32'b00000000000000000000000000001011
+	IADDR_SLOT10=32'b00000000000000000000000000001100
+	IADDR_SLOT11=32'b00000000000000000000000000001101
+	IADDR_SLOT12=32'b00000000000000000000000000001110
+	IADDR_SLOT13=32'b00000000000000000000000000001111
+	IADDR_SLOT14=32'b00000000000000000000000000010000
+	IADDR_SLOT15=32'b00000000000000000000000000010001
+	SL0=16'b0000000000000001
+	SL1=16'b0000000000000000
+	SL2=16'b0000000000000000
+	SL3=16'b0000000000000000
+	SL4=16'b0000000000000000
+	SL5=16'b0000000000000000
+	SL6=16'b0000000000000000
+	SL7=16'b0000000000000000
+	SL8=16'b0000000000000000
+	SL9=16'b0000000000000000
+	SL10=16'b0000000000000000
+	SL11=16'b0000000000000000
+	SL12=16'b0000000000000000
+	SL13=16'b0000000000000000
+	SL14=16'b0000000000000000
+	SL15=16'b0000000000000000
+	SC=16'b0000000000000000
+	SC_qual=16'b0000000000000000
+   Generated name = CoreAPB3_Z1
+
+@W: CG360 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":244:12:244:20|No assignment to wire IA_PRDATA
+
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\mss_tshell.v":1:7:1:13|Synthesizing module MSS_APB
+
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v":151:7:151:13|Synthesizing module MSS_CCC
+
+@N: CG364 :"C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v":2620:7:2620:11|Synthesizing module RCOSC
+
+@N: CG364 :"C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v":1141:7:1141:9|Synthesizing module GND
+
+@N: CG364 :"C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v":1868:7:1868:9|Synthesizing module VCC
+
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":5:7:5:39|Synthesizing module HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC
+
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v":23:7:23:15|Synthesizing module INBUF_MSS
+
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v":37:7:37:16|Synthesizing module OUTBUF_MSS
+
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\HBridge_MSS.v":9:7:9:17|Synthesizing module HBridge_MSS
+
+@N: CG364 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge\HBridge.v":9:7:9:13|Synthesizing module HBridge
+
+@W: CL157 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":62:7:62:18|*Output RCOSC_CLKOUT has undriven bits -- simulation mismatch possible.
+@W: CL157 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":63:7:63:20|*Output MAINXIN_CLKOUT has undriven bits -- simulation mismatch possible.
+@W: CL157 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":64:7:64:18|*Output LPXIN_CLKOUT has undriven bits -- simulation mismatch possible.
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":36:7:36:10|Input CLKA is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":37:7:37:14|Input CLKA_PAD is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":38:7:38:15|Input CLKA_PADP is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":39:7:39:15|Input CLKA_PADN is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":40:7:40:10|Input CLKB is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":41:7:41:14|Input CLKB_PAD is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":42:7:42:15|Input CLKB_PADP is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":43:7:43:15|Input CLKB_PADN is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":44:7:44:10|Input CLKC is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":45:7:45:14|Input CLKC_PAD is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":46:7:46:15|Input CLKC_PADP is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":47:7:47:15|Input CLKC_PADN is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":48:7:48:13|Input MAINXIN is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":49:7:49:11|Input LPXIN is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\MSS_CCC_0\HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC.v":50:7:50:13|Input MAC_CLK is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":72:36:72:40|Input IADDR is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":73:13:73:19|Input PRESETN is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":74:13:74:16|Input PCLK is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":105:18:105:25|Input PRDATAS1 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":106:18:106:25|Input PRDATAS2 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":107:18:107:25|Input PRDATAS3 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":108:18:108:25|Input PRDATAS4 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":109:18:109:25|Input PRDATAS5 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":110:18:110:25|Input PRDATAS6 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":111:18:111:25|Input PRDATAS7 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":112:18:112:25|Input PRDATAS8 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":113:18:113:25|Input PRDATAS9 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":114:18:114:26|Input PRDATAS10 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":115:18:115:26|Input PRDATAS11 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":116:18:116:26|Input PRDATAS12 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":117:18:117:26|Input PRDATAS13 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":118:18:118:26|Input PRDATAS14 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":119:18:119:26|Input PRDATAS15 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":122:13:122:20|Input PREADYS1 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":123:13:123:20|Input PREADYS2 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":124:13:124:20|Input PREADYS3 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":125:13:125:20|Input PREADYS4 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":126:13:126:20|Input PREADYS5 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":127:13:127:20|Input PREADYS6 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":128:13:128:20|Input PREADYS7 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":129:13:129:20|Input PREADYS8 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":130:13:130:20|Input PREADYS9 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":131:13:131:21|Input PREADYS10 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":132:13:132:21|Input PREADYS11 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":133:13:133:21|Input PREADYS12 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":134:13:134:21|Input PREADYS13 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":135:13:135:21|Input PREADYS14 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":136:13:136:21|Input PREADYS15 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":139:13:139:21|Input PSLVERRS1 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":140:13:140:21|Input PSLVERRS2 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":141:13:141:21|Input PSLVERRS3 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":142:13:142:21|Input PSLVERRS4 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":143:13:143:21|Input PSLVERRS5 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":144:13:144:21|Input PSLVERRS6 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":145:13:145:21|Input PSLVERRS7 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":146:13:146:21|Input PSLVERRS8 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":147:13:147:21|Input PSLVERRS9 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":148:13:148:22|Input PSLVERRS10 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":149:13:149:22|Input PSLVERRS11 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":150:13:150:22|Input PSLVERRS12 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":151:13:151:22|Input PSLVERRS13 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":152:13:152:22|Input PSLVERRS14 is unused
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core\coreapb3.v":153:13:153:22|Input PSLVERRS15 is unused
+@W: CL138 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":99:0:99:5|Removing register 'fabint' because it is only assigned 0 or its original value.
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit duty[6] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit duty[7] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[8] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[9] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[10] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[11] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[12] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[13] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[14] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[15] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[16] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[17] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[18] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[19] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[20] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[21] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[22] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[23] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[24] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[25] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[26] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[27] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[28] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[29] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[30] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[31] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[16] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[17] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[18] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[19] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[20] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[21] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[22] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[23] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[24] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[25] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[26] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[27] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[28] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[29] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[30] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Register bit pwmCount[31] is always 0, optimizing ...
+@W: CL279 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":239:0:239:5|Pruning register bits 31 to 16 of pwmCount[31:0] 
+
+@W: CL279 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Pruning register bits 31 to 8 of bus_read_data[31:0] 
+
+@W: CL279 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Pruning register bits 7 to 6 of duty[7:0] 
+
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[6] is always 0, optimizing ...
+@W: CL189 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Register bit bus_read_data[7] is always 0, optimizing ...
+@W: CL279 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":113:0:113:5|Pruning register bits 7 to 6 of bus_read_data[7:0] 
+
+@W: CL246 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":76:12:76:19|Input port bits 7 to 5 of bus_addr[7:0] are unused
+
+@W: CL246 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":76:12:76:19|Input port bits 1 to 0 of bus_addr[7:0] are unused
+
+@W: CL246 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":77:13:77:26|Input port bits 31 to 6 of bus_write_data[31:0] are unused
+
+@W: CL159 :"C:\Users\jawadmn\TeamRocket\HBridge\hdl\Controllerv2.v":78:6:78:11|Input switch is unused
+@END
+
+At c_ver Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 76MB peak: 77MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Wed Mar 23 13:12:01 2016
+
+###########################################################]
+Synopsys Netlist Linker, version comp201403sp1p1, Build 095R, built Oct  9 2014
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 70MB peak: 71MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Wed Mar 23 13:12:04 2016
+
+###########################################################]
+Pre-mapping Report
+
+Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 1346R, Built Oct 10 2014 11:20:09
+Copyright (C) 1994-2014, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+Product Version I-2014.03M-SP1
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
+
+Reading constraint file: C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\mss_tshell_syn.sdc
+@L: C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge_scck.rpt 
+Printing clock  summary report in "C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge_scck.rpt" file 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 102MB peak: 104MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 102MB peak: 104MB)
+
+
+
+@S |Clock Summary
+****************
+
+Start       Requested     Requested     Clock        Clock      
+Clock       Frequency     Period        Type         Group      
+----------------------------------------------------------------
+FAB_CLK     20.0 MHz      50.000        declared     clk_group_0
+FCLK        20.0 MHz      50.000        declared     clk_group_0
+================================================================
+
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge.sap.
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:00s; Memory used current: 49MB peak: 113MB)
+
+Process took 0h:00m:02s realtime, 0h:00m:01s cputime
+# Wed Mar 23 13:12:07 2016
+
+###########################################################]
+Map & Optimize Report
+
+Synopsys Microsemi Technology Mapper, Version mapact, Build 1346R, Built Oct 10 2014 11:20:09
+Copyright (C) 1994-2014, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+Product Version I-2014.03M-SP1
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
+
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 110MB peak: 110MB)
+
+@W: MO111 :"c:\users\jawadmn\teamrocket\hbridge\component\work\hbridge_mss\mss_ccc_0\hbridge_mss_tmp_mss_ccc_0_mss_ccc.v":64:7:64:18|Tristate driver LPXIN_CLKOUT on net LPXIN_CLKOUT has its enable tied to GND (module HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC) 
+@W: MO111 :"c:\users\jawadmn\teamrocket\hbridge\component\work\hbridge_mss\mss_ccc_0\hbridge_mss_tmp_mss_ccc_0_mss_ccc.v":63:7:63:20|Tristate driver MAINXIN_CLKOUT on net MAINXIN_CLKOUT has its enable tied to GND (module HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC) 
+@W: MO111 :"c:\users\jawadmn\teamrocket\hbridge\component\work\hbridge_mss\mss_ccc_0\hbridge_mss_tmp_mss_ccc_0_mss_ccc.v":62:7:62:18|Tristate driver RCOSC_CLKOUT on net RCOSC_CLKOUT has its enable tied to GND (module HBridge_MSS_tmp_MSS_CCC_0_MSS_CCC) 
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@N: MF236 :"c:\users\jawadmn\teamrocket\hbridge\hdl\controllerv2.v":245:32:245:35|Generating a type div divider 
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 111MB peak: 112MB)
+
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF238 :"c:\users\jawadmn\teamrocket\hbridge\hdl\controllerv2.v":244:20:244:32|Found 16-bit incrementor, 'un2_pwmCount_1[15:0]'
+@N: MF179 :"c:\users\jawadmn\teamrocket\hbridge\hdl\controllerv2.v":245:8:245:35|Found 23 bit by 23 bit '<' comparator, 'pwm4'
+
+Finished factoring (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:04s; Memory used current: 115MB peak: 115MB)
+
+
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:04s; Memory used current: 114MB peak: 115MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:04s; Memory used current: 118MB peak: 121MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:04s; Memory used current: 118MB peak: 121MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:13s; Memory used current: 160MB peak: 161MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:14s; Memory used current: 160MB peak: 161MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:14s; Memory used current: 159MB peak: 161MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:14s; Memory used current: 145MB peak: 165MB)
+
+
+High Fanout Net Report
+**********************
+
+Driver Instance / Pin Name               Fanout, notes
+------------------------------------------------------
+controllerV2_0.handler_0.duty[3] / Q     28           
+controllerV2_0.handler_0.duty[5] / Q     26           
+======================================================
+
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:14s; Memory used current: 145MB peak: 165MB)
+
+Replicating Sequential Instance controllerV2_0.handler_0.duty[5], fanout 26 segments 2
+Replicating Sequential Instance controllerV2_0.handler_0.duty[3], fanout 28 segments 2
+
+Added 0 Buffers
+Added 2 Cells via replication
+	Added 2 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:14s; Memory used current: 145MB peak: 165MB)
+
+
+
+#### START OF CLOCK OPTIMIZATION REPORT #####[
+
+Clock optimization not enabled
+1 non-gated/non-generated clock tree(s) driving 41 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+============================================ Non-Gated/Non-Generated Clocks ============================================
+Clock Tree ID     Driving Element     Drive Element Type                Fanout     Sample Instance                      
+------------------------------------------------------------------------------------------------------------------------
+@K:CKID0001       HBridge_MSS_0       clock definition on hierarchy     41         controllerV2_0.handler_0.pwmCount[15]
+========================================================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######]
+
+Writing Analyst data base C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:14s; Memory used current: 142MB peak: 165MB)
+
+Writing Analyst data base C:\Users\jawadmn\TeamRocket\HBridge\synthesis\synwork\HBridge_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:14s; Memory used current: 142MB peak: 165MB)
+
+Writing EDIF Netlist and constraint files
+I-2014.03M-SP1
+
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:15s; Memory used current: 143MB peak: 165MB)
+
+Found clock FAB_CLK with period 50.00ns 
+Found clock FCLK with period 50.00ns 
+
+
+@S |##### START OF TIMING REPORT #####[
+# Timing Report written on Wed Mar 23 13:12:25 2016
+#
+
+
+Top view:               HBridge
+Library name:           smartfusion
+Operating conditions:   COMWCSTD ( T = 70.0, V = 1.42, P = 1.74, tree_type = balanced_tree )
+Requested Frequency:    20.0 MHz
+Wire load mode:         top
+Wire load model:        smartfusion
+Paths requested:        5
+Constraint File(s):    C:\Users\jawadmn\TeamRocket\HBridge\component\work\HBridge_MSS\mss_tshell_syn.sdc
+                       
+@N: MT320 |Timing report estimates place and route data. Please look at the place and route timing report for final timing.
+
+@N: MT322 |Clock constraints cover only FF-to-FF paths associated with the clock.
+
+
+
+Performance Summary 
+*******************
+
+
+Worst slack in design: -2.690
+
+                   Requested     Estimated     Requested     Estimated                Clock        Clock          
+Starting Clock     Frequency     Frequency     Period        Period        Slack      Type         Group          
+------------------------------------------------------------------------------------------------------------------
+FAB_CLK            20.0 MHz      19.0 MHz      50.000        52.690        -2.690     declared     clk_group_0    
+FCLK               20.0 MHz      NA            50.000        NA            NA         declared     clk_group_0    
+System             100.0 MHz     276.1 MHz     10.000        3.622         6.378      system       system_clkgroup
+==================================================================================================================
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks             |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+----------------------------------------------------------------------------------------------------------
+Starting  Ending   |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+----------------------------------------------------------------------------------------------------------
+System    System   |  10.000      6.378   |  No paths    -      |  No paths    -      |  No paths    -    
+System    FAB_CLK  |  50.000      40.233  |  No paths    -      |  No paths    -      |  No paths    -    
+FAB_CLK   System   |  50.000      47.979  |  No paths    -      |  No paths    -      |  No paths    -    
+FAB_CLK   FAB_CLK  |  50.000      -2.690  |  No paths    -      |  No paths    -      |  No paths    -    
+==========================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: FAB_CLK
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                         Starting                                       Arrival           
+Instance                                 Reference     Type     Pin     Net             Time        Slack 
+                                         Clock                                                            
+----------------------------------------------------------------------------------------------------------
+controllerV2_0.handler_0.duty[0]         FAB_CLK       DFN1     Q       duty[0]         0.737       -2.690
+controllerV2_0.handler_0.duty[1]         FAB_CLK       DFN1     Q       duty[1]         0.580       -2.563
+controllerV2_0.handler_0.duty[2]         FAB_CLK       DFN1     Q       duty[2]         0.737       -1.920
+controllerV2_0.handler_0.duty_0_0[5]     FAB_CLK       DFN1     Q       duty_0[5]       0.737       -1.301
+controllerV2_0.handler_0.duty[4]         FAB_CLK       DFN1     Q       duty[4]         0.737       -1.197
+controllerV2_0.handler_0.duty[3]         FAB_CLK       DFN1     Q       duty[3]         0.737       -0.819
+controllerV2_0.handler_0.duty[5]         FAB_CLK       DFN1     Q       duty[5]         0.737       -0.816
+controllerV2_0.handler_0.duty_0_0[3]     FAB_CLK       DFN1     Q       duty_0[3]       0.737       -0.248
+controllerV2_0.handler_0.pwmCount[9]     FAB_CLK       DFN1     Q       pwmCount[9]     0.737       40.770
+controllerV2_0.handler_0.pwmCount[6]     FAB_CLK       DFN1     Q       pwmCount[6]     0.737       40.890
+==========================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                          Starting                                          Required           
+Instance                                  Reference     Type     Pin     Net                Time         Slack 
+                                          Clock                                                                
+---------------------------------------------------------------------------------------------------------------
+controllerV2_0.handler_0.pwm              FAB_CLK       DFN1     D       pwm4               49.461       -2.690
+controllerV2_0.handler_0.pwmCount[12]     FAB_CLK       DFN1     D       pwmCount_3[12]     49.461       41.147
+controllerV2_0.handler_0.pwmCount[11]     FAB_CLK       DFN1     D       pwmCount_3[11]     49.461       41.310
+controllerV2_0.handler_0.pwmCount[15]     FAB_CLK       DFN1     D       pwmCount_3[15]     49.461       41.310
+controllerV2_0.handler_0.pwmCount[6]      FAB_CLK       DFN1     D       pwmCount_3[6]      49.461       41.835
+controllerV2_0.handler_0.pwmCount[10]     FAB_CLK       DFN1     D       pwmCount_3[10]     49.461       41.835
+controllerV2_0.handler_0.pwmCount[0]      FAB_CLK       DFN1     D       pwmCount_3[0]      49.461       41.837
+controllerV2_0.handler_0.pwmCount[13]     FAB_CLK       DFN1     D       I_37               49.461       42.030
+controllerV2_0.handler_0.pwmCount[14]     FAB_CLK       DFN1     D       I_40               49.461       42.030
+controllerV2_0.handler_0.pwmCount[9]      FAB_CLK       DFN1     D       I_26               49.461       42.760
+===============================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      50.000
+    - Setup time:                            0.539
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         49.461
+
+    - Propagation time:                      52.151
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -2.690
+
+    Number of logic level(s):                35
+    Starting point:                          controllerV2_0.handler_0.duty[0] / Q
+    Ending point:                            controllerV2_0.handler_0.pwm / D
+    The start point is clocked by            FAB_CLK [rising] on pin CLK
+    The end   point is clocked by            FAB_CLK [rising] on pin CLK
+
+Instance / Net                                                                                                  Pin      Pin               Arrival     No. of    
+Name                                                                                                  Type      Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+controllerV2_0.handler_0.duty[0]                                                                      DFN1      Q        Out     0.737     0.737       -         
+duty[0]                                                                                               Net       -        -       2.409     -           22        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     B        In      -         3.146       -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     Y        Out     0.627     3.773       -         
+m13_a5_0                                                                                              Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      B        In      -         4.957       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      Y        Out     0.652     5.609       -         
+m15_0_0                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     A        In      -         5.930       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     Y        Out     0.514     6.444       -         
+m15_0_3                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     A        In      -         6.766       -         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     Y        Out     0.514     7.280       -         
+N_16_2                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     B        In      -         7.666       -         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     Y        Out     0.937     8.603       -         
+un5_i[10]                                                                                             Net       -        -       1.708     -           10        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      B        In      -         10.311      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      Y        Out     0.937     11.248      -         
+N_25_i                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     B        In      -         11.634      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     Y        Out     0.937     12.570      -         
+ADD_9x9_fast_I32_Y_i_x3_0_0                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      A        In      -         12.892      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      Y        Out     0.488     13.380      -         
+N_27_i_i_3                                                                                            Net       -        -       1.639     -           8         
+d_m5                                                                                                  AOI5      B        In      -         15.019      -         
+d_m5                                                                                                  AOI5      Y        Out     0.407     15.426      -         
+d_i2_mux                                                                                              Net       -        -       0.322     -           1         
+d_m6                                                                                                  NOR2      B        In      -         15.747      -         
+d_m6                                                                                                  NOR2      Y        Out     0.646     16.394      -         
+d_N_7                                                                                                 Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     B        In      -         16.715      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     Y        Out     0.937     17.652      -         
+d_N_8_0                                                                                               Net       -        -       2.381     -           21        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     B        In      -         20.033      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     Y        Out     0.516     20.549      -         
+ADD_m9_0                                                                                              Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     A        In      -         20.871      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     Y        Out     0.488     21.359      -         
+ADD_N_12_mux                                                                                          Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_9x9_fast_I25_Y_i_o3_1          MX2A      S        In      -         22.543      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_9x9_fast_I25_Y_i_o3_1          MX2A      Y        Out     0.480     23.022      -         
+N_19_2                                                                                                Net       -        -       1.526     -           7         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m3_0                           ZOR3      C        In      -         24.548      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m3_0                           ZOR3      Y        Out     0.992     25.541      -         
+ADD_i1_mux                                                                                            Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m5_0                           XOR3      C        In      -         25.862      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m5_0                           XOR3      Y        Out     0.985     26.847      -         
+ADD_m5_0_0                                                                                            Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I25_Y_i_o2_0          MX2C      S        In      -         27.233      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I25_Y_i_o2_0          MX2C      Y        Out     0.480     27.713      -         
+N_16_1                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      B        In      -         28.099      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      Y        Out     0.937     29.035      -         
+B_i_i_1[7]                                                                                            Net       -        -       1.994     -           12        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I25_Y_i_a3_2          NOR2A     A        In      -         31.029      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I25_Y_i_a3_2          NOR2A     Y        Out     0.516     31.545      -         
+N_35_0                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      B        In      -         31.931      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      Y        Out     0.992     32.923      -         
+B_i_i_0[7]                                                                                            Net       -        -       1.776     -           11        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     C        In      -         34.699      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     Y        Out     0.985     35.685      -         
+ADD_9x9_fast_I35_Y_i_x2_2_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      A        In      -         36.006      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      Y        Out     0.488     36.494      -         
+ADD_9x9_fast_I35_Y_i_x2_2_2                                                                           Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      B        In      -         36.880      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      Y        Out     0.937     37.817      -         
+ADD_N_5_i                                                                                             Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a1_0      NOR2A     A        In      -         39.001      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a1_0      NOR2A     Y        Out     0.516     39.517      -         
+ADD_9x9_fast_I33_Y_i_o3_a1_0                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      A        In      -         39.838      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      Y        Out     0.636     40.474      -         
+ADD_9x9_fast_I33_Y_i_o3_0_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     B        In      -         40.796      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     Y        Out     0.607     41.402      -         
+N_18_3                                                                                                Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      B        In      -         42.209      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      Y        Out     0.933     43.142      -         
+N_19                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     C        In      -         43.463      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     Y        Out     0.985     44.449      -         
+ADD_9x9_fast_I35_Y_i_x2_4                                                                             Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      C        In      -         44.770      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      Y        Out     0.488     45.259      -         
+B_i_i[6]                                                                                              Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      A        In      -         46.065      -         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      Y        Out     0.537     46.602      -         
+ACT_LT3_E[1]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     B        In      -         46.923      -         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     Y        Out     0.931     47.855      -         
+ACT_LT3_E[3]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     A        In      -         48.176      -         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     Y        Out     0.900     49.077      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[0]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       C        In      -         49.398      -         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       Y        Out     0.655     50.053      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[2]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       B        In      -         50.375      -         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       Y        Out     0.567     50.941      -         
+DWACT_COMP0_E[2]                                                                                      Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       B        In      -         51.263      -         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       Y        Out     0.567     51.829      -         
+pwm4                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm                                                                          DFN1      D        In      -         52.151      -         
+=================================================================================================================================================================
+Total path delay (propagation time + setup) of 52.690 is 25.991(49.3%) logic and 26.699(50.7%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      50.000
+    - Setup time:                            0.539
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         49.461
+
+    - Propagation time:                      52.068
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -2.606
+
+    Number of logic level(s):                35
+    Starting point:                          controllerV2_0.handler_0.duty[0] / Q
+    Ending point:                            controllerV2_0.handler_0.pwm / D
+    The start point is clocked by            FAB_CLK [rising] on pin CLK
+    The end   point is clocked by            FAB_CLK [rising] on pin CLK
+
+Instance / Net                                                                                                  Pin      Pin               Arrival     No. of    
+Name                                                                                                  Type      Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+controllerV2_0.handler_0.duty[0]                                                                      DFN1      Q        Out     0.737     0.737       -         
+duty[0]                                                                                               Net       -        -       2.409     -           22        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     B        In      -         3.146       -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     Y        Out     0.627     3.773       -         
+m13_a5_0                                                                                              Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      B        In      -         4.957       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      Y        Out     0.652     5.609       -         
+m15_0_0                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     A        In      -         5.930       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     Y        Out     0.514     6.444       -         
+m15_0_3                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     A        In      -         6.766       -         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     Y        Out     0.514     7.280       -         
+N_16_2                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     B        In      -         7.666       -         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     Y        Out     0.937     8.603       -         
+un5_i[10]                                                                                             Net       -        -       1.708     -           10        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      B        In      -         10.311      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      Y        Out     0.937     11.248      -         
+N_25_i                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     B        In      -         11.634      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     Y        Out     0.937     12.570      -         
+ADD_9x9_fast_I32_Y_i_x3_0_0                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      A        In      -         12.892      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      Y        Out     0.488     13.380      -         
+N_27_i_i_3                                                                                            Net       -        -       1.639     -           8         
+d_m5                                                                                                  AOI5      B        In      -         15.019      -         
+d_m5                                                                                                  AOI5      Y        Out     0.407     15.426      -         
+d_i2_mux                                                                                              Net       -        -       0.322     -           1         
+d_m6                                                                                                  NOR2      B        In      -         15.747      -         
+d_m6                                                                                                  NOR2      Y        Out     0.646     16.394      -         
+d_N_7                                                                                                 Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     B        In      -         16.715      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     Y        Out     0.937     17.652      -         
+d_N_8_0                                                                                               Net       -        -       2.381     -           21        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     B        In      -         20.033      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     Y        Out     0.516     20.549      -         
+ADD_m9_0                                                                                              Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     A        In      -         20.871      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     Y        Out     0.488     21.359      -         
+ADD_N_12_mux                                                                                          Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_9x9_fast_I25_Y_i_o3_1          MX2A      S        In      -         22.543      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_9x9_fast_I25_Y_i_o3_1          MX2A      Y        Out     0.480     23.022      -         
+N_19_2                                                                                                Net       -        -       1.526     -           7         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m3_0                           ZOR3      C        In      -         24.548      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m3_0                           ZOR3      Y        Out     0.992     25.541      -         
+ADD_i1_mux                                                                                            Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m5_0                           XOR3      C        In      -         25.862      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m5_0                           XOR3      Y        Out     0.985     26.847      -         
+ADD_m5_0_0                                                                                            Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I25_Y_i_o2_0          MX2C      S        In      -         27.233      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I25_Y_i_o2_0          MX2C      Y        Out     0.480     27.713      -         
+N_16_1                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      B        In      -         28.099      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      Y        Out     0.937     29.035      -         
+B_i_i_1[7]                                                                                            Net       -        -       1.994     -           12        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2_2          XOR2      B        In      -         31.029      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2_2          XOR2      Y        Out     0.937     31.965      -         
+ADD_9x9_fast_I35_Y_i_x2_2_3                                                                           Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      C        In      -         32.351      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      Y        Out     0.488     32.840      -         
+B_i_i_0[7]                                                                                            Net       -        -       1.776     -           11        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     C        In      -         34.616      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     Y        Out     0.985     35.601      -         
+ADD_9x9_fast_I35_Y_i_x2_2_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      A        In      -         35.923      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      Y        Out     0.488     36.411      -         
+ADD_9x9_fast_I35_Y_i_x2_2_2                                                                           Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      B        In      -         36.797      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      Y        Out     0.937     37.733      -         
+ADD_N_5_i                                                                                             Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a1_0      NOR2A     A        In      -         38.917      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a1_0      NOR2A     Y        Out     0.516     39.433      -         
+ADD_9x9_fast_I33_Y_i_o3_a1_0                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      A        In      -         39.755      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      Y        Out     0.636     40.391      -         
+ADD_9x9_fast_I33_Y_i_o3_0_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     B        In      -         40.712      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     Y        Out     0.607     41.319      -         
+N_18_3                                                                                                Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      B        In      -         42.125      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      Y        Out     0.933     43.059      -         
+N_19                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     C        In      -         43.380      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     Y        Out     0.985     44.365      -         
+ADD_9x9_fast_I35_Y_i_x2_4                                                                             Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      C        In      -         44.687      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      Y        Out     0.488     45.175      -         
+B_i_i[6]                                                                                              Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      A        In      -         45.982      -         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      Y        Out     0.537     46.519      -         
+ACT_LT3_E[1]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     B        In      -         46.840      -         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     Y        Out     0.931     47.772      -         
+ACT_LT3_E[3]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     A        In      -         48.093      -         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     Y        Out     0.900     48.993      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[0]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       C        In      -         49.315      -         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       Y        Out     0.655     49.970      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[2]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       B        In      -         50.291      -         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       Y        Out     0.567     50.858      -         
+DWACT_COMP0_E[2]                                                                                      Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       B        In      -         51.179      -         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       Y        Out     0.567     51.746      -         
+pwm4                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm                                                                          DFN1      D        In      -         52.068      -         
+=================================================================================================================================================================
+Total path delay (propagation time + setup) of 52.606 is 25.908(49.2%) logic and 26.699(50.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 3: 
+      Requested Period:                      50.000
+    - Setup time:                            0.539
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         49.461
+
+    - Propagation time:                      52.041
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -2.580
+
+    Number of logic level(s):                35
+    Starting point:                          controllerV2_0.handler_0.duty[0] / Q
+    Ending point:                            controllerV2_0.handler_0.pwm / D
+    The start point is clocked by            FAB_CLK [rising] on pin CLK
+    The end   point is clocked by            FAB_CLK [rising] on pin CLK
+
+Instance / Net                                                                                                  Pin      Pin               Arrival     No. of    
+Name                                                                                                  Type      Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+controllerV2_0.handler_0.duty[0]                                                                      DFN1      Q        Out     0.737     0.737       -         
+duty[0]                                                                                               Net       -        -       2.409     -           22        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     B        In      -         3.146       -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     Y        Out     0.627     3.773       -         
+m13_a5_0                                                                                              Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      B        In      -         4.957       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      Y        Out     0.652     5.609       -         
+m15_0_0                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     A        In      -         5.930       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     Y        Out     0.514     6.444       -         
+m15_0_3                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     A        In      -         6.766       -         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     Y        Out     0.514     7.280       -         
+N_16_2                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     B        In      -         7.666       -         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     Y        Out     0.937     8.603       -         
+un5_i[10]                                                                                             Net       -        -       1.708     -           10        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      B        In      -         10.311      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      Y        Out     0.937     11.248      -         
+N_25_i                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     B        In      -         11.634      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     Y        Out     0.937     12.570      -         
+ADD_9x9_fast_I32_Y_i_x3_0_0                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      A        In      -         12.892      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      Y        Out     0.488     13.380      -         
+N_27_i_i_3                                                                                            Net       -        -       1.639     -           8         
+d_m5                                                                                                  AOI5      B        In      -         15.019      -         
+d_m5                                                                                                  AOI5      Y        Out     0.407     15.426      -         
+d_i2_mux                                                                                              Net       -        -       0.322     -           1         
+d_m6                                                                                                  NOR2      B        In      -         15.747      -         
+d_m6                                                                                                  NOR2      Y        Out     0.646     16.394      -         
+d_N_7                                                                                                 Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     B        In      -         16.715      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     Y        Out     0.937     17.652      -         
+d_N_8_0                                                                                               Net       -        -       2.381     -           21        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     B        In      -         20.033      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     Y        Out     0.516     20.549      -         
+ADD_m9_0                                                                                              Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     A        In      -         20.871      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     Y        Out     0.488     21.359      -         
+ADD_N_12_mux                                                                                          Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m6_i_a4_0                      NOR2B     B        In      -         22.543      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m6_i_a4_0                      NOR2B     Y        Out     0.516     23.059      -         
+ADD_m6_i_a4_0                                                                                         Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m6_i_0                         XO1A      C        In      -         23.380      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m6_i_0                         XO1A      Y        Out     0.344     23.724      -         
+ADD_m6_i_0                                                                                            Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m7_1                           AX1B      B        In      -         24.046      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m7_1                           AX1B      Y        Out     1.001     25.047      -         
+B_i_i_2[7]                                                                                            Net       -        -       2.037     -           13        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2_0          XOR2      B        In      -         27.084      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2_0          XOR2      Y        Out     0.937     28.020      -         
+r_m1_0_0                                                                                              Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      A        In      -         28.406      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      Y        Out     0.408     28.815      -         
+B_i_i_1[7]                                                                                            Net       -        -       1.994     -           12        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I25_Y_i_a3_2          NOR2A     A        In      -         30.808      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I25_Y_i_a3_2          NOR2A     Y        Out     0.627     31.436      -         
+N_35_0                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      B        In      -         31.821      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      Y        Out     0.992     32.814      -         
+B_i_i_0[7]                                                                                            Net       -        -       1.776     -           11        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     C        In      -         34.590      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     Y        Out     0.985     35.575      -         
+ADD_9x9_fast_I35_Y_i_x2_2_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      A        In      -         35.897      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      Y        Out     0.488     36.385      -         
+ADD_9x9_fast_I35_Y_i_x2_2_2                                                                           Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      B        In      -         36.771      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      Y        Out     0.937     37.708      -         
+ADD_N_5_i                                                                                             Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a1_0      NOR2A     A        In      -         38.891      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a1_0      NOR2A     Y        Out     0.516     39.407      -         
+ADD_9x9_fast_I33_Y_i_o3_a1_0                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      A        In      -         39.729      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      Y        Out     0.636     40.365      -         
+ADD_9x9_fast_I33_Y_i_o3_0_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     B        In      -         40.686      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     Y        Out     0.607     41.293      -         
+N_18_3                                                                                                Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      B        In      -         42.099      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      Y        Out     0.933     43.032      -         
+N_19                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     C        In      -         43.354      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     Y        Out     0.985     44.339      -         
+ADD_9x9_fast_I35_Y_i_x2_4                                                                             Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      C        In      -         44.661      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      Y        Out     0.488     45.149      -         
+B_i_i[6]                                                                                              Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      A        In      -         45.956      -         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      Y        Out     0.537     46.493      -         
+ACT_LT3_E[1]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     B        In      -         46.814      -         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     Y        Out     0.931     47.746      -         
+ACT_LT3_E[3]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     A        In      -         48.067      -         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     Y        Out     0.900     48.967      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[0]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       C        In      -         49.289      -         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       Y        Out     0.655     49.944      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[2]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       B        In      -         50.266      -         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       Y        Out     0.567     50.832      -         
+DWACT_COMP0_E[2]                                                                                      Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       B        In      -         51.154      -         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       Y        Out     0.567     51.720      -         
+pwm4                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm                                                                          DFN1      D        In      -         52.041      -         
+=================================================================================================================================================================
+Total path delay (propagation time + setup) of 52.580 is 25.435(48.4%) logic and 27.145(51.6%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 4: 
+      Requested Period:                      50.000
+    - Setup time:                            0.539
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         49.461
+
+    - Propagation time:                      52.024
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -2.563
+
+    Number of logic level(s):                35
+    Starting point:                          controllerV2_0.handler_0.duty[1] / Q
+    Ending point:                            controllerV2_0.handler_0.pwm / D
+    The start point is clocked by            FAB_CLK [rising] on pin CLK
+    The end   point is clocked by            FAB_CLK [rising] on pin CLK
+
+Instance / Net                                                                                                  Pin      Pin               Arrival     No. of    
+Name                                                                                                  Type      Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+controllerV2_0.handler_0.duty[1]                                                                      DFN1      Q        Out     0.580     0.580       -         
+duty[1]                                                                                               Net       -        -       2.381     -           21        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     A        In      -         2.962       -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     Y        Out     0.488     3.450       -         
+m13_a5_0                                                                                              Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      B        In      -         4.633       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      Y        Out     0.900     5.534       -         
+m15_0_0                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     A        In      -         5.855       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     Y        Out     0.488     6.343       -         
+m15_0_3                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     A        In      -         6.665       -         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     Y        Out     0.488     7.153       -         
+N_16_2                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     B        In      -         7.539       -         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     Y        Out     0.937     8.476       -         
+un5_i[10]                                                                                             Net       -        -       1.708     -           10        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      B        In      -         10.184      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      Y        Out     0.937     11.121      -         
+N_25_i                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     B        In      -         11.507      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     Y        Out     0.937     12.443      -         
+ADD_9x9_fast_I32_Y_i_x3_0_0                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      A        In      -         12.765      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      Y        Out     0.488     13.253      -         
+N_27_i_i_3                                                                                            Net       -        -       1.639     -           8         
+d_m5                                                                                                  AOI5      B        In      -         14.892      -         
+d_m5                                                                                                  AOI5      Y        Out     0.407     15.299      -         
+d_i2_mux                                                                                              Net       -        -       0.322     -           1         
+d_m6                                                                                                  NOR2      B        In      -         15.620      -         
+d_m6                                                                                                  NOR2      Y        Out     0.646     16.267      -         
+d_N_7                                                                                                 Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     B        In      -         16.588      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     Y        Out     0.937     17.525      -         
+d_N_8_0                                                                                               Net       -        -       2.381     -           21        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     B        In      -         19.906      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     Y        Out     0.516     20.422      -         
+ADD_m9_0                                                                                              Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     A        In      -         20.744      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     Y        Out     0.488     21.232      -         
+ADD_N_12_mux                                                                                          Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_9x9_fast_I25_Y_i_o3_1          MX2A      S        In      -         22.416      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_9x9_fast_I25_Y_i_o3_1          MX2A      Y        Out     0.480     22.895      -         
+N_19_2                                                                                                Net       -        -       1.526     -           7         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m3_0                           ZOR3      C        In      -         24.421      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m3_0                           ZOR3      Y        Out     0.992     25.413      -         
+ADD_i1_mux                                                                                            Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m5_0                           XOR3      C        In      -         25.735      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m5_0                           XOR3      Y        Out     0.985     26.720      -         
+ADD_m5_0_0                                                                                            Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I25_Y_i_o2_0          MX2C      S        In      -         27.106      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I25_Y_i_o2_0          MX2C      Y        Out     0.480     27.586      -         
+N_16_1                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      B        In      -         27.971      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      Y        Out     0.937     28.908      -         
+B_i_i_1[7]                                                                                            Net       -        -       1.994     -           12        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I25_Y_i_a3_2          NOR2A     A        In      -         30.902      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I25_Y_i_a3_2          NOR2A     Y        Out     0.516     31.418      -         
+N_35_0                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      B        In      -         31.804      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      Y        Out     0.992     32.796      -         
+B_i_i_0[7]                                                                                            Net       -        -       1.776     -           11        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     C        In      -         34.572      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     Y        Out     0.985     35.557      -         
+ADD_9x9_fast_I35_Y_i_x2_2_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      A        In      -         35.879      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      Y        Out     0.488     36.367      -         
+ADD_9x9_fast_I35_Y_i_x2_2_2                                                                           Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      B        In      -         36.753      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      Y        Out     0.937     37.690      -         
+ADD_N_5_i                                                                                             Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a1_0      NOR2A     A        In      -         38.873      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a1_0      NOR2A     Y        Out     0.516     39.389      -         
+ADD_9x9_fast_I33_Y_i_o3_a1_0                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      A        In      -         39.711      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      Y        Out     0.636     40.347      -         
+ADD_9x9_fast_I33_Y_i_o3_0_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     B        In      -         40.669      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     Y        Out     0.607     41.275      -         
+N_18_3                                                                                                Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      B        In      -         42.081      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      Y        Out     0.933     43.015      -         
+N_19                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     C        In      -         43.336      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     Y        Out     0.985     44.322      -         
+ADD_9x9_fast_I35_Y_i_x2_4                                                                             Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      C        In      -         44.643      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      Y        Out     0.488     45.132      -         
+B_i_i[6]                                                                                              Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      A        In      -         45.938      -         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      Y        Out     0.537     46.475      -         
+ACT_LT3_E[1]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     B        In      -         46.796      -         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     Y        Out     0.931     47.728      -         
+ACT_LT3_E[3]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     A        In      -         48.049      -         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     Y        Out     0.900     48.950      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[0]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       C        In      -         49.271      -         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       Y        Out     0.655     49.926      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[2]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       B        In      -         50.248      -         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       Y        Out     0.567     50.814      -         
+DWACT_COMP0_E[2]                                                                                      Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       B        In      -         51.136      -         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       Y        Out     0.567     51.702      -         
+pwm4                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm                                                                          DFN1      D        In      -         52.024      -         
+=================================================================================================================================================================
+Total path delay (propagation time + setup) of 52.563 is 25.892(49.3%) logic and 26.671(50.7%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 5: 
+      Requested Period:                      50.000
+    - Setup time:                            0.539
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         49.461
+
+    - Propagation time:                      52.001
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -2.540
+
+    Number of logic level(s):                35
+    Starting point:                          controllerV2_0.handler_0.duty[0] / Q
+    Ending point:                            controllerV2_0.handler_0.pwm / D
+    The start point is clocked by            FAB_CLK [rising] on pin CLK
+    The end   point is clocked by            FAB_CLK [rising] on pin CLK
+
+Instance / Net                                                                                                  Pin      Pin               Arrival     No. of    
+Name                                                                                                  Type      Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+controllerV2_0.handler_0.duty[0]                                                                      DFN1      Q        Out     0.737     0.737       -         
+duty[0]                                                                                               Net       -        -       2.409     -           22        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     B        In      -         3.146       -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I35_Y_i_x2_0_a1_0     NOR2B     Y        Out     0.627     3.773       -         
+m13_a5_0                                                                                              Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      B        In      -         4.957       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_0                                                             OA1C      Y        Out     0.652     5.609       -         
+m15_0_0                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     A        In      -         5.930       -         
+controllerV2_0.handler_0.un5_0_27.m15_0_3                                                             NOR2B     Y        Out     0.514     6.444       -         
+m15_0_3                                                                                               Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     A        In      -         6.766       -         
+controllerV2_0.handler_0.un5_0_27.m15_0                                                               NOR2B     Y        Out     0.514     7.280       -         
+N_16_2                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     B        In      -         7.666       -         
+controllerV2_0.handler_0.un5_0_27.m37                                                                 XNOR2     Y        Out     0.937     8.603       -         
+un5_i[10]                                                                                             Net       -        -       1.708     -           10        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      B        In      -         10.311      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un61_sum.ADD_9x9_fast_I31_Y_i_x3            XOR2      Y        Out     0.937     11.248      -         
+N_25_i                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     B        In      -         11.634      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3_0          XNOR2     Y        Out     0.937     12.570      -         
+ADD_9x9_fast_I32_Y_i_x3_0_0                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      A        In      -         12.892      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un68_sum.ADD_9x9_fast_I32_Y_i_x3            XOR2      Y        Out     0.488     13.380      -         
+N_27_i_i_3                                                                                            Net       -        -       1.639     -           8         
+d_m5                                                                                                  AOI5      B        In      -         15.019      -         
+d_m5                                                                                                  AOI5      Y        Out     0.407     15.426      -         
+d_i2_mux                                                                                              Net       -        -       0.322     -           1         
+d_m6                                                                                                  NOR2      B        In      -         15.747      -         
+d_m6                                                                                                  NOR2      Y        Out     0.646     16.394      -         
+d_N_7                                                                                                 Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     B        In      -         16.715      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un75_sum.ADD_m2_1                           XNOR2     Y        Out     0.937     17.652      -         
+d_N_8_0                                                                                               Net       -        -       2.381     -           21        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     B        In      -         20.033      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9_0                           NOR2B     Y        Out     0.516     20.549      -         
+ADD_m9_0                                                                                              Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     A        In      -         20.871      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_m9                             NOR2B     Y        Out     0.488     21.359      -         
+ADD_N_12_mux                                                                                          Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_9x9_fast_I25_Y_i_o3_1          MX2A      S        In      -         22.543      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un82_sum.ADD_9x9_fast_I25_Y_i_o3_1          MX2A      Y        Out     0.480     23.022      -         
+N_19_2                                                                                                Net       -        -       1.526     -           7         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m3_0                           ZOR3      C        In      -         24.548      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m3_0                           ZOR3      Y        Out     0.992     25.541      -         
+ADD_i1_mux                                                                                            Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m5_0                           XOR3      C        In      -         25.862      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_m5_0                           XOR3      Y        Out     0.985     26.847      -         
+ADD_m5_0_0                                                                                            Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I25_Y_i_o2_0          MX2C      S        In      -         27.233      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I25_Y_i_o2_0          MX2C      Y        Out     0.480     27.713      -         
+N_16_1                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      B        In      -         28.099      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un89_sum.ADD_9x9_fast_I35_Y_i_x2            XOR2      Y        Out     0.937     29.035      -         
+B_i_i_1[7]                                                                                            Net       -        -       1.994     -           12        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I25_Y_i_a3_2          NOR2A     A        In      -         31.029      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I25_Y_i_a3_2          NOR2A     Y        Out     0.516     31.545      -         
+N_35_0                                                                                                Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      B        In      -         31.931      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un96_sum.ADD_9x9_fast_I35_Y_i_x2            AX1D      Y        Out     0.992     32.923      -         
+B_i_i_0[7]                                                                                            Net       -        -       1.776     -           11        
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     C        In      -         34.699      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2_1       XNOR3     Y        Out     0.985     35.685      -         
+ADD_9x9_fast_I35_Y_i_x2_2_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      A        In      -         36.006      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un103_sum.ADD_9x9_fast_I35_Y_i_x2_2         XOR2      Y        Out     0.488     36.494      -         
+ADD_9x9_fast_I35_Y_i_x2_2_2                                                                           Net       -        -       0.386     -           2         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      B        In      -         36.880      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_m5_i_x2                       XOR2      Y        Out     0.937     37.817      -         
+ADD_N_5_i                                                                                             Net       -        -       1.184     -           4         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a3        NOR2B     B        In      -         39.001      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_a3        NOR2B     Y        Out     0.516     39.517      -         
+ADD_9x9_fast_I33_Y_i_o3_a3                                                                            Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      C        In      -         39.838      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0_1       OA1C      Y        Out     0.487     40.325      -         
+ADD_9x9_fast_I33_Y_i_o3_0_1                                                                           Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     B        In      -         40.646      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I33_Y_i_o3_0         NOR3B     Y        Out     0.607     41.253      -         
+N_18_3                                                                                                Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      B        In      -         42.059      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un110_sum.ADD_9x9_fast_I25_Y_i_o3_0         AO13      Y        Out     0.933     42.992      -         
+N_19                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     C        In      -         43.314      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2_4         XNOR3     Y        Out     0.985     44.299      -         
+ADD_9x9_fast_I35_Y_i_x2_4                                                                             Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      C        In      -         44.621      -         
+controllerV2_0.handler_0.un1_duty.if_generate_plus\.mult1_un117_sum.ADD_9x9_fast_I35_Y_i_x2           AX1D      Y        Out     0.488     45.109      -         
+B_i_i[6]                                                                                              Net       -        -       0.806     -           3         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      A        In      -         45.916      -         
+controllerV2_0.handler_0.pwm4_0.I_73                                                                  OR2A      Y        Out     0.537     46.453      -         
+ACT_LT3_E[1]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     B        In      -         46.774      -         
+controllerV2_0.handler_0.pwm4_0.I_75                                                                  AOI1A     Y        Out     0.931     47.706      -         
+ACT_LT3_E[3]                                                                                          Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     A        In      -         48.027      -         
+controllerV2_0.handler_0.pwm4_0.I_78                                                                  AOI1A     Y        Out     0.900     48.927      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[0]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       C        In      -         49.249      -         
+controllerV2_0.handler_0.pwm4_0.I_90                                                                  AO1       Y        Out     0.655     49.904      -         
+DWACT_CMPLE_PO2_DWACT_COMP0_E_0[2]                                                                    Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       B        In      -         50.225      -         
+controllerV2_0.handler_0.pwm4_0.I_91                                                                  AO1       Y        Out     0.567     50.792      -         
+DWACT_COMP0_E[2]                                                                                      Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       B        In      -         51.113      -         
+controllerV2_0.handler_0.pwm4_0.I_92                                                                  AO1       Y        Out     0.567     51.680      -         
+pwm4                                                                                                  Net       -        -       0.322     -           1         
+controllerV2_0.handler_0.pwm                                                                          DFN1      D        In      -         52.001      -         
+=================================================================================================================================================================
+Total path delay (propagation time + setup) of 52.540 is 25.842(49.2%) logic and 26.699(50.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+
+====================================
+Detailed Report for Clock: System
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                 Starting                                                                              Arrival           
+Instance                         Reference     Type        Pin              Net                                        Time        Slack 
+                                 Clock                                                                                                   
+-----------------------------------------------------------------------------------------------------------------------------------------
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPADDR[9]      HBridge_MSS_0_MSS_MASTER_APB_PADDR[9]      0.000       6.378 
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPSEL          HBridge_MSS_0_MSS_MASTER_APB_PSELx         0.000       6.430 
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPADDR[10]     HBridge_MSS_0_MSS_MASTER_APB_PADDR[10]     0.000       6.547 
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPADDR[8]      HBridge_MSS_0_MSS_MASTER_APB_PADDR[8]      0.000       6.606 
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPADDR[11]     HBridge_MSS_0_MSS_MASTER_APB_PADDR[11]     0.000       6.686 
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     EMCCLK           MSS_ADLIB_INST_EMCCLK                      0.000       9.678 
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPWRITE        CoreAPB3_0_APBmslave0_PWRITE               0.000       42.414
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPENABLE       CoreAPB3_0_APBmslave0_PENABLE              0.000       43.328
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPADDR[2]      CoreAPB3_0_APBmslave0_PADDR[2]             0.000       43.898
+HBridge_MSS_0.MSS_ADLIB_INST     System        MSS_APB     MSSPADDR[3]      CoreAPB3_0_APBmslave0_PADDR[3]             0.000       44.041
+=========================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                         Starting                                                                              Required           
+Instance                                 Reference     Type        Pin              Net                                        Time         Slack 
+                                         Clock                                                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------
+HBridge_MSS_0.MSS_ADLIB_INST             System        MSS_APB     MSSPRDATA[0]     HBridge_MSS_0_MSS_MASTER_APB_PRDATA[0]     10.000       6.378 
+HBridge_MSS_0.MSS_ADLIB_INST             System        MSS_APB     MSSPRDATA[1]     HBridge_MSS_0_MSS_MASTER_APB_PRDATA[1]     10.000       6.378 
+HBridge_MSS_0.MSS_ADLIB_INST             System        MSS_APB     MSSPRDATA[2]     HBridge_MSS_0_MSS_MASTER_APB_PRDATA[2]     10.000       6.378 
+HBridge_MSS_0.MSS_ADLIB_INST             System        MSS_APB     MSSPRDATA[3]     HBridge_MSS_0_MSS_MASTER_APB_PRDATA[3]     10.000       6.378 
+HBridge_MSS_0.MSS_ADLIB_INST             System        MSS_APB     MSSPRDATA[4]     HBridge_MSS_0_MSS_MASTER_APB_PRDATA[4]     10.000       6.378 
+HBridge_MSS_0.MSS_ADLIB_INST             System        MSS_APB     MSSPRDATA[5]     HBridge_MSS_0_MSS_MASTER_APB_PRDATA[5]     10.000       6.378 
+HBridge_MSS_0.MSS_ADLIB_INST             System        MSS_APB     EMCCLKRTN        MSS_ADLIB_INST_EMCCLK                      10.000       9.678 
+controllerV2_0.handler_0.duty[5]         System        DFN1        D                duty_0_0_RNI9U022[5]                       49.426       40.233
+controllerV2_0.handler_0.duty_0_0[5]     System        DFN1        D                duty_0_0_RNI9U022[5]                       49.426       40.233
+controllerV2_0.handler_0.duty[1]         System        DFN1        D                duty_RNO[1]                                49.426       40.297
+==================================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.000
+    + Clock delay at ending point:           0.000 (ideal)
+    + Estimated clock delay at ending point: 0.000
+    = Required time:                         10.000
+
+    - Propagation time:                      3.622
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (non-critical) :                 6.378
+
+    Number of logic level(s):                2
+    Starting point:                          HBridge_MSS_0.MSS_ADLIB_INST / MSSPADDR[9]
+    Ending point:                            HBridge_MSS_0.MSS_ADLIB_INST / MSSPRDATA[0]
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            System [rising]
+
+Instance / Net                                         Pin              Pin               Arrival     No. of    
+Name                                       Type        Name             Dir     Delay     Time        Fan Out(s)
+----------------------------------------------------------------------------------------------------------------
+HBridge_MSS_0.MSS_ADLIB_INST               MSS_APB     MSSPADDR[9]      Out     0.000     0.000       -         
+HBridge_MSS_0_MSS_MASTER_APB_PADDR[9]      Net         -                -       0.322     -           1         
+CoreAPB3_0.iPSELS_2[0]                     NOR3A       C                In      -         0.322       -         
+CoreAPB3_0.iPSELS_2[0]                     NOR3A       Y                Out     0.716     1.038       -         
+iPSELS_2[0]                                Net         -                -       1.639     -           8         
+CoreAPB3_0.u_mux_p_to_b3.PRDATA_0          NOR3C       B                In      -         2.676       -         
+CoreAPB3_0.u_mux_p_to_b3.PRDATA_0          NOR3C       Y                Out     0.624     3.300       -         
+HBridge_MSS_0_MSS_MASTER_APB_PRDATA[0]     Net         -                -       0.322     -           1         
+HBridge_MSS_0.MSS_ADLIB_INST               MSS_APB     MSSPRDATA[0]     In      -         3.622       -         
+================================================================================================================
+Total path delay (propagation time + setup) of 3.622 is 1.340(37.0%) logic and 2.282(63.0%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+--------------------------------------------------------------------------------
+Target Part: A2F200M3F_FBGA484_STD
+Report for cell HBridge.verilog
+  Core Cell usage:
+              cell count     area count*area
+              AND2     5      1.0        5.0
+             AND2A     2      1.0        2.0
+              AND3    19      1.0       19.0
+               AO1     6      1.0        6.0
+              AO13     6      1.0        6.0
+              AO18     6      1.0        6.0
+              AO1A     5      1.0        5.0
+              AO1C     4      1.0        4.0
+              AO1D     3      1.0        3.0
+              AOI1     4      1.0        4.0
+             AOI1A     2      1.0        2.0
+             AOI1B     1      1.0        1.0
+              AOI5     2      1.0        2.0
+              AX1A     4      1.0        4.0
+              AX1B     5      1.0        5.0
+              AX1C     3      1.0        3.0
+              AX1D     9      1.0        9.0
+              AX1E     1      1.0        1.0
+              AXO6     1      1.0        1.0
+             AXOI5     1      1.0        1.0
+               GND     7      0.0        0.0
+              MAJ3     3      1.0        3.0
+           MSS_APB     1      0.0        0.0
+           MSS_CCC     1      0.0        0.0
+               MX2    23      1.0       23.0
+              MX2A     5      1.0        5.0
+              MX2B     5      1.0        5.0
+              MX2C     4      1.0        4.0
+              NOR2    12      1.0       12.0
+             NOR2A    31      1.0       31.0
+             NOR2B    31      1.0       31.0
+              NOR3     5      1.0        5.0
+             NOR3A    16      1.0       16.0
+             NOR3B    14      1.0       14.0
+             NOR3C    13      1.0       13.0
+               OA1     6      1.0        6.0
+              OA1A    14      1.0       14.0
+              OA1B     5      1.0        5.0
+              OA1C     8      1.0        8.0
+              OAI1     2      1.0        2.0
+               OR2     3      1.0        3.0
+              OR2A    17      1.0       17.0
+               OR3     3      1.0        3.0
+              OR3B     3      1.0        3.0
+              OR3C     1      1.0        1.0
+             RCOSC     1      0.0        0.0
+               VCC     7      0.0        0.0
+               XA1     2      1.0        2.0
+              XA1A     7      1.0        7.0
+              XA1B     2      1.0        2.0
+              XA1C     1      1.0        1.0
+             XAI1A     1      1.0        1.0
+             XNOR2    30      1.0       30.0
+             XNOR3    11      1.0       11.0
+              XO1A     2      1.0        2.0
+              XOR2    48      1.0       48.0
+              XOR3    10      1.0       10.0
+              ZOR3     2      1.0        2.0
+
+
+              DFN1    35      1.0       35.0
+            DFN1E0     6      1.0        6.0
+                   -----          ----------
+             TOTAL   487               470.0
+
+
+  IO Cell usage:
+              cell count
+         INBUF_MSS     3
+            OUTBUF     5
+        OUTBUF_MSS     2
+                   -----
+             TOTAL    10
+
+
+Core Cells         : 470 of 4608 (10%)
+IO Cells           : 10
+
+  RAM/ROM Usage Summary
+Block Rams : 0 of 8 (0%)
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:15s; Memory used current: 49MB peak: 165MB)
+
+Process took 0h:00m:18s realtime, 0h:00m:15s cputime
+# Wed Mar 23 13:12:25 2016
+
+###########################################################]

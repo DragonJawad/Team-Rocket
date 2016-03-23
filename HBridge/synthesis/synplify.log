@@ -1,0 +1,94 @@
+
+Starting:    C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1\win64\mbin\synbatch.exe
+Install:     C:\Microsemi\Libero_v11.5\Synopsys\synplify_I201403MSP1
+Date:        Wed Mar 23 16:20:05 2016
+Version:     I-2014.03M-SP1
+
+Arguments:   -product synplify_pro  -licensetype synplifypro_actel -batch -log synplify.log HBridge_syn.tcl
+ProductType: synplify_pro
+
+License checkout: synplifypro_actel
+License: synplifypro_actel node-locked 
+Licensed Vendor: actel
+License Option: actel_oem
+
+Running in Vendor Mode
+
+
+auto_infer_blackbox is not supported in current product.
+
+log file: "C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge.srr"
+
+
+
+Running HBridge_syn|synthesis
+
+
+Running: Compile on HBridge_syn|synthesis
+
+
+Running: Compile Process on HBridge_syn|synthesis
+
+
+Running: Compile Input on HBridge_syn|synthesis
+
+Copied C:\Users\jawadmn\TeamRocket\HBridge\synthesis\synwork\HBridge_comp.srs to C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge.srs
+
+
+compiler Completed with warnings
+Return Code: 1
+Run Time:0h:00m:02s
+
+
+Running: Multi-srs Generator on HBridge_syn|synthesis
+
+Copied C:\Users\jawadmn\TeamRocket\HBridge\synthesis\synwork\HBridge_comp.srs to C:\Users\jawadmn\TeamRocket\HBridge\synthesis\synwork\HBridge_s.srs
+
+
+multi_srs_gen Completed
+Return Code: 0
+Run Time:0h:00m:00s
+
+Copied C:\Users\jawadmn\TeamRocket\HBridge\synthesis\synwork\HBridge_mult.srs to C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge.srs
+
+Complete: Compile Process on HBridge_syn|synthesis
+
+
+Running: Pre-mapping on HBridge_syn|synthesis
+
+Copied C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge.sap to C:\Users\jawadmn\TeamRocket\HBridge\synthesis\synwork\HBridge_s.sap
+
+Copied C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge.fse to C:\Users\jawadmn\TeamRocket\HBridge\synthesis\synwork\HBridge_s.fse
+
+
+premap Completed
+Return Code: 0
+Run Time:0h:00m:01s
+
+Complete: Compile on HBridge_syn|synthesis
+
+
+Running: Map on HBridge_syn|synthesis
+
+
+Running: Map & Optimize on HBridge_syn|synthesis
+
+Copied C:\Users\jawadmn\TeamRocket\HBridge\synthesis\synwork\HBridge_m.srm to C:\Users\jawadmn\TeamRocket\HBridge\synthesis\HBridge.srm
+
+
+fpga_mapper Completed with warnings
+Return Code: 1
+Run Time:0h:00m:36s
+
+Complete: Map on HBridge_syn|synthesis
+
+Complete: Logic Synthesis on HBridge_syn|synthesis
+
+TCL script complete: "HBridge_syn.tcl"
+
+exit status=0
+
+exit status=0
+
+License checkin: synplifypro_actel
+

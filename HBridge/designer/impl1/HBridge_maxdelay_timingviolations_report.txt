@@ -1,0 +1,118 @@
+Timing Violation Report Max Delay Analysis
+
+SmartTime Version v11.5 SP3
+Microsemi Corporation - Microsemi Libero Software Release v11.5 SP3 (Version 11.5.3.10)
+Date: Wed Mar 23 16:21:47 2016
+
+
+Design: HBridge
+Family: SmartFusion
+Die: A2F200M3F
+Package: 484 FBGA
+Temperature: COM
+Voltage: COM
+Speed Grade: STD
+Design State: Post-Layout
+Data source: Silicon verified
+Min Operating Condition: BEST
+Max Operating Condition: WORST
+Using Enhanced Min Delay Analysis
+Scenario for Timing Analysis: Primary
+
+
+Path 1
+  From:                        controllerV2_0/handler_0/duty[4]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  54.231
+  Slack (ns):                  -4.721
+  Arrival (ns):                60.868
+  Required (ns):               56.147
+
+Path 2
+  From:                        controllerV2_0/handler_0/duty[5]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  54.138
+  Slack (ns):                  -4.652
+  Arrival (ns):                60.799
+  Required (ns):               56.147
+
+Path 3
+  From:                        controllerV2_0/handler_0/duty_0_0[2]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  54.088
+  Slack (ns):                  -4.600
+  Arrival (ns):                60.747
+  Required (ns):               56.147
+
+Path 4
+  From:                        controllerV2_0/handler_0/duty[3]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  53.768
+  Slack (ns):                  -4.273
+  Arrival (ns):                60.420
+  Required (ns):               56.147
+
+Path 5
+  From:                        controllerV2_0/handler_0/duty[1]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  53.725
+  Slack (ns):                  -4.237
+  Arrival (ns):                60.384
+  Required (ns):               56.147
+
+Path 6
+  From:                        controllerV2_0/handler_0/duty[0]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  53.625
+  Slack (ns):                  -4.130
+  Arrival (ns):                60.277
+  Required (ns):               56.147
+
+Path 7
+  From:                        controllerV2_0/handler_0/duty_0_0[1]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  53.534
+  Slack (ns):                  -4.030
+  Arrival (ns):                60.177
+  Required (ns):               56.147
+
+Path 8
+  From:                        controllerV2_0/handler_0/duty[2]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  53.451
+  Slack (ns):                  -3.956
+  Arrival (ns):                60.103
+  Required (ns):               56.147
+
+Path 9
+  From:                        controllerV2_0/handler_0/duty_0_0[0]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  53.432
+  Slack (ns):                  -3.928
+  Arrival (ns):                60.075
+  Required (ns):               56.147
+
+Path 10
+  From:                        controllerV2_0/handler_0/duty_0_0[3]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  53.266
+  Slack (ns):                  -3.778
+  Arrival (ns):                59.925
+  Required (ns):               56.147
+
+Path 11
+  From:                        controllerV2_0/handler_0/duty_0_0[5]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  53.138
+  Slack (ns):                  -3.650
+  Arrival (ns):                59.797
+  Required (ns):               56.147
+
+Path 12
+  From:                        controllerV2_0/handler_0/duty_0_0[4]:CLK
+  To:                          controllerV2_0/handler_0/pwm:D
+  Delay (ns):                  52.747
+  Slack (ns):                  -3.259
+  Arrival (ns):                59.406
+  Required (ns):               56.147
+
