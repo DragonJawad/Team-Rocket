@@ -10,19 +10,21 @@
 /***************************************/
 
 /* Struct definition for reference
-struct controller {
-	mss_gpio_id_t select;
+typedef struct controller {
+	int counter;
+	mss_spi_slave_t select;
 	uint8_t vibration;
-	uint8_t slave_buffer[21];
+	uint8_t slave_buffer[MAX_BUFFER_SIZE];
 } controller_t;
 */
 
 // Initialize the controller struct
-void controller_init(controller_t * controller, mss_gpio_id_t select) {
+void controller_init(controller_t * controller, mss_spi_slave_t select) {
 
 	// Initialize all values
 	controller->select = select;
 	controller->vibration = 0;
+	controller->counter = 0;
 	int i;
 	for (i = 0; i < MAX_BUFFER_SIZE; ++i) {
 		controller->slave_buffer[i] = 0;
@@ -85,9 +87,9 @@ static void button_setup(uint8_t * slave_buffer);
 void digital_capture(controller_t * controller) {
 
 	// Select controller
-	MSS_GPIO_set_output(controller->select, 0);
+	MSS_SPI_set_slave_select( &g_mss_spi1, controller->select );
 
-	uint8_t master_buffer[5]  = { 0x80, flip(0x42), 0x00, 0x00, 0x00 };
+	uint8_t master_buffer[3]  = { 0x80, flip(0x42), 0x00 };
 	MSS_SPI_transfer_block
 	(
 	    &g_mss_spi1,
@@ -96,7 +98,7 @@ void digital_capture(controller_t * controller) {
 	);
 
 	// Deselect controller
-	MSS_GPIO_set_output(controller->select, 1);
+	MSS_SPI_clear_slave_select( &g_mss_spi1, controller->select );
 
 }
 // Poll for all values
@@ -112,7 +114,7 @@ void full_capture(controller_t * controller) {
 	}
 
 	// Select controller
-	MSS_GPIO_set_output(controller->select, 0);
+	MSS_SPI_set_slave_select( &g_mss_spi1, controller->select );
 
 	uint8_t master_buffer[5]  = { 0x80, flip(0x42), 0x00, vibration, vibration };
 	MSS_SPI_transfer_block
@@ -122,52 +124,43 @@ void full_capture(controller_t * controller) {
 	    (uint8_t *) controller->slave_buffer, 16
 	);
 
-	// Deselect controller
-	MSS_GPIO_set_output(controller->select, 1);
+	// Select controller
+	MSS_SPI_clear_slave_select( &g_mss_spi1, controller->select );
 }
 
 // Perform all setup tasks on this controller
 void setup_all(controller_t * controller) {
 
-	mss_gpio_id_t select = controller->select;
+	// Select controller
+	MSS_SPI_set_slave_select( &g_mss_spi1, controller->select );
+
 	uint8_t * slave_buffer = (uint8_t *) (controller->slave_buffer);
+
 	int i = 0;
 
 	// Enter configuration mode
-	MSS_GPIO_set_output(select, 0);
 	enter_config(slave_buffer);
-	MSS_GPIO_set_output(select, 1);
 
 	for (i = 0; i < 200; ++i); // Delay
 
 	// Enable analog mode on the controller
-	MSS_GPIO_set_output(select, 0);
 	enable_analog(slave_buffer);
-	MSS_GPIO_set_output(select, 1);
 
 	for (i = 0; i < 200; ++i); // Delay
 
 	// Setup the motor to map to the proper bytes
-	MSS_GPIO_set_output(select, 0);
 	motor_setup(slave_buffer);
-	MSS_GPIO_set_output(select, 1);
 
 	for (i = 0; i < 200; ++i); // Delay
 
 	// Configure the buttons to send analog data
-	MSS_GPIO_set_output(select, 0);
 	button_setup(slave_buffer);
-	MSS_GPIO_set_output(select, 1);
 
 	for (i = 0; i < 200; ++i); // Delay
 
 	// Exit configuration mode
-	MSS_GPIO_set_output(select, 0);
 	exit_config(slave_buffer);
-	MSS_GPIO_set_output(select, 1);
 }
-
-
 
 // Set the controller to vibrate for a certain amount of time
 void set_vibration(controller_t * controller, uint8_t vibration, int counter) {
@@ -175,8 +168,6 @@ void set_vibration(controller_t * controller, uint8_t vibration, int counter) {
 	controller->vibration = vibration;
 	controller->counter = counter;
 }
-
-
 
 // Enter configuration mode
 void enter_config(uint8_t * slave_buffer) {

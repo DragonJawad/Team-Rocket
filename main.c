@@ -24,7 +24,6 @@ int main() {
 	int i = 0;
 	for (i = 0; i < 1000000; ++i);
 
-
 	/********************************/
 	/********** SETUP UART **********/
 	/********************************/
@@ -35,12 +34,11 @@ int main() {
 		(MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT)
 	);
 
-	uint8_t tx_buff[2] = { 0, 0 };
-
 	/********************************/
 	/********** SETUP GPIO **********/
 	/********************************/
 
+	/*
 	MSS_GPIO_init();
 
 	MSS_GPIO_config
@@ -50,36 +48,41 @@ int main() {
 	);
 
 	MSS_GPIO_set_output (MSS_GPIO_15,	1);
+	*/
 
-
-
-
-
-	/*******************************/
-	/********** SETUP SPI **********/
-	/*******************************/
+	/***************************************/
+	/********** SETUP CONTROLLERS **********/
+	/***************************************/
 
 	MSS_SPI_init( &g_mss_spi1 );
 	MSS_SPI_configure_master_mode
 	(
 		&g_mss_spi1,
 		MSS_SPI_SLAVE_1,
-		MSS_SPI_MODE3,		  // Clock starts high, data read on rising edge, data changes on falling edge
-		MSS_SPI_PCLK_DIV_256, // Clock period of 390 kHz - good enough!
+		MSS_SPI_MODE3,		  // Clock idle high, read on rising edge
+		MSS_SPI_PCLK_DIV_256, // Clock period of 20MHz / 256 ~= 78 KHz
 		MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE
 	);
 
-	MSS_SPI_set_slave_select( &g_mss_spi1, MSS_SPI_SLAVE_1 );
-
 	// Initialize controllers here
 	controller_t controller1;
-	controller_init(&controller1, MSS_GPIO_15);
+	controller_t controller2;
+	controller_t controller3;
+	controller_t controller4;
+	
+	controller_init(&controller1, MSS_SPI_SLAVE_1);
+	controller_init(&controller2, MSS_SPI_SLAVE_2);
+	controller_init(&controller3, MSS_SPI_SLAVE_3);
+	controller_init(&controller4, MSS_SPI_SLAVE_4);
+	
+	/* Debugging
 	digital_capture(&controller1);
+	*/
+	
 	setup_all(&controller1);
-
-	// Don't vibrate yet
-	set_vibration(&controller1, 0, 0);
-
+	setup_all(&controller2);
+	setup_all(&controller3);
+	setup_all(&controller4);
 
 
 	/*******************************/
@@ -88,28 +91,64 @@ int main() {
 
 	for (i = 0; 1; ++i) {
 
+	
+		/********** CAPTURE CONTROLLER DATA ********/
+		
 		full_capture(&controller1);
+		//full_capture(&controller2);
+		//full_capture(&controller3);
+		//full_capture(&controller4);
 
+		/*
 		printf("\r\nResponses %d:\r\n", i);
 		int j; for (j = 0; j < 18; ++j) {
 			printf("Buffer[%d]: %d\r\n", j, (unsigned int) flip(controller1.slave_buffer[j]));
 		}
+		*/
 
-		tx_buff[0] = controller1.slave_buffer[12];
-		tx_buff[1] = controller1.slave_buffer[13];
+		
+		/********** SEND DATA TO CARS ********/
 
-		set_vibration(&controller1, 0xFF, 10);
-
-		MSS_UART_polled_tx (
+		MSS_UART_polled_tx(
 			&g_mss_uart1,
-			tx_buff,
-			sizeof(tx_buff)
+			controller1.slave_buffer + 12,
+			2 // number of bytes to send
+		);
+		
+		MSS_UART_polled_tx(
+			&g_mss_uart1,
+			controller1.slave_buffer + 12,
+			2 // number of bytes to send
+		);
+		
+		MSS_UART_polled_tx(
+			&g_mss_uart1,
+			controller1.slave_buffer + 12,
+			2 // number of bytes to send
+		);
+		
+		MSS_UART_polled_tx(
+			&g_mss_uart1,
+			controller1.slave_buffer + 12,
+			2 // number of bytes to send
 		);
 
+		
+		/********** RECEIVE DATA FROM CARS **********/
+		
+		/********** CHANGE VIBRATION DATA **********/
 
-		// Delay
-		j = 0; for (j = 0; j < 10000; ++j);
+		set_vibration(&controller1, 0xFF, 10);
+		//set_vibration(&controller2, 0xFF, 10);
+		//set_vibration(&controller3, 0xFF, 10);
+		//set_vibration(&controller4, 0xFF, 10);
+
+		
+		
+		
+		j = 0; for (j = 0; j < 10000; ++j); // Delay
 	}
-
-	MSS_SPI_clear_slave_select( &g_mss_spi1, MSS_SPI_SLAVE_1 );
+	
+	// If you've made it this far, something went wrong
+	return(1);
 }

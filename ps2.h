@@ -16,7 +16,7 @@
 
 typedef struct controller {
 	int counter;
-	mss_gpio_id_t select;
+	mss_spi_slave_t select;
 	uint8_t vibration;
 	uint8_t slave_buffer[MAX_BUFFER_SIZE];
 } controller_t;
