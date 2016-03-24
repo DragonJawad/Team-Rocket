@@ -3,8 +3,8 @@
  * Project Name:   EECS373 Final Project
  * Created by:     Jawad Nasser
  * Modified by:    Adrian Padin
- * 			       Emily Rowland
- * 				   Ben Roland Miron
+ *                 Emily Rowland
+ *                 Ben Roland Miron
  * Start date:     23 March 2016
  * Last modified:  23 March 2016
  \**************************************/
@@ -58,8 +58,8 @@ assign PSLVERR = 1'b0;
  * PWM operates at 500 Hz
  * 20 MHz / 500 Hz = 40,000 cycles
  */
-`define period 40000
-//`define period 50000
+//`define period 40000
+`define period 50000
 reg [31:0] counter;
 reg [31:0] overflow;	// Value between 0 and period
 reg [7:0] duty;			// Value between 0 and 100
@@ -136,14 +136,6 @@ begin
 	H_output <= 0;
 end
 
-// Always shift buffer into outputs if different
-else if (H_output != H_output_buffer &&
-	(!WRITE_EN) && 
-	(PADDR[4:2] != 3'b001))
-begin
-	H_output <= H_output_buffer;
-end
-
 else
 begin
 
@@ -159,8 +151,9 @@ begin
             
             3'b001: // Offset 0x04: Write HBridge inputs
             begin
-                H_output_buffer <= PWDATA[3:0];
-                H_output <= 0;
+                //H_output_buffer <= PWDATA[3:0];
+                //H_output <= 0;
+                H_output <= PWDATA[3:0];
             end
         endcase
     end
