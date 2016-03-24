@@ -32,14 +32,14 @@ input PCLK, PENABLE, PSEL, PRESETN, PWRITE;
 input [31:0] PWDATA;
 input [7:0] PADDR;
 input CAPTURE_SWITCH;
-output [31:0] PRDATA;
+output reg [31:0] PRDATA;
 output PREADY, PSLVERR;
 
 
 /* PWM Outputs */
 output FABINT;
 output PWM1;
-output [3:0] H_IN1; // Zero and one should never both be on
+output [3:0] H_IN; // Zero and one should never both be on
 					// Two and three should never both be on
 
 					
@@ -65,6 +65,7 @@ reg [31:0] overflow;	// Value between 0 and period
 reg [7:0] duty;			// Value between 0 and 100
 reg pwm1_reg;
 
+assign PWM1 = pwm1_reg;
 
 /* H-Bridge variables
 
@@ -100,10 +101,10 @@ else
 begin
 
 	// Calculate overflow
-	overflow <= ((duty * period) / 100);
+	overflow <= ((duty * `period) / 100);
 
 	// Reset the counter after "period" cycles
-	if (counter >= period)
+	if (counter >= `period)
 	begin
 		counter <= 0;
 		pwm1_reg <= 1'b1;
@@ -114,11 +115,11 @@ begin
 		// If the counter is less than overflow, out is 1
 		// If it is greater, out is 0
 		if (counter > overflow)
-			pwm_reg1 <= 1'b0;
+			pwm1_reg <= 1'b0;
 		else
-			pwm_reg1 <= 1'b0;
+			pwm1_reg <= 1'b1;
 			
-		counter += 1;
+		counter <= counter + 1;
 	end
 end
 
@@ -127,21 +128,20 @@ end
 
 always @(posedge PCLK)
 
-// Always shift buffer into outputs if different
-if (H_output != H_output_buffer &&
-	(!WRITE_EN) && 
-	(PADDR[4:2] != 3'b001))
-begin
-	H_output <= H_output_buffer;
-end
-	
-
 // Default values
 if(~PRESETN)
 begin
 	duty <= 50; // Initialize to 50%
 	H_output_buffer <= 0;
 	H_output <= 0;
+end
+
+// Always shift buffer into outputs if different
+else if (H_output != H_output_buffer &&
+	(!WRITE_EN) && 
+	(PADDR[4:2] != 3'b001))
+begin
+	H_output <= H_output_buffer;
 end
 
 else
@@ -154,12 +154,12 @@ begin
 		
 			3'b000: // Offset 0x00: Write duty cycle
 			begin 
-				duty <= PWRITE[7:0];
+				duty <= PWDATA[7:0];
             end
             
             3'b001: // Offset 0x04: Write HBridge inputs
             begin
-                H_output_buffer <= PWRITE[3:0];
+                H_output_buffer <= PWDATA[3:0];
                 H_output <= 0;
             end
         endcase
@@ -172,23 +172,13 @@ begin
 		
 	        3'b000: // Offset 0x00: Read duty cycle
             begin 
-		        PWRITE[7:0] <= duty;
+		        PRDATA[7:0] <= duty;
 			end
             3'b001: // Offset 0x04: Set HBridge inputs
             begin
-                PWRITE[7:0] <= H_outputs;
+                PRDATA[3:0] <= H_output;
             end
         endcase
-     end
-     else begin
-        /*
-		NOTE: I HAVE NO IDEA WHAT THE F**K THIS IS:
-		
-        overflowReset       <= 1'b0;
-        reset_interrupt     <= 1'b0;
-        reset_capture_sync  <= 1'b0;
-        reset_capture_async <= 1'b0;
-        */
      end
 
 end
