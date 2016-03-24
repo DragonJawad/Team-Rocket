@@ -10,8 +10,9 @@
  \**************************************/
 
 #include <stdio.h>
-#include <inttypes>
-#include <cassert>
+#include <inttypes.h>
+#include <stdlib.h>
+#include <assert.h>
 
 #define APB_BASE_ADDR 0x40050000;
 
@@ -27,28 +28,33 @@ void setPWMDuty(int duty) {
 	assert(duty >= 0 && duty <= 100);
 	
 	// Write to offset 0
-	*((uint32_t *) APB_BASE_ADDR) = duty;
+	volatile uint32_t * addr_ptr = (uint32_t *) APB_BASE_ADDR;
+	*addr_ptr = duty;
 }
 
 // Get the duty cycle
 uint32_t getPWMDuty(void) {
 
 	// Read from offset 0
-	return *((uint32_t *) APB_BASE_ADDR);
+	volatile uint32_t * addr_ptr = (uint32_t *) APB_BASE_ADDR;
+	return *addr_ptr;
 }
 
 // Set the H-Bridge bits
 void setHBridgeInputs(uint32_t H_in) {
 	
-	// Duty should only be 0x0, 0xA, or 0x5
-	assert(
-		H_in == H_BRIDGE_OFF      || 
-		H_in == H_BRIDGE_FORWARD  ||
-		H_in == H_BRIDGE_BACKWARD
-	);
+	// These are invalid values and will harm the H-bridge
+	assert(!(H_in == 0x3));
+	assert(!(H_in == 0xC));
+
+	// First read value to do error checking, offset 4
+	volatile uint32_t * addr_ptr = (uint32_t *) APB_BASE_ADDR;
+	addr_ptr += 1;
 	
 	// Write to offset 4
-	*((uint32_t *) (APB_BASE_ADDR + 4)) = duty;
+	// Write 0 first for safety with h-bridge
+	*addr_ptr = 0;
+	*addr_ptr = H_in;
 }
 
 
@@ -56,18 +62,7 @@ void setHBridgeInputs(uint32_t H_in) {
 uint32_t getHBridgeInputs(void) {
 
 	// Read from offset 4
-	return *((uint32_t *) (APB_BASE_ADDR + 4));
-}
-
-
-int main()
-{
-
-	while( 1 )
-	{
-		setHBridgeInputs(H_BRIDGE_FORWARD);
-		setHBridgeInputs(H_BRIDGE_OFF);
-		setHBridgeInputs(H_BRIDGE_BACKWARD);
-		setHBridgeInputs(H_BRIDGE_OFF);
-	}
+	volatile uint32_t * addr_ptr = (uint32_t *) APB_BASE_ADDR;
+	++addr_ptr;
+	return *addr_ptr;
 }
