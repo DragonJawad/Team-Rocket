@@ -26,6 +26,8 @@ void controller_init(controller_t * controller, mss_spi_slave_t select) {
 	controller->vibration = 0;
 	controller->counter = 0;
 	int i;
+	
+	// Here is a change
 	for (i = 0; i < MAX_BUFFER_SIZE; ++i) {
 		controller->slave_buffer[i] = 0;
 	}
