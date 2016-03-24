@@ -6,6 +6,7 @@
 
 #include <inttypes.h>
 #include "drivers/mss_gpio/mss_gpio.h"
+#include "drivers/mss_spi/mss_spi.h"
 
 #define MAX_BUFFER_SIZE 21
 
@@ -23,7 +24,7 @@ typedef struct controller {
 
 
 // Initialize the controller struct
-void controller_init(controller_t * controller, mss_gpio_id_t select);
+void controller_init(controller_t * controller, mss_spi_slave_t select);
 
 
 /**************************************/
