@@ -1,0 +1,16 @@
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin64\c_ver.exe  -osyn  C:\Users\Ben\Desktop\VehicleController\synthesis\synwork\VehicleController_comp.srs  -prodtype  synplify_pro  -nram -fixsmult -divnmod   -I C:\Users\Ben\Desktop\VehicleController\synthesis\  -I C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib   -v2001  -devicelib  C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v  -encrypt  -pro  -dmgen  C:\Users\Ben\Desktop\VehicleController\synthesis\dm  -ui -fid2 -ram -sharing on -ll 2000 -autosm  -lib work C:\Users\Ben\Desktop\VehicleController\hdl\PWM_Controller.v -lib work C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\mss_tshell.v -lib work C:\Users\Ben\Desktop\VehicleController\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v -lib work C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\MSS_CCC_0\VehicleController_MSS_tmp_MSS_CCC_0_MSS_CCC.v -lib work C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\VehicleController_MSS.v -lib COREAPB3_LIB C:\Users\Ben\Desktop\VehicleController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_muxptob3.v -lib COREAPB3_LIB C:\Users\Ben\Desktop\VehicleController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_iaddr_reg.v -lib COREAPB3_LIB C:\Users\Ben\Desktop\VehicleController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v -lib work C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController\VehicleController.v  -log  C:\Users\Ben\Desktop\VehicleController\synthesis\synlog\VehicleController_compiler.srr 
+rc:1 success:1
+C:\Users\Ben\Desktop\VehicleController\synthesis\synwork\VehicleController_comp.srs|o|1458885002|50476
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v|i|1412951262|72817
+C:\Users\Ben\Desktop\VehicleController\hdl\PWM_Controller.v|i|1458882840|6399
+C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\mss_tshell.v|i|1458872628|12226
+C:\Users\Ben\Desktop\VehicleController\component\Actel\SmartFusionMSS\MSS\2.5.106\mss_comps.v|i|1457905076|11243
+C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\MSS_CCC_0\VehicleController_MSS_tmp_MSS_CCC_0_MSS_CCC.v|i|1458872624|2899
+C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\VehicleController_MSS.v|i|1458872632|19630
+C:\Users\Ben\Desktop\VehicleController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_muxptob3.v|i|1458868757|6765
+C:\Users\Ben\Desktop\VehicleController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_iaddr_reg.v|i|1458868757|3556
+C:\Users\Ben\Desktop\VehicleController\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v|i|1458868757|32806
+C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController\VehicleController.v|i|1458884938|14610
+C:\Users\Ben\Desktop\VehicleController\synthesis\synlog\VehicleController_compiler.srr|o|1458885002|27016
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin\c_ver.exe|i|1412907176|2306560
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin64\c_ver.exe|i|1412907378|5845504

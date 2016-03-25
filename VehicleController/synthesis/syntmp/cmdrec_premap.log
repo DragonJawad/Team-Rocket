@@ -1,0 +1,14 @@
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin64\m_proasic.exe  -prodtype  synplify_pro   -encrypt  -pro  -rundir  C:\Users\Ben\Desktop\VehicleController\synthesis   -part A2F200M3F  -package FBGA484  -grade STD    -globalthreshold 50 -maxfan 24 -opcond COMWC -report_path 0 -RWCheckOnRam 0 -summaryfile C:\Users\Ben\Desktop\VehicleController\synthesis\synlog\report\VehicleController_premap.xml  -oedif  C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController.edn  -conchk_prepass  C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController_cck_prepass.rpt   -freq 100.000   -tcl  C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\mss_tshell_syn.sdc  C:\Users\Ben\Desktop\VehicleController\synthesis\synwork\VehicleController_mult.srs  -flow prepass  -gcc_prepass  -osrd  C:\Users\Ben\Desktop\VehicleController\synthesis\synwork\VehicleController_prem.srd  -qsap  C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController.sap  -devicelib  C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v  -ologparam  C:\Users\Ben\Desktop\VehicleController\synthesis\syntmp\VehicleController.plg  -osyn  C:\Users\Ben\Desktop\VehicleController\synthesis\synwork\VehicleController_prem.srd  -prjdir  C:\Users\Ben\Desktop\VehicleController\synthesis\  -prjname  VehicleController_syn  -log  C:\Users\Ben\Desktop\VehicleController\synthesis\synlog\VehicleController_premap.srr 
+rc:1 success:1
+C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController.edn|o|0|0
+C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController_cck_prepass.rpt|o|0|0
+C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\mss_tshell_syn.sdc|i|1458872628|212
+C:\Users\Ben\Desktop\VehicleController\synthesis\synwork\VehicleController_mult.srs|i|1458885003|11471
+C:\Users\Ben\Desktop\VehicleController\synthesis\synwork\VehicleController_prem.srd|o|1458885004|43233
+C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController.sap|o|1458885004|2818
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\lib\proasic\smartfusion.v|i|1412951262|72817
+C:\Users\Ben\Desktop\VehicleController\synthesis\syntmp\VehicleController.plg|o|1458885003|0
+C:\Users\Ben\Desktop\VehicleController\synthesis\synwork\VehicleController_prem.srd|o|1458885004|43233
+C:\Users\Ben\Desktop\VehicleController\synthesis\synlog\VehicleController_premap.srr|o|1458885004|4683
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin\m_proasic.exe|i|1412952226|12576768
+C:\Libero\Libero_v11.5\Synopsys\synplify_I201403MSP1\bin64\m_proasic.exe|i|1412954416|15337984

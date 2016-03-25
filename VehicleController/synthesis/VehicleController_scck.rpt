@@ -1,0 +1,29 @@
+# Synopsys Constraint Checker(syntax only), version mapact, Build 1346R, built Oct 10 2014
+# Copyright (C) 1994-2014, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+# Written on Fri Mar 25 01:50:03 2016
+
+
+##### DESIGN INFO #######################################################
+
+Top View:                "VehicleController"
+Constraint File(s):      "C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\mss_tshell_syn.sdc"
+
+#Run constraint checker to find more issues with constraints.
+#########################################################################
+
+
+
+No issues found in constraint syntax.
+
+
+
+Clock Summary
+**************
+
+Start       Requested     Requested     Clock        Clock      
+Clock       Frequency     Period        Type         Group      
+----------------------------------------------------------------
+FAB_CLK     20.0 MHz      50.000        declared     clk_group_0
+FCLK        20.0 MHz      50.000        declared     clk_group_0
+================================================================

@@ -1,0 +1,49 @@
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_2 on net PRDATA_2 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_3 on net PRDATA_3 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_4 on net PRDATA_4 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_5 on net PRDATA_5 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_6 on net PRDATA_6 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_7 on net PRDATA_7 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_8 on net PRDATA_8 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_9 on net PRDATA_9 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_10 on net PRDATA_10 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_11 on net PRDATA_11 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_12 on net PRDATA_12 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_13 on net PRDATA_13 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_14 on net PRDATA_14 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_15 on net PRDATA_15 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_16 on net PRDATA_16 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Tristate driver PRDATA_17 on net PRDATA_17 has its enable tied to GND (module PWM) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\component\work\vehiclecontroller_mss\mss_ccc_0\vehiclecontroller_mss_tmp_mss_ccc_0_mss_ccc.v":64:7:64:18|Tristate driver LPXIN_CLKOUT on net LPXIN_CLKOUT has its enable tied to GND (module VehicleController_MSS_tmp_MSS_CCC_0_MSS_CCC) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\component\work\vehiclecontroller_mss\mss_ccc_0\vehiclecontroller_mss_tmp_mss_ccc_0_mss_ccc.v":63:7:63:20|Tristate driver MAINXIN_CLKOUT on net MAINXIN_CLKOUT has its enable tied to GND (module VehicleController_MSS_tmp_MSS_CCC_0_MSS_CCC) 
+@W: MO111 :"c:\users\ben\desktop\vehiclecontroller\component\work\vehiclecontroller_mss\mss_ccc_0\vehiclecontroller_mss_tmp_mss_ccc_0_mss_ccc.v":62:7:62:18|Tristate driver RCOSC_CLKOUT on net RCOSC_CLKOUT has its enable tied to GND (module VehicleController_MSS_tmp_MSS_CCC_0_MSS_CCC) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[16] on net CoreAPB3_0_APBmslave0_PRDATA[16] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[17] on net CoreAPB3_0_APBmslave0_PRDATA[17] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[18] on net CoreAPB3_0_APBmslave0_PRDATA[18] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[19] on net CoreAPB3_0_APBmslave0_PRDATA[19] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[20] on net CoreAPB3_0_APBmslave0_PRDATA[20] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[21] on net CoreAPB3_0_APBmslave0_PRDATA[21] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[22] on net CoreAPB3_0_APBmslave0_PRDATA[22] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[23] on net CoreAPB3_0_APBmslave0_PRDATA[23] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[24] on net CoreAPB3_0_APBmslave0_PRDATA[24] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[25] on net CoreAPB3_0_APBmslave0_PRDATA[25] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[26] on net CoreAPB3_0_APBmslave0_PRDATA[26] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[27] on net CoreAPB3_0_APBmslave0_PRDATA[27] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[28] on net CoreAPB3_0_APBmslave0_PRDATA[28] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[29] on net CoreAPB3_0_APBmslave0_PRDATA[29] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[30] on net CoreAPB3_0_APBmslave0_PRDATA[30] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[31] on net CoreAPB3_0_APBmslave0_PRDATA[31] has its enable tied to GND (module VehicleController) 
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Sequential instance PWM_0.overflow2[23] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Sequential instance PWM_0.overflow2[24] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":165:0:165:5|Sequential instance PWM_0.overflow1[23] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":165:0:165:5|Sequential instance PWM_0.overflow1[24] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Sequential instance PWM_0.overflow2[19] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":165:0:165:5|Sequential instance PWM_0.overflow1[19] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Sequential instance PWM_0.overflow2[18] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Sequential instance PWM_0.overflow2[0] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Sequential instance PWM_0.overflow2[1] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":218:0:218:5|Sequential instance PWM_0.overflow2[17] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":165:0:165:5|Sequential instance PWM_0.overflow1[0] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":165:0:165:5|Sequential instance PWM_0.overflow1[1] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":165:0:165:5|Sequential instance PWM_0.overflow1[17] reduced to a combinational gate by constant propagation
+@W: MO129 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":165:0:165:5|Sequential instance PWM_0.overflow1[18] reduced to a combinational gate by constant propagation

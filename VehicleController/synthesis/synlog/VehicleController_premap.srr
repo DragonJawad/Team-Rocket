@@ -1,0 +1,55 @@
+Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 1346R, Built Oct 10 2014 11:20:09
+Copyright (C) 1994-2014, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+Product Version I-2014.03M-SP1
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 99MB)
+
+Reading constraint file: C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController_MSS\mss_tshell_syn.sdc
+@L: C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController_scck.rpt 
+Printing clock  summary report in "C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController_scck.rpt" file 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 103MB peak: 105MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 103MB peak: 105MB)
+
+
+
+@S |Clock Summary
+****************
+
+Start       Requested     Requested     Clock        Clock      
+Clock       Frequency     Period        Type         Group      
+----------------------------------------------------------------
+FAB_CLK     20.0 MHz      50.000        declared     clk_group_0
+FCLK        20.0 MHz      50.000        declared     clk_group_0
+================================================================
+
+Finished Pre Mapping Phase.
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[16] on net CoreAPB3_0_APBmslave0_PRDATA[16] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[17] on net CoreAPB3_0_APBmslave0_PRDATA[17] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[18] on net CoreAPB3_0_APBmslave0_PRDATA[18] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[19] on net CoreAPB3_0_APBmslave0_PRDATA[19] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[20] on net CoreAPB3_0_APBmslave0_PRDATA[20] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[21] on net CoreAPB3_0_APBmslave0_PRDATA[21] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[22] on net CoreAPB3_0_APBmslave0_PRDATA[22] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[23] on net CoreAPB3_0_APBmslave0_PRDATA[23] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[24] on net CoreAPB3_0_APBmslave0_PRDATA[24] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[25] on net CoreAPB3_0_APBmslave0_PRDATA[25] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[26] on net CoreAPB3_0_APBmslave0_PRDATA[26] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[27] on net CoreAPB3_0_APBmslave0_PRDATA[27] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[28] on net CoreAPB3_0_APBmslave0_PRDATA[28] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[29] on net CoreAPB3_0_APBmslave0_PRDATA[29] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[30] on net CoreAPB3_0_APBmslave0_PRDATA[30] has its enable tied to GND (module VehicleController) 
+@W: MO111 :|Tristate driver CoreAPB3_0_APBmslave0_PRDATA_t[31] on net CoreAPB3_0_APBmslave0_PRDATA[31] has its enable tied to GND (module VehicleController) 
+@N: BN225 |Writing default property annotation file C:\Users\Ben\Desktop\VehicleController\synthesis\VehicleController.sap.
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 49MB peak: 113MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Fri Mar 25 01:50:04 2016
+
+###########################################################]

@@ -1,0 +1,139 @@
+/**************************************\
+ * File Name:     	main.c
+ * Project Name:   	EECS373 Final Project
+ * Created by:     	Adrian Padin
+ * Edited by:		Ben Miron
+ * 					Emily Rowland
+ * 					Jawad Nasser
+ * Start date:     	15 March 2016
+ * Last modified:  	22 March 2016
+\**************************************/
+
+#include <stdio.h>
+#include <inttypes.h>
+#include "drivers/mss_uart/mss_uart.h"
+#include "drivers/mss_gpio/mss_gpio.h"
+#include "pwm.h"
+
+/************************************/
+/******** Define and Globals ********/
+/************************************/
+
+//Define for the RX_BUFF for UART1
+#define RX_BUFF_SIZE    2
+
+
+//UART1 buffer for input
+uint8_t g_rx_buff[RX_BUFF_SIZE];
+uint8_t g_rx_idx = 0;
+
+
+/************************************/
+/******** Interrupt Handlers ********/
+/************************************/
+
+//UART RX Interrupt Handler
+void uart1_rx_handler( mss_uart_instance_t * this_uart ){
+	int data_received = 0;
+    data_received = MSS_UART_get_rx( this_uart, &g_rx_buff, sizeof(g_rx_buff) );
+
+    if(data_received == 1){
+    	printf("Received incomplete data\r\n");
+    }
+
+    uint32_t current_H = getHBridgeInputs();
+    uint32_t new_H;
+
+    if(g_rx_buff[0] & 0x01){
+    	if(g_rx_buff[0] > 128){
+    		setPWMDutyRight(calc_duty(g_rx_buff[0]));
+
+    		newH = current_H & 0xC;
+    		newH += 0x1;
+
+    		setHBridgeInputs(newH);
+    	}
+
+    	else if(g_rx_buff[0] < 128){
+    		setPWMDutyRight(calc_duty(g_rx_buff[0]));
+
+    	}
+    }
+    g_rx_buff[0]
+
+    // printf("Data received! %x\r\n", g_rx_buff[g_rx_idx]);
+}
+
+
+/************************************/
+/*************** MAIN ***************/
+/************************************/
+
+int main() {
+
+	/************************************/
+	/********** INITIALIZATION **********/
+	/************************************/
+
+	// printf("\r\n\r\nHBridge: %x\r\n", (int) getHBridgeInputs());
+
+	setHBridgeInputs(0);
+
+
+	int i = 0;
+	for (i = 0; i < 1000000; ++i);
+
+	/********************************/
+	/********** SETUP UART **********/
+	/********************************/
+
+	MSS_UART_init (
+		&g_mss_uart1,
+		MSS_UART_9600_BAUD,
+		(MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT)
+	);
+
+	//MSS_UART_FIFO_EIGHT_BYTES
+	//MSS_UART_FIFO_SINGLE_BYTE
+	MSS_UART_set_rx_handler
+	(
+		     &g_mss_uart1,
+		     uart1_rx_handler,
+		     0x20
+	);
+
+	/********************************/
+	/********** SETUP GPIO **********/
+	/********************************/
+
+	/*
+	MSS_GPIO_init();
+
+	MSS_GPIO_config
+	(
+		MSS_GPIO_15,
+	    MSS_GPIO_OUTPUT_MODE
+	);
+
+	MSS_GPIO_set_output (MSS_GPIO_15,	1);
+	*/
+
+
+	/*******************************/
+	/********** MAIN LOOP **********/
+	/*******************************/
+
+	while(1) {
+
+
+		//printf("\r\nResponses %d:\r\n", i);
+
+		/* No code needed here, all in interrupt handler */
+
+	}
+
+	// If you've made it this far, something went very very wrong
+	printf("RIP, yer code be ded\r\n");
+
+	return(1);
+}

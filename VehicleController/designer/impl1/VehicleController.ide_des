@@ -1,0 +1,9 @@
+KEY IDE_DES_TOOL "Ide"
+KEY IDE_DES_ADB_PATH "C:\Users\Ben\Desktop\VehicleController\designer\impl1\VehicleController.adb"
+LIST SOURCE_FILES
+VALUE "C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController\VehicleController.pdc;pdc"
+ENDLIST
+LIST OPTIONAL_FILES
+ENDLIST
+LIST VCD_FILES
+ENDLIST

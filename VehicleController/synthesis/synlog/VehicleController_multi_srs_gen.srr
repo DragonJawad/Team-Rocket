@@ -1,0 +1,12 @@
+Synopsys Netlist Linker, version comp201403sp1p1, Build 095R, built Oct  9 2014
+@N|Running in 64-bit mode
+Options changed - recompiling
+@N: NF107 :"C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController\VehicleController.v":9:7:9:23|Selected library: work cell: VehicleController view verilog as top level
+@N: NF107 :"C:\Users\Ben\Desktop\VehicleController\component\work\VehicleController\VehicleController.v":9:7:9:23|Selected library: work cell: VehicleController view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 70MB peak: 71MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Fri Mar 25 01:50:03 2016
+
+###########################################################]

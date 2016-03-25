@@ -1,0 +1,52 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled 
+@N: MF236 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":234:23:234:45|Generating a type div divider 
+@N: MF236 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":181:23:181:45|Generating a type div divider 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MF179 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":196:16:196:36|Found 25 bit by 25 bit '<' comparator, 'pwm1_reg4'
+@N: MF179 :"c:\users\ben\desktop\vehiclecontroller\hdl\pwm_controller.v":249:16:249:36|Found 25 bit by 25 bit '<' comparator, 'pwm2_reg6'
