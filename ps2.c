@@ -21,13 +21,23 @@ typedef struct controller {
 // Initialize the controller struct
 void controller_init(controller_t * controller, mss_spi_slave_t select) {
 
+	// Configure SPI select
+	MSS_SPI_configure_master_mode
+	(
+		&g_mss_spi1,
+		select,
+		MSS_SPI_MODE3,		  // Clock idle high, read on rising edge
+		MSS_SPI_PCLK_DIV_256, // Clock period of 20MHz / 256 ~= 78 KHz
+		MSS_SPI_BLOCK_TRANSFER_FRAME_SIZE
+	);
+
 	// Initialize all values
 	controller->select = select;
 	controller->vibration = 0;
 	controller->counter = 0;
 	int i;
-	
-	// Here is a change
+
+	// Clear slave buffer
 	for (i = 0; i < MAX_BUFFER_SIZE; ++i) {
 		controller->slave_buffer[i] = 0;
 	}
