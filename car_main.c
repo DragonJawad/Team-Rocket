@@ -1,13 +1,14 @@
-/**************************************\
- * File Name:     	main.c
- * Project Name:   	EECS373 Final Project
- * Created by:     	Adrian Padin
- * Edited by:		Ben Miron
- * 					Emily Rowland
- * 					Jawad Nasser
- * Start date:     	15 March 2016
- * Last modified:  	22 March 2016
-\**************************************/
+/********************************************\
+ * File Name:      		pwm.c
+ * Project Name:   		EECS373 Final Project
+ * Created by:     		Jawad Nasser
+ * Modified by:    		Adrian Padin
+ * 			       		Emily Rowland
+ * 				   		Ben Miron
+ * Start date:     		23 March 2016
+ * Last modified:  		28 March 2016
+ * Last modified by:	Ben Miron
+ \*******************************************/
 
 #include <stdio.h>
 #include <inttypes.h>
@@ -19,156 +20,177 @@
 /******** Define and Globals ********/
 /************************************/
 
-//Define for the RX_BUFF for UART1
-#define RX_BUFF_SIZE    2
+// Define for the RX_BUFF for UART1
+#define RX_BUFF_SIZE    4
+
+// Define for the TX_BUFF for UART1
+#define TX_BUFF_SIZE	4
+
+// Define the identifier for this car
+#define CAR_ID			0x01
+
+// Define the address for GPIO
+#define GPIO_ADDR		0x40050000
+
+// Define thresholds to turn on the controller vibration
+#define X_LOW			0
+#define X_HIGH			5000
+
+#define Y_LOW			0
+#define Y_HIGH			5000
 
 
-//UART1 buffer for input
+// UART1 buffer for input
 uint8_t g_rx_buff[RX_BUFF_SIZE];
-uint8_t g_rx_idx = 0;
+
+// Declare a global count
+// This is used to stop the car if no data is received
+uint32_t count = 0;
+
+// UART1 buffer for output
+uint8_t g_tx_buff[TX_BUFF_SIZE];
+
+// Declare globals for the ADC
+ace_channel_handle_t adc_handler2;
+ace_channel_handle_t adc_handler3;
 
 
-/************************************/
-/******** Interrupt Handlers ********/
-/************************************/
+/* ***************************************************** */
+/* ***************** Interrupt Handlers **************** */
+/* ***************************************************** */
 
 
-//UART RX Interrupt Handler
+/* ************************************
+*	UART RX Interrupt Handler
+*	The values should be sent in the form
+*	g_rx_buff[0] = CAR ID
+*	g_rx_buff[1] = first side of the car (analog stick)
+*	g_rx_buff[2] = second side of the car (analog stick)
+************************************ */
 void uart1_rx_handler( mss_uart_instance_t * this_uart ){
 	int data_received = 0;
 
-	//data_received = the number of bytes that were saved into g_rx_buff
-	//This value should be 2, since we are receiving 2 bytes of data at a time
+	// data_received = the number of bytes that were saved into g_rx_buff
+	// This value should be 2, since we are receiving 2 bytes of data at a time
     data_received = MSS_UART_get_rx( this_uart, g_rx_buff, sizeof(g_rx_buff) );
 
-
-    //If this value is 0, an interrupt should NOT have been thrown
-    if (data_received == 0){
-    	printf("I'm not sure how this happened, but you probably should check it out.\r\n");
+    // If data_received is not 8, we received the incorrect bytes
+    if (data_received != RX_BUFF_SIZE){
+    	printf("Received incorrect number of bytes.\r\n");
     }
 
-    //If we received more than 2 bytes, there is a problem with the uart input
-    else if (data_received > 2){
-    	printf("No idea how this happened either. Check it out.\r\n");
+
+    // Otherwise, the data was received correctly
+    // Now, check if the first byte is the correct identifier (CAR 1)
+    else if(g_rx_buff[0] != CAR_ID){
+    	printf("Different car\r\n");
     }
 
-    /*
-	//The data was received at least partially correctly
-    else if(data_received == 1){
-        		printf("received incomplete data, processing anyway\r\n");
-    }
-	*/
+    // Otherwise, it should be this car
+    else if(g_rx_buff[0] == CAR_ID){
 
-    //Otherwise, the data was received correctly
+    	// Print the data that has been received
+    	printf("\nData received! %x\r\n", g_rx_buff[1]);
+    	printf("Second byte received: %x\r\n", g_rx_buff[2]);
+
+
+    	setPWMDuty(g_rx_buff[1]);
+    	setHBridgeInputs(g_rx_buff[1]);
+
+    	setPWMDuty(g_rx_buff[2]);
+    	setHBridgeInputs(g_rx_buff[2]);
+    }
+
     else{
-
-    	//If we are trying to control the right wheel with the first byte (LSB is 0)
-		if(!(g_rx_buff[0] & 0x01)){
-
-			setPWMDutyRight(calc_duty(g_rx_buff[0]));
-			setHBridgeInputs(calc_HBridgeRight(g_rx_buff[0]));
-		}
-
-		//Trying to control the left wheel with the first byte (LSB is 1)
-		if(g_rx_buff[0] & 0x01){
-
-			setPWMDutyLeft(calc_duty(g_rx_buff[0]));
-			setHBridgeInputs(calc_HBridgeLeft(g_rx_buff[0]));
-
-		}
-
-		//Trying to control the right wheel with the second byte (LSB is 0)
-		/*
-		if(!(g_rx_buff[1] & 0x01)){
-
-			setPWMDutyRight(calc_duty(g_rx_buff[1]));
-			setHBridgeInputs(calc_HBridgeRight(g_rx_buff[1]));
-		}
-
-		//Trying to control the left wheel with the second byte (LSB is 1)
-		if(g_rx_buff[1] & 0x01){
-
-			setPWMDutyLeft(calc_duty(g_rx_buff[1]));
-			setHBridgeInputs(calc_HBridgeLeft(g_rx_buff[1]));
-
-		}
-		*/
+    	printf("Made it to the end of the interrupt handler\r\n");
     }
-    printf("Data received! %x\r\n", g_rx_buff[g_rx_idx]);
-    uint32_t pwmDuty = getPWMDuty();
-    printf("HBridge Inputs: %x | Left Duty: %x | Right duty: %x\r\n", getHBridgeInputs() & 0x0F,
-    		(pwmDuty & PWM_RIGHT_MASK) >> 8, pwmDuty & PWM_LEFT_MASK);
+
+    count = 0;
 }
 
 
-
-
-/************************************/
-/*************** MAIN ***************/
-/************************************/
+/* ***************************************************** */
+/* ********************** MAIN ************************* */
+/* ***************************************************** */
 
 int main() {
 
-	/************************************/
-	/********** INITIALIZATION **********/
-	/************************************/
+	/* ******************************** */
+	/* ******** INITIALIZATION ******** */
+	/* ******************************** */
 
 	// printf("\r\n\r\nHBridge: %x\r\n", (int) getHBridgeInputs());
-	setPWMDutyRight(0);
-	setPWMDutyLeft(0);
-	setHBridgeInputs(0);
+	initHBridge();
+	initPWM();
 
+	// Init the ADC for the accelerometers
+	ACE_init();
+
+	// Initialize the ADC handlers
+	adc_handler2 = ACE_get_channel_handle((const uint8_t)"ADCDirectInput_2");
+	adc_handler3 = ACE_get_channel_handle((const uint8_t *)"ADCDirectInput_3");
+
+	uint16_t adcx, adcy;
 
 	int i = 0;
 	for (i = 0; i < 1000000; ++i);
 
-	/********************************/
-	/********** SETUP UART **********/
-	/********************************/
+	/* **************************** */
+	/* ******** SETUP UART ******** */
+	/* **************************** */
 
 	MSS_UART_init (
 		&g_mss_uart1,
-		MSS_UART_9600_BAUD,
+		MSS_UART_57600_BAUD,
 		(MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT)
 	);
 
-	//MSS_UART_FIFO_EIGHT_BYTES
-	//MSS_UART_FIFO_SINGLE_BYTE
+	// MSS_UART_FIFO_EIGHT_BYTES
+	// MSS_UART_FIFO_SINGLE_BYTE
 	MSS_UART_set_rx_handler
 	(
 		     &g_mss_uart1,
 		     uart1_rx_handler,
-		     0x20
+		     MSS_UART_FIFO_FOUR_BYTES
 	);
 
-	/********************************/
-	/********** SETUP GPIO **********/
-	/********************************/
 
-	/*
-	MSS_GPIO_init();
-
-	MSS_GPIO_config
-	(
-		MSS_GPIO_15,
-	    MSS_GPIO_OUTPUT_MODE
-	);
-
-	MSS_GPIO_set_output (MSS_GPIO_15,	1);
-	*/
-
-
-	/*******************************/
-	/********** MAIN LOOP **********/
-	/*******************************/
+	/* *************************** */
+	/* ******** MAIN LOOP ******** */
+	/* *************************** */
 
 	while(1) {
 
+		// Reset the RX Buffer
+		g_tx_buff[1] &= 0x00;
 
-		//printf("\r\nResponses %d:\r\n", i);
+		// Take ADC inputs here
+		// X is connected to ADC2, Y to ADC3
+		adcx = ACE_get_ppe_sample(adc_handler2);
+		adcy = ACE_get_ppe_sample(adc_handler3);
 
-		/* No code needed here, all in interrupt handlers */
+		// If the Y value is outside the threshold, turn on vibration
+		if(adcy > Y_HIGH || adcy < Y_LOW){
+			g_tx_buff[1] |= 0x01;
+		}
 
+		// If the X value is outside the threshold, turn on vibrations
+		if(adcx > X_HIGH || adcx < X_LOW){
+			g_tx_buff[1] |= 0x01;
+		}
+
+		//Transmit the vibration data via xBee connected to UART1
+		MSS_UART_polled_tx(&g_mss_uart1, g_tx_buff, sizeof(g_tx_buff));
+
+		// If the count makes it to 1000000, turn the car off
+		// (No signals were received in this time)
+
+		if(count == 1000000){
+			initHBridge();
+			initPWM();
+		}
+
+		count += 1;
 	}
 
 	// If you've made it this far, something went very very wrong
