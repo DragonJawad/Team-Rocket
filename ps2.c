@@ -143,6 +143,9 @@ void full_capture(controller_t * controller) {
 // Perform all setup tasks on this controller
 void setup_all(controller_t * controller) {
 
+	// Poll once for fun
+	digital_capture(controller);
+
 	// Select controller
 	MSS_SPI_set_slave_select( &g_mss_spi1, controller->select );
 
