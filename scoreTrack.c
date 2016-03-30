@@ -76,8 +76,20 @@ SCORETRACK_updateCycle() {
 		}
 		SCREENCONTROL_printStr(spaceBuffer);
 
-		char str2[50] = "Test message!";
-		SCREENCONTROL_printStr(str2);
+		// Draws a line all the way down the center of the screen [(79,0) to (79,127)]
+			// Technically should draw another one at x=80, but not necessary atm
+		SCREENCONTROL_printLine(79, 0, 79, 127);
+
+		// Write the score on the left side of the screen
+			// Remember that (0,0) is in the bottom left
+			// Center at (40, 64), need offset of (-16, -36) due to character size
+			//		4*6 (4 characters of width of 6 pixels to left) and 3.5*8
+		SCREENCONTROL_printLargeNum(scoreCountA, 16, 127-36);
+
+		// Placeholder for score of second team on right side
+			// Centered at same spot as first num but 80 pixels (half of screen width) over
+		SCREENCONTROL_printLargeNum(0, 16+80, 127-36);
+
 
 		// Keep track of the new last printed score
 		lastScorePrinted = scoreCountA;
