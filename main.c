@@ -14,6 +14,14 @@
 #include "drivers/mss_uart/mss_uart.h"
 #include "drivers/mss_gpio/mss_gpio.h"
 #include "ps2.h"
+#include "light_show.h"
+
+
+const mss_gpio_id_t BLUE = MSS_GPIO_0;
+const mss_gpio_id_t MAIZE = MSS_GPIO_1;
+const mss_gpio_id_t START = MSS_GPIO_2;
+const mss_gpio_id_t OFF = MSS_GPIO_3;
+
 
 /********** GLOBAL VARIABLES **********/
 
@@ -45,10 +53,10 @@ void uart1_rx_handler( mss_uart_instance_t * this_uart ){
 
 		// Other two bytes are unused
 		num_bytes = MSS_UART_get_rx( this_uart, rx_buff, sizeof(rx_buff) );
+
+		//printf("Got some XBEE data: car %x, value %x\r\n", car_select, rx_buff[0]);
+
 	}
-
-	printf("Got some XBEE data\r\n");
-
     return;
 }
 
@@ -90,19 +98,9 @@ int main() {
     );
 
 
-    /********** SETUP GPIO **********/
+    /********** SETUP LIGHT SHOW **********/
 
-    /*
-    MSS_GPIO_init();
-
-    MSS_GPIO_config
-    (
-        MSS_GPIO_15,
-        MSS_GPIO_OUTPUT_MODE
-    );
-
-    MSS_GPIO_set_output (MSS_GPIO_15,   1);
-    */
+    init_lights();
 
 
     /********** SETUP CONTROLLERS **********/
@@ -111,17 +109,17 @@ int main() {
 
     // Initialize controllers here
     controller_t controller1;
-    //controller_t controller2;
+    controller_t controller2;
     //controller_t controller3;
     //controller_t controller4;
 
     controller_init(&controller1, MSS_SPI_SLAVE_1);
-    //controller_init(&controller2, MSS_SPI_SLAVE_2);
+    controller_init(&controller2, MSS_SPI_SLAVE_2);
     //controller_init(&controller3, MSS_SPI_SLAVE_3);
     //controller_init(&controller4, MSS_SPI_SLAVE_4);
 
     setup_all(&controller1);
-    //setup_all(&controller2);
+    setup_all(&controller2);
     //setup_all(&controller3);
     //setup_all(&controller4);
 
@@ -129,7 +127,7 @@ int main() {
     /********** DATA SENT TO CARS **********/
 
     uint8_t tx_buff_1[4] = { 1, 0, 0, 0 };
-    //uint8_t tx_buff_2[4] = { 2, 0, 0, 0 };
+    uint8_t tx_buff_2[4] = { 2, 0, 0, 0 };
     //uint8_t tx_buff_3[4] = { 3, 0, 0, 0 };
     //uint8_t tx_buff_4[4] = { 4, 0, 0, 0 };
 
@@ -142,15 +140,16 @@ int main() {
         /********** CAPTURE CONTROLLER DATA ********/
 
         full_capture(&controller1);
-        //full_capture(&controller2);
+        full_capture(&controller2);
         //full_capture(&controller3);
         //full_capture(&controller4);
 
 
         printf("\r\nResponses %d:\r\n", i);
-        int j; for (j = 0; j < 16; ++j) {
-            printf("Buffer[%d]: %d\r\n", j, (unsigned int) flip(controller1.slave_buffer[j]));
-        }
+        int j;
+        //for (j = 0; j < 5; ++j) {
+        //    printf("Buffer[%d]: %d\r\n", j, (unsigned int) flip(controller1.slave_buffer[j]));
+        //}
 
 
         /********** SEND DATA TO CARS ********/
@@ -159,11 +158,16 @@ int main() {
         tx_buff_1[1] = flip(controller1.slave_buffer[3]) | 1;
         tx_buff_1[2] = flip(controller1.slave_buffer[1]) & 0xfe;
 
+        // Decide which data to send
+        tx_buff_2[1] = flip(controller2.slave_buffer[3]) | 1;
+        tx_buff_2[2] = flip(controller2.slave_buffer[1]) & 0xfe;
+
         // Debugging
         printf("sending: %x, %x, %x\r\n", tx_buff_1[0], tx_buff_1[1], tx_buff_1[2]);
+        printf("sending: %x, %x, %x\r\n", tx_buff_2[0], tx_buff_2[1], tx_buff_2[2]);
 
-        MSS_UART_polled_tx(&g_mss_uart1, tx_buff_1, sizeof(tx_buff_1));
-        //MSS_UART_polled_tx(&g_mss_uart1, tx_buff_2, sizeof(tx_buff_2));
+        MSS_UART_polled_tx(&g_mss_uart1, tx_buff_1, 4);
+        MSS_UART_polled_tx(&g_mss_uart1, tx_buff_2, 4);
         //MSS_UART_polled_tx(&g_mss_uart1, tx_buff_3, sizeof(tx_buff_3));
         //MSS_UART_polled_tx(&g_mss_uart1, tx_buff_4, sizeof(tx_buff_4));
 
@@ -172,11 +176,24 @@ int main() {
 
 		// Data is updated automagically by interrupts
         set_vibration(&controller1, vibration[1], 100);
-        //set_vibration(&controller2, vibration[2], 100);
+        set_vibration(&controller2, vibration[2], 100);
         //set_vibration(&controller3, vibration[3], 100);
         //set_vibration(&controller4, vibration[4], 100);
 
-		
+		if (controller1.slave_buffer[10] > 0) {
+			light_show(BLUE);
+		}
+		else if (controller1.slave_buffer[9] > 0) {
+			light_show(MAIZE);
+		}
+		else if (controller1.slave_buffer[8] > 0) {
+			light_show(START);
+		}
+		else {
+			light_show(OFF);
+		}
+
+
 		/********** CHECK SCORING STATUS **********/
 
         j = 0; for (j = 0; j < 10000; ++j); // Delay (can be shortened if necessary)
