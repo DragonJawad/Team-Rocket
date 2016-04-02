@@ -6,8 +6,9 @@
 #define PIN 6
 
 #define S1 5
-
 #define S2 4
+#define S3 3
+#define S4 2
 
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = Arduino pin number (most are valid)
@@ -32,40 +33,61 @@ void setup() {
      Serial.begin(9600);
 pinMode(S1, INPUT_PULLUP);
 pinMode(S2, INPUT_PULLUP);
+pinMode(S3, INPUT_PULLUP);
+pinMode(S4, INPUT_PULLUP);
 
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
 
-
 }
 
 void loop() {
+int lastlastS1=0;
+int lastlastS2=0;
+int lastS1=0;
+int lastS2=0;
+int lastlastS3=0;
+int lastlastS4=0;
+int lastS3=0;
+int lastS4=0;
+
+//delay(5);
   while(1){
- if(digitalRead(S1) && digitalRead(S2)){
-    Serial.println(digitalRead(S1));
-    Serial.println(digitalRead(S2));
+ //delay(1);  
+ if(digitalRead(S3) && !digitalRead(S4)&& lastlastS3 && !lastlastS4 && lastS3 && !lastS4){
+    Serial.println(digitalRead(S3));
+    Serial.println(digitalRead(S4));
     startShow(0);
     
     break;
   }
- else if(digitalRead(S1) && !digitalRead(S2)){
+ else if(digitalRead(S1) && !digitalRead(S2)&& lastlastS1 && !lastlastS2 && lastS1 && !lastS2){
     Serial.println(digitalRead(S1));
     Serial.println(digitalRead(S2));
     startShow(1);
     break;
  }
- else if(!digitalRead(S1) && digitalRead(S2)){
+ else if(!digitalRead(S1) && digitalRead(S2)&& !lastlastS1 && lastlastS2 && !lastS1 && lastS2){
     Serial.println(digitalRead(S1));
     Serial.println(digitalRead(S2));
     startShow(2);
     break;
  }
- else if(!digitalRead(S1) && !digitalRead(S2)){
-    Serial.println(digitalRead(S1));
-    Serial.println(digitalRead(S2));
+ else if(!digitalRead(S3) && digitalRead(S4) && !lastlastS3 && lastlastS4 && !lastS3 && lastS4){
+    Serial.println(digitalRead(S3));
+    Serial.println(digitalRead(S4));
     startShow(3);
     break;
  }
+
+lastlastS1=lastS1;
+lastlastS2=lastS2;
+lastS1=digitalRead(S1);
+lastS2=digitalRead(S2);
+lastlastS3=lastS3;
+lastlastS4=lastS4;
+lastS3=digitalRead(S3);
+lastS4=digitalRead(S4);
   /* int sensorValue0 = analogRead(A0);
   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
   float voltage0 = sensorValue0 * (5.0 / 1023.0);
@@ -182,6 +204,7 @@ void startShow(int i) {
     case 3: colorWipe(strip.Color(255, 0, 0), 10); // Red
              colorWipe(strip.Color(255,255,0), 10); // Yellow
              theaterChase(strip.Color(0, 255, 0), 40); // Green
+              colorWipe(strip.Color(0, 0, 0), 1); 
             break;
     case 4: rainbowCycle(20);
             colorWipe(strip.Color(0, 0, 0), 1); 
