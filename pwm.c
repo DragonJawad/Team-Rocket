@@ -42,17 +42,20 @@ uint32_t calc_duty(uint8_t input){
 
 //Calculates the H Bridge Inputs for the right side of the car
 //Expects the value to be in the form 4'b1100
-uint32_t calc_HBridgeRight(uint8_t input){
+uint32_t calc_HBridgeRight(uint8_t input, uint8_t buff_val){
 
-	if(input > 128){
-		return input | 0x1;
+	if(buff_val > 128){
+		// printf("Right return 1: %x\r\n", (input | 0x1));
+		return (input | 0x1);
 	}
 
-	else if(input < 128){
-		return input | 0x2;
+	else if(buff_val < 128){
+		// printf("Right return 2: %x\r\n", (input | 0x2));
+		return (input | 0x2);
 	}
 
 	else{
+		// printf("Right return 3: %x\r\n", (input | 0x2));
 		return input;
 	}
 }
@@ -62,14 +65,14 @@ uint32_t calc_HBridgeRight(uint8_t input){
 
 //Calculates the H Bridge Inputs for the left side of the car
 //Expects the value to be in the form 4'b0011
-uint32_t calc_HBridgeLeft(uint8_t input){
+uint32_t calc_HBridgeLeft(uint8_t input, uint8_t buff_val){
 
-	if(input > 128){
-		return input | 0x8;
+	if(buff_val > 128){
+		return (input | 0x8);
 	}
 
-	else if(input < 128){
-		return input | 0x4;
+	else if(buff_val < 128){
+		return (input | 0x4);
 	}
 
 	else{
@@ -170,14 +173,16 @@ void setHBridgeInputs(uint8_t buff_val) {
 
 	// Read the current H-Bridge valuess
 	uint32_t targetVal = *addr_ptr;
-	
+	targetVal &= 0x0000000F;
+
+	printf("targetVal = %x\r\n", targetVal);
 
 	//If we are trying to control the right wheel
 	if(!(buff_val & 0x01)){
 
 
 		//Calculate the new H-Bridge values
-		targetVal = calc_HBridgeRight((uint8_t)(targetVal & H_BRIDGE_RIGHT_MASK));
+		targetVal = (uint32_t)calc_HBridgeRight((uint8_t)(targetVal & H_BRIDGE_RIGHT_MASK), buff_val);
 
 
 	} // if(!(buff_val & 0x01))
@@ -187,7 +192,7 @@ void setHBridgeInputs(uint8_t buff_val) {
 	else if(buff_val & 0x01){
 
 		//Calculate the new H-Bridge values
-		targetVal = calc_HBridgeRight((uint8_t)(targetVal & H_BRIDGE_LEFT_MASK));
+		targetVal = (uint32_t)calc_HBridgeLeft((uint8_t)(targetVal & H_BRIDGE_LEFT_MASK), (buff_val & 0xFE));
 
 
 	} // else if(buff_val & 0x01)
@@ -205,7 +210,7 @@ void setHBridgeInputs(uint8_t buff_val) {
 
 
 	// Print the new H_in cycle value
-	printf("setHBridgeInputs Right: %x\r\n", (unsigned int)targetVal);
+	printf("setHBridgeInputs: %x\r\n", (unsigned int)targetVal);
 
 	// Write 0 first for safety with h-bridge
 	// *addr_ptr = 0;

@@ -1,5 +1,5 @@
 /********************************************\
- * File Name:      		pwm.c
+ * File Name:      		pwm.h
  * Project Name:   		EECS373 Final Project
  * Created by:     		Jawad Nasser
  * Modified by:    		Adrian Padin

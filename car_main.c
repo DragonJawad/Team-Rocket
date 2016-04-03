@@ -1,5 +1,5 @@
 /********************************************\
- * File Name:      		pwm.c
+ * File Name:      		main.c
  * Project Name:   		EECS373 Final Project
  * Created by:     		Jawad Nasser
  * Modified by:    		Adrian Padin
@@ -15,6 +15,7 @@
 #include "drivers/mss_uart/mss_uart.h"
 #include "drivers/mss_gpio/mss_gpio.h"
 #include "pwm.h"
+#include "drivers/mss_ace/mss_ace.h"
 
 /************************************/
 /******** Define and Globals ********/
@@ -72,11 +73,11 @@ void uart1_rx_handler( mss_uart_instance_t * this_uart ){
 
 	// data_received = the number of bytes that were saved into g_rx_buff
 	// This value should be 2, since we are receiving 2 bytes of data at a time
-    data_received = MSS_UART_get_rx( this_uart, g_rx_buff, sizeof(g_rx_buff) );
+    data_received = MSS_UART_get_rx( this_uart, g_rx_buff, RX_BUFF_SIZE );
 
     // If data_received is not 8, we received the incorrect bytes
     if (data_received != RX_BUFF_SIZE){
-    	printf("Received incorrect number of bytes.\r\n");
+    	printf("Received incorrect number of bytes. %d\r\n", (unsigned int)data_received);
     }
 
 
@@ -127,7 +128,7 @@ int main() {
 	ACE_init();
 
 	// Initialize the ADC handlers
-	adc_handler2 = ACE_get_channel_handle((const uint8_t)"ADCDirectInput_2");
+	adc_handler2 = ACE_get_channel_handle((const uint8_t *)"ADCDirectInput_2");
 	adc_handler3 = ACE_get_channel_handle((const uint8_t *)"ADCDirectInput_3");
 
 	uint16_t adcx, adcy;
@@ -179,13 +180,15 @@ int main() {
 			g_tx_buff[1] |= 0x01;
 		}
 
-		//Transmit the vibration data via xBee connected to UART1
-		MSS_UART_polled_tx(&g_mss_uart1, g_tx_buff, sizeof(g_tx_buff));
+		//Transmit the vibration data via xBee connected to UART1 if the value is non-zero
+		if(g_tx_buff[1] == 0x01){
+			MSS_UART_polled_tx(&g_mss_uart1, g_tx_buff, sizeof(g_tx_buff));
+		}
 
 		// If the count makes it to 1000000, turn the car off
 		// (No signals were received in this time)
 
-		if(count == 1000000){
+		if(count == 10000000){
 			initHBridge();
 			initPWM();
 		}
