@@ -1,19 +1,22 @@
-// PS2 Header File
-// ps2.h
+/**************************************\
+ * File Name:      ps2.h
+ * Project Name:   EECS373 Final Project
+ * Created by:     Adrian Padin
+ * Start date:     22 March 2016
+ * Last modified:  4 April 2016
+\**************************************/
 
 #ifndef PS2_H
 #define PS2_H
 
 #include <inttypes.h>
-#include "drivers/mss_gpio/mss_gpio.h"
 #include "drivers/mss_spi/mss_spi.h"
 
 #define MAX_BUFFER_SIZE 21
+#define BUFFER_SIZE 16
 
 
-/***************************************/
 /********** CONTROLLER STRUCT **********/
-/***************************************/
 
 typedef struct controller {
 	int counter;
@@ -27,17 +30,13 @@ typedef struct controller {
 void controller_init(controller_t * controller, mss_spi_slave_t select);
 
 
-/**************************************/
 /********** HELPER FUNCTIONS **********/
-/**************************************/
 
 // Flip the bits of an 8-bit value
 uint8_t flip(uint8_t value);
 
 
-/***************************************/
 /********** COMMAND FUNCTIONS **********/
-/***************************************/
 
 // Poll for digital button values
 void digital_capture(controller_t * controller);

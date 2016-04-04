@@ -1,22 +1,14 @@
-// PS2 Source File
-// ps2.c
+/**************************************\
+ * File Name:      ps2.c
+ * Project Name:   EECS373 Final Project
+ * Created by:     Adrian Padin
+ * Start date:     22 March 2016
+ * Last modified:  4 April 2016
+\**************************************/
 
 #include "ps2.h"
-#include "drivers/mss_spi/mss_spi.h"
-#include "drivers/mss_gpio/mss_gpio.h"
 
-/***************************************/
 /********** CONTROLLER STRUCT **********/
-/***************************************/
-
-/* Struct definition for reference
-typedef struct controller {
-	int counter;
-	mss_spi_slave_t select;
-	uint8_t vibration;
-	uint8_t slave_buffer[MAX_BUFFER_SIZE];
-} controller_t;
-*/
 
 // Initialize the controller struct
 void controller_init(controller_t * controller, mss_spi_slave_t select) {
@@ -43,11 +35,7 @@ void controller_init(controller_t * controller, mss_spi_slave_t select) {
 	}
 }
 
-
-
-/**************************************/
 /********** HELPER FUNCTIONS **********/
-/**************************************/
 
 // Flip the bits of an 8-bit value
 uint8_t flip(uint8_t value) {
@@ -66,11 +54,7 @@ uint8_t flip(uint8_t value) {
 
 
 
-
-
-/***************************************/
 /********** COMMAND FUNCTIONS **********/
-/***************************************/
 
 // Poll for just digital values
 // static void digital_poll(uint8_t * slave_buffer);
