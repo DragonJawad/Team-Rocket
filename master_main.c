@@ -19,41 +19,53 @@
 
 /********** GLOBAL VARIABLES **********/
 
-uint8_t vibration[5] = {0, 0, 0, 0, 0}; // Holder for vibration data (1-indexed)
+// Global controller structs
+controller_t controller1;
+controller_t controller2;
+//controller_t controller3;
+//controller_t controller4;
 
 
 /********** INTERRUPT HANDLERS **********/
 
 // UART RX Interrupt Handler
-void uart1_rx_handler( mss_uart_instance_t * this_uart ){
+void xbee_receive_data( mss_uart_instance_t * this_uart ){
 
-    uint8_t rx_buff[4];
+    uint8_t tx_buff; // keep the data buffer aligned
 
     // Read in data from rx_buff
-    int num_bytes = MSS_UART_get_rx( this_uart, rx_buff, sizeof(rx_buff) );
+	int num_bytes = MSS_UART_get_rx( this_uart, tx_buff, 4 );
+	assert(num_bytes == 4);
 
-	while (num_bytes > 0) {
-		
-		// Bytes should come in groups of four
-		//assert(num_bytes == 4);
-	
-		// First byte should be the ID of the car (1, 2, 3, or 4)
-		int car_select = rx_buff[0];
-		//assert(car_select > 0 && car_select <= 4);
+	int car_select = rx_buff[0];
+	int vibration = rx_buff[1];
 
-		// Second byte is the vibration value
-		// Set vibration values accordingly
-		vibration[car_select] = rx_buff[1];
-
-		// Other two bytes are unused
-		num_bytes = MSS_UART_get_rx( this_uart, rx_buff, sizeof(rx_buff) );
-
-		//printf("Got some XBEE data: car %x, value %x\r\n", car_select, rx_buff[0]);
-
+	// Set the vibration value
+	switch (car_select) {
+		case 1: set_vibration(&controller1, vibration, 100); break;
+		case 2: set_vibration(&controller2, vibration, 100); break;
+		case 3: set_vibration(&controller3, vibration, 100); break;
+		case 4: set_vibration(&controller4, vibration, 100); break;
+		default: break;
 	}
-    return;
+	
+	//printf("Got some XBEE data: car %x, value %x\r\n", car_select, rx_buff[0]);
 }
 
+// Send data to the cars (not an irq but may become one later)
+void send_data_to_car(controller_t * controller) {
+	
+	// Data sent to cars
+	uint8_t tx_buff[4] = { 	controller->select,
+							flip(controller->slave_buffer[3]),
+							flip(controller->slave_buffer[1]),
+							0 };
+
+	// Debugging
+	printf("sending: %x, %x, %x\r\n", tx_buff[0], tx_buff[1], tx_buff[2]);
+
+    MSS_UART_polled_tx(&g_mss_uart1, tx_buff, 4);
+}
 
 
 
@@ -62,7 +74,7 @@ int main() {
 
     /********** INITIALIZATION **********/
 
-    int i = 0;
+    int i = 0, j = 0;
 	
 
     /********** SETUP UART **********/
@@ -73,12 +85,11 @@ int main() {
         (MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT)
     );
 
-
     // Interrupt handler for incoming XBee data
     MSS_UART_set_rx_handler
     (
         &g_mss_uart1,
-        uart1_rx_handler,
+        xbee_receive_data,
         MSS_UART_FIFO_FOUR_BYTES
     );
 
@@ -92,12 +103,6 @@ int main() {
 
     MSS_SPI_init( &g_mss_spi1 );
 
-    // Initialize controllers here
-    controller_t controller1;
-    controller_t controller2;
-    //controller_t controller3;
-    //controller_t controller4;
-
     controller_init(&controller1, MSS_SPI_SLAVE_1);
     controller_init(&controller2, MSS_SPI_SLAVE_2);
     //controller_init(&controller3, MSS_SPI_SLAVE_3);
@@ -108,82 +113,58 @@ int main() {
     //setup_all(&controller3);
     //setup_all(&controller4);
 
-
-    /********** DATA SENT TO CARS **********/
-
-    uint8_t tx_buff_1[4] = { 1, 0, 0, 0 };
-    uint8_t tx_buff_2[4] = { 2, 0, 0, 0 };
-    //uint8_t tx_buff_3[4] = { 3, 0, 0, 0 };
-    //uint8_t tx_buff_4[4] = { 4, 0, 0, 0 };
-
-
+	
     /********** LOOP **********/
 
     for (i = 0; 1; ++i) {
 
-		// Counter
-	    int j;
-
-
         /********** CAPTURE CONTROLLER DATA ********/
-
         full_capture(&controller1);
         full_capture(&controller2);
         //full_capture(&controller3);
         //full_capture(&controller4);
 
 
-        printf("\r\nResponses %d:\r\n", i);
+        //printf("\r\nResponses %d:\r\n", i);
         //for (j = 0; j < 5; ++j) {
         //    printf("Buffer[%d]: %d\r\n", j, (unsigned int) flip(controller1.slave_buffer[j]));
         //}
 
 
         /********** SEND DATA TO CARS ********/
+        send_data_to_car(&controller1);
+        send_data_to_car(&controller2);
+        //send_data_to_car(&controller3);
+        //send_data_to_car(&controller4);
 
-        // Decide which data to send
-        tx_buff_1[1] = flip(controller1.slave_buffer[3]) | 1;
-        tx_buff_1[2] = flip(controller1.slave_buffer[1]) & 0xfe;
+		// Vibration data is updated automagically by interrupts
 
-        // Decide which data to send
-        tx_buff_2[1] = flip(controller2.slave_buffer[3]) | 1;
-        tx_buff_2[2] = flip(controller2.slave_buffer[1]) & 0xfe;
-
-        // Debugging
-        printf("sending: %x, %x, %x\r\n", tx_buff_1[0], tx_buff_1[1], tx_buff_1[2]);
-        printf("sending: %x, %x, %x\r\n", tx_buff_2[0], tx_buff_2[1], tx_buff_2[2]);
-
-        MSS_UART_polled_tx(&g_mss_uart1, tx_buff_1, 4);
-        MSS_UART_polled_tx(&g_mss_uart1, tx_buff_2, 4);
-        //MSS_UART_polled_tx(&g_mss_uart1, tx_buff_3, sizeof(tx_buff_3));
-        //MSS_UART_polled_tx(&g_mss_uart1, tx_buff_4, sizeof(tx_buff_4));
-
-
-        /********** CHANGE VIBRATION DATA **********/
-
-		// Data is updated automagically by interrupts
-        set_vibration(&controller1, vibration[1], 100);
-        set_vibration(&controller2, vibration[2], 100);
-        //set_vibration(&controller3, vibration[3], 100);
-        //set_vibration(&controller4, vibration[4], 100);
-
+		
+		// Testing out the light shows
+		/*
 		if (controller1.slave_buffer[10] > 0) {
-			light_show(BLUE_SHOW);
+			light_show(LIGHTS_BLUE);
 		}
 		else if (controller1.slave_buffer[9] > 0) {
-			light_show(MAIZE);
+			light_show(LIGHTS_MAIZE);
 		}
 		else if (controller1.slave_buffer[8] > 0) {
-			light_show(START);
+			light_show(LIGHTS_START);
 		}
 		else {
-			light_show(OFF);
+			light_show(LIGHTS_OFF);
 		}
-
+		//*/
 
 		/********** CHECK SCORING STATUS **********/
 
-        j = 0; for (j = 0; j < 10000; ++j); // Delay (can be shortened if necessary)
+		
+		
+		
+		
+		
+		
+        for (j = 0; j < 10000; ++j); // Delay
     }
 
     // If you've made it this far, something went wrong

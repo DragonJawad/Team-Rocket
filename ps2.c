@@ -11,7 +11,7 @@
 /********** CONTROLLER STRUCT **********/
 
 // Initialize the controller struct
-void controller_init(controller_t * controller, mss_spi_slave_t select) {
+void controller_init(controller_t * controller, uint8_t select) {
 
 	// Configure SPI select
 	MSS_SPI_configure_master_mode

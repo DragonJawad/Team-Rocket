@@ -20,14 +20,14 @@
 
 typedef struct controller {
 	int counter;
-	mss_spi_slave_t select;
+	uint8_t select;		// Controller ID
 	uint8_t vibration;
 	uint8_t slave_buffer[MAX_BUFFER_SIZE];
 } controller_t;
 
 
 // Initialize the controller struct
-void controller_init(controller_t * controller, mss_spi_slave_t select);
+void controller_init(controller_t * controller, uint8_t select);
 
 
 /********** HELPER FUNCTIONS **********/
