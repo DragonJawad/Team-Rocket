@@ -34,11 +34,11 @@
 #define GPIO_ADDR		0x40050000
 
 // Define thresholds to turn on the controller vibration
-#define X_LOW			0
-#define X_HIGH			5000
+#define X_LOW			120
+#define X_HIGH			200
 
-#define Y_LOW			0
-#define Y_HIGH			5000
+#define Y_LOW			120
+#define Y_HIGH			200
 
 
 // UART1 buffer for input
@@ -52,8 +52,8 @@ uint32_t count = 0;
 uint8_t g_tx_buff[TX_BUFF_SIZE];
 
 // Declare globals for the ADC
-ace_channel_handle_t adc_handler2;
-ace_channel_handle_t adc_handler3;
+ace_channel_handle_t adc_handler2_x;
+ace_channel_handle_t adc_handler3_y;
 
 
 /* ***************************************************** */
@@ -67,6 +67,10 @@ ace_channel_handle_t adc_handler3;
 *	g_rx_buff[0] = CAR ID
 *	g_rx_buff[1] = first side of the car (analog stick)
 *	g_rx_buff[2] = second side of the car (analog stick)
+*
+*	Data should be sent back in the form
+*	g_tx_buff[0] = CAR ID
+*	g_tx_buff[1] = Accel data
 ************************************ */
 void uart1_rx_handler( mss_uart_instance_t * this_uart ){
 	int data_received = 0;
@@ -107,6 +111,43 @@ void uart1_rx_handler( mss_uart_instance_t * this_uart ){
     }
 
     count = 0;
+
+    // Take ADC inputs here
+	// X is connected to ADC2, Y to ADC3
+    int shouldSendData = 0;
+	uint16_t adcx, adcy;
+	uint8_t tx_output = 0;
+	adcx = ACE_get_ppe_sample(adc_handler2_x);
+	adcy = ACE_get_ppe_sample(adc_handler3_y);
+
+	// Shift over the first 4 useless bits
+	adcx = adcx>>4;
+	adcy = adcy>>4;
+
+	printf("x: %u | y: %u\r\n", adcx, adcy);
+
+	// If both X and Y are valid, OR the two values into the output
+	if((adcy > Y_HIGH || adcy < Y_LOW) && (adcx > X_HIGH || adcx < X_LOW)){
+		tx_output = adcx | adcy;
+	}
+	// Else if X is valid, that should be the output
+	else if(adcx > X_HIGH || adcx < X_LOW) {
+		tx_output = adcx;
+	}
+	// Else if Y is valid, that should be the output
+	else if(adcy > Y_HIGH || adcy < Y_LOW){
+		tx_output = adcy;
+	}
+
+	// Finally, only send data if there's any valid output
+	if(tx_output != 0) {
+		// Set the tx buff
+		g_tx_buff[0] = CAR_ID;
+		g_tx_buff[1] = tx_output;
+
+		// Send out the accelerometer data
+		MSS_UART_polled_tx(&g_mss_uart1, g_tx_buff, sizeof(g_tx_buff));
+	}
 }
 
 
@@ -128,13 +169,8 @@ int main() {
 	ACE_init();
 
 	// Initialize the ADC handlers
-	adc_handler2 = ACE_get_channel_handle((const uint8_t *)"ADCDirectInput_2");
-	adc_handler3 = ACE_get_channel_handle((const uint8_t *)"ADCDirectInput_3");
-
-	uint16_t adcx, adcy;
-
-	int i = 0;
-	for (i = 0; i < 1000000; ++i);
+	adc_handler2_x = ACE_get_channel_handle((const uint8_t *)"ADCDirectInput_2");
+	adc_handler3_y = ACE_get_channel_handle((const uint8_t *)"ADCDirectInput_3");
 
 	/* **************************** */
 	/* ******** SETUP UART ******** */
@@ -161,14 +197,24 @@ int main() {
 	/* *************************** */
 
 	while(1) {
-
 		// Reset the RX Buffer
 		g_tx_buff[1] &= 0x00;
 
+		uint16_t adcx, adcy;
+		adcx = ACE_get_ppe_sample(adc_handler2_x);
+		adcy = ACE_get_ppe_sample(adc_handler3_y);
+
+		// Shift over the first 4 useless bits
+		adcx = adcx>>4;
+		adcy = adcy>>4;
+
+		//printf("x: %u | y: %u\r\n", adcx, adcy);
+
+		/*
 		// Take ADC inputs here
 		// X is connected to ADC2, Y to ADC3
-		adcx = ACE_get_ppe_sample(adc_handler2);
-		adcy = ACE_get_ppe_sample(adc_handler3);
+		adcx = ACE_get_ppe_sample(adc_handler2_x);
+		adcy = ACE_get_ppe_sample(adc_handler3_y);
 
 		// If the Y value is outside the threshold, turn on vibration
 		if(adcy > Y_HIGH || adcy < Y_LOW){
@@ -184,16 +230,20 @@ int main() {
 		if(g_tx_buff[1] == 0x01){
 			MSS_UART_polled_tx(&g_mss_uart1, g_tx_buff, sizeof(g_tx_buff));
 		}
+		*/
 
-		// If the count makes it to 1000000, turn the car off
+
+
+		// If the count makes it to 10000, turn the car off
 		// (No signals were received in this time)
 
-		if(count == 10000000){
+		if(count == 10000){
 			initHBridge();
 			initPWM();
 		}
 
 		count += 1;
+
 	}
 
 	// If you've made it this far, something went very very wrong
