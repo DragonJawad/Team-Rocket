@@ -19,7 +19,6 @@
 /********** CONTROLLER STRUCT **********/
 
 typedef struct controller {
-	int counter;
 	uint8_t select;		// Controller ID
 	uint8_t vibration;
 	uint8_t slave_buffer[MAX_BUFFER_SIZE];
@@ -48,7 +47,7 @@ void full_capture(controller_t * controller);
 void setup_all(controller_t * controller);
 
 // Set the controller to vibrate for a certain amount of time
-void set_vibration(controller_t * controller, uint8_t vibration, int counter);
+void set_vibration(controller_t * controller, uint8_t vibration);
 
 
 

@@ -25,16 +25,18 @@ controller_t controller2;
 //controller_t controller3;
 //controller_t controller4;
 
+int counter = 0;
+
 
 /********** INTERRUPT HANDLERS **********/
 
 // UART RX Interrupt Handler
 void xbee_receive_data( mss_uart_instance_t * this_uart ){
 
-    uint8_t tx_buff; // keep the data buffer aligned
+    uint8_t rx_buff[4]; // keep the data buffer aligned
 
     // Read in data from rx_buff
-	int num_bytes = MSS_UART_get_rx( this_uart, tx_buff, 4 );
+	int num_bytes = MSS_UART_get_rx( this_uart, rx_buff, 4 );
 	assert(num_bytes == 4);
 
 	int car_select = rx_buff[0];
@@ -42,14 +44,15 @@ void xbee_receive_data( mss_uart_instance_t * this_uart ){
 
 	// Set the vibration value
 	switch (car_select) {
-		case 1: set_vibration(&controller1, vibration, 100); break;
-		case 2: set_vibration(&controller2, vibration, 100); break;
-		case 3: set_vibration(&controller3, vibration, 100); break;
-		case 4: set_vibration(&controller4, vibration, 100); break;
+		case 1: set_vibration(&controller1, vibration); break;
+		case 2: set_vibration(&controller2, vibration); break;
+		//case 3: set_vibration(&controller3, vibration, 100); break;
+		//case 4: set_vibration(&controller4, vibration, 100); break;
 		default: break;
 	}
 	
-	//printf("Got some XBEE data: car %x, value %x\r\n", car_select, rx_buff[0]);
+	counter = 0;
+	printf("Got some XBEE data: car %x, value %x\r\n", car_select, vibration);
 }
 
 // Send data to the cars (not an irq but may become one later)
@@ -62,7 +65,7 @@ void send_data_to_car(controller_t * controller) {
 							0 };
 
 	// Debugging
-	printf("sending: %x, %x, %x\r\n", tx_buff[0], tx_buff[1], tx_buff[2]);
+	//printf("sending: %x, %x, %x\r\n", tx_buff[0], tx_buff[1], tx_buff[2]);
 
     MSS_UART_polled_tx(&g_mss_uart1, tx_buff, 4);
 }
@@ -158,13 +161,26 @@ int main() {
 
 		/********** CHECK SCORING STATUS **********/
 
+
+        //set_vibration(&controller1,0xFF);
+        //set_vibration(&controller2,0xFF);
 		
+		if (controller1.slave_buffer[10] > 0) {
+			set_vibration(&controller1, 0xff);
+			counter = 0;
+		}
 		
-		
-		
-		
-		
+		//*
         for (j = 0; j < 10000; ++j); // Delay
+        counter++;
+        int x = counter;
+
+        ///*
+        if (counter > 50) {
+        	set_vibration(&controller1, 0);
+        	set_vibration(&controller2, 0);
+        }
+        //*/
     }
 
     // If you've made it this far, something went wrong

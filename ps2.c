@@ -26,10 +26,9 @@ void controller_init(controller_t * controller, uint8_t select) {
 	// Initialize all values
 	controller->select = select;
 	controller->vibration = 0;
-	controller->counter = 0;
-	int i;
 
 	// Clear slave buffer
+	int i;
 	for (i = 0; i < MAX_BUFFER_SIZE; ++i) {
 		controller->slave_buffer[i] = 0;
 	}
@@ -100,13 +99,9 @@ void digital_capture(controller_t * controller) {
 // Poll for all values
 void full_capture(controller_t * controller) {
 
-	// Handle vibration counter
-	uint8_t vibration = 0;
-
-	// If counter reached 0, reset vibration
-	if (controller->counter > 0) {
-		vibration = controller->vibration;
-		controller->counter -= 1;
+	int vibration = 0;
+	if (controller->vibration > 0) {
+		vibration = 0xff;
 	}
 
 	// Select controller
@@ -162,10 +157,9 @@ void setup_all(controller_t * controller) {
 }
 
 // Set the controller to vibrate for a certain amount of time
-void set_vibration(controller_t * controller, uint8_t vibration, int counter) {
+void set_vibration(controller_t * controller, uint8_t vibration) {
 
 	controller->vibration = vibration;
-	controller->counter = counter;
 }
 
 // Enter configuration mode

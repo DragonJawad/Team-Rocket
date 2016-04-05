@@ -14,19 +14,19 @@ void init_lights(void) {
     MSS_GPIO_init();
 
 	// Initialize all possible light shows as outputs
-    MSS_GPIO_config(OFF, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(BLUE, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(MAIZE, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(START, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(LIGHTS_OFF, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(LIGHTS_BLUE, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(LIGHTS_MAIZE, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(LIGHTS_START, MSS_GPIO_OUTPUT_MODE);
 	
 	// Initalize return input
     MSS_GPIO_config(MSS_GPIO_4, MSS_GPIO_INPUT_MODE);
 
 	// All outputs are active low/passive high
-    MSS_GPIO_set_output(OFF, 1);
-    MSS_GPIO_set_output(BLUE, 1);
-    MSS_GPIO_set_output(MAIZE, 1);
-    MSS_GPIO_set_output(START, 1);
+    MSS_GPIO_set_output(LIGHTS_OFF, 1);
+    MSS_GPIO_set_output(LIGHTS_BLUE, 1);
+    MSS_GPIO_set_output(LIGHTS_MAIZE, 1);
+    MSS_GPIO_set_output(LIGHTS_START, 1);
 }
 
 // Run a specific light show
