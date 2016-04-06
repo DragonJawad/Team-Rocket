@@ -5,10 +5,15 @@
 
 #define PIN 6
 
-#define S1 5
-#define S2 4
-#define S3 3
-#define S4 2
+#define S1 5  //GPIO2
+#define S2 4  //GPIO1
+#define S3 3  //GPIO3
+#define S4 2  //GPIO0
+#define S5 1  //GPIO5
+#define S6 0  //GPIO6
+#define S7 7  //GPIO7
+#define S8 8  //GPIO8
+#define S9 9  //GPIO4
 
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = Arduino pin number (most are valid)
@@ -35,6 +40,11 @@ pinMode(S1, INPUT_PULLUP);
 pinMode(S2, INPUT_PULLUP);
 pinMode(S3, INPUT_PULLUP);
 pinMode(S4, INPUT_PULLUP);
+pinMode(S5, INPUT_PULLUP);
+pinMode(S6, INPUT_PULLUP);
+pinMode(S7, INPUT_PULLUP);
+pinMode(S8, INPUT_PULLUP);
+pinMode(S9, OUTPUT);
 
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
@@ -50,36 +60,77 @@ int lastlastS3=0;
 int lastlastS4=0;
 int lastS3=0;
 int lastS4=0;
+int lastlastS5=0;
+int lastlastS6=0;
+int lastS5=0;
+int lastS6=0;
+int lastlastS7=0;
+int lastlastS8=0;
+int lastS7=0;
+int lastS8=0;
 
 //delay(5);
   while(1){
+ digitalWrite(S9, HIGH);
  //delay(1);  
  if(digitalRead(S3) && !digitalRead(S4)&& lastlastS3 && !lastlastS4 && lastS3 && !lastS4){
     Serial.println(digitalRead(S3));
     Serial.println(digitalRead(S4));
+   // digitalWrite(S9, LOW); don't do this for blackout
     startShow(0);
     
     break;
-  }
+  } // BLACKOUT
  else if(digitalRead(S1) && !digitalRead(S2)&& lastlastS1 && !lastlastS2 && lastS1 && !lastS2){
     Serial.println(digitalRead(S1));
     Serial.println(digitalRead(S2));
+    digitalWrite(S9, LOW);
     startShow(1);
     break;
- }
+ } //B
  else if(!digitalRead(S1) && digitalRead(S2)&& !lastlastS1 && lastlastS2 && !lastS1 && lastS2){
     Serial.println(digitalRead(S1));
     Serial.println(digitalRead(S2));
+    digitalWrite(S9, LOW);
     startShow(2);
     break;
- }
+ } //Y
  else if(!digitalRead(S3) && digitalRead(S4) && !lastlastS3 && lastlastS4 && !lastS3 && lastS4){
     Serial.println(digitalRead(S3));
     Serial.println(digitalRead(S4));
+    digitalWrite(S9, LOW);
     startShow(3);
     break;
- }
-
+ } // show start
+  // end of reg shows
+ else if(!digitalRead(S5) && digitalRead(S6)&& !lastlastS5 && lastlastS6 && !lastS5 && lastS6){
+    Serial.println(digitalRead(S5));
+    Serial.println(digitalRead(S6));
+    digitalWrite(S9, LOW);
+    startShow(4);
+    break;
+ }// egg1
+ else if(digitalRead(S5) && !digitalRead(S6) && lastlastS5 && !lastlastS6 && lastS5 && !lastS6){
+    Serial.println(digitalRead(S3));
+    Serial.println(digitalRead(S4));
+    digitalWrite(S9, LOW);
+    startShow(5);
+    break;
+ }// egg2
+ else if(!digitalRead(S7) && digitalRead(S8)&& !lastlastS7 && lastlastS8 && !lastS7 && lastS8){
+    Serial.println(digitalRead(S7));
+    Serial.println(digitalRead(S8));
+    digitalWrite(S9, LOW);
+    startShow(6);
+    break;
+ }// egg3
+ else if(digitalRead(S7) && !digitalRead(S8) && lastlastS7 && !lastlastS8 && lastS7 && !lastS8){
+    Serial.println(digitalRead(S7));
+    Serial.println(digitalRead(S8));
+    digitalWrite(S9, LOW);
+    startShow(7);
+    break;
+ }// egg4
 lastlastS1=lastS1;
 lastlastS2=lastS2;
 lastS1=digitalRead(S1);
@@ -88,6 +139,14 @@ lastlastS3=lastS3;
 lastlastS4=lastS4;
 lastS3=digitalRead(S3);
 lastS4=digitalRead(S4);
+lastlastS5=lastS5;
+lastlastS6=lastS6;
+lastS5=digitalRead(S5);
+lastS6=digitalRead(S6);
+lastlastS7=lastS7;
+lastlastS8=lastS8;
+lastS7=digitalRead(S7);
+lastS8=digitalRead(S8);
   /* int sensorValue0 = analogRead(A0);
   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
   float voltage0 = sensorValue0 * (5.0 / 1023.0);
@@ -196,28 +255,40 @@ void startShow(int i) {
     case 1: colorWipe(strip.Color(0, 0, 255), 10);  // Blue
             theaterChase(strip.Color(  0,   0, 127), 30); // Blue
             colorWipe(strip.Color(0, 0, 0), 1); 
+            digitalWrite(S9, HIGH);
             break;
     case 2: colorWipe(strip.Color(255, 255, 0), 10);  // Y
             theaterChase(strip.Color(  127,   127, 0), 30); // Y
             colorWipe(strip.Color(0, 0, 0), 1); 
+            digitalWrite(S9, HIGH);
             break;
     case 3: colorWipe(strip.Color(255, 0, 0), 10); // Red
              colorWipe(strip.Color(255,255,0), 10); // Yellow
              theaterChase(strip.Color(0, 255, 0), 40); // Green
-              colorWipe(strip.Color(0, 0, 0), 1); 
+             colorWipe(strip.Color(0, 0, 0), 1); 
+             digitalWrite(S9, HIGH);
             break;
-    case 4: rainbowCycle(20);
+    case 4: theaterChaseRainbow(20);
             colorWipe(strip.Color(0, 0, 0), 1); 
+            digitalWrite(S9, HIGH);
             break;
-    case 5: theaterChase(strip.Color(127,   0,   0), 50); // Red
+    case 5: colorWipe(strip.Color(255, 0, 0), 5); // Red
+            colorWipe(strip.Color(255, 127, 0), 5); // Orange
+            colorWipe(strip.Color(255,255,0), 5); // Yellow
+            colorWipe(strip.Color(0, 255, 0), 5); // Green
+            colorWipe(strip.Color(0, 0, 255), 5); // Blue
+            colorWipe(strip.Color(127,0,255), 5); // Violet
+            colorWipe(strip.Color(0, 0, 0), 1); 
+            digitalWrite(S9, HIGH);
             break;
-    case 6: theaterChase(strip.Color(  0,   0, 127), 50); // Blue
+    case 6: rainbowCycle(10);
+            colorWipe(strip.Color(0, 0, 0), 1); 
+            digitalWrite(S9, HIGH);
             break;
-    case 7: rainbow(20);
-            break;
-    case 8: rainbowCycle(20);
-            break;
-    case 9: theaterChaseRainbow(50);
+    case 7: rainbow(5);
+            theaterChase(strip.Color(255,0,255), 10); //PINK
+            colorWipe(strip.Color(0, 0, 0), 1); 
+            digitalWrite(S9, HIGH);
             break;
   }
 }
