@@ -2,6 +2,7 @@
 #define SCREEN_CONTROL_H_
 
 #include <inttypes.h>
+#include "drivers/CoreUARTapb/core_uart_apb.h"
 
 /* Assumes using UART 1 (if not, ctrl+f replace &g_mss_uart1 in .c file)
  * Should setup like the following:
@@ -14,6 +15,10 @@
  *
  * Rest of commands at https://github.com/sparkfun/SparkFun_Graphic_LCD_Serial_Backpack_Arduino_Library/blob/V_1.0.1/src/SparkFunSerialGraphicLCD.cpp
  */
+
+// Initializes the library particularly sets up UART outputting (CoreUARTapb)
+void
+SCREENCONTROL_init();
 
 // Clears the screen
 void
