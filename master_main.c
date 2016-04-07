@@ -15,7 +15,8 @@
 #include "drivers/mss_gpio/mss_gpio.h"
 #include "ps2.h"
 #include "light_show.h"
-
+#include "linked_list.h"
+#include <stdlib.h>
 
 /********** GLOBAL VARIABLES **********/
 
@@ -71,15 +72,15 @@ void send_data_to_car(controller_t * controller) {
 }
 
 
-
-
 int main() {
 
     /********** INITIALIZATION **********/
 
     int i = 0, j = 0;
-	
-
+    MSS_GPIO_set_output(5, 0);
+    MSS_GPIO_set_output(6, 0);
+    MSS_GPIO_set_output(7, 0);
+    MSS_GPIO_set_output(8, 0);
     /********** SETUP UART **********/
 
     MSS_UART_init (
@@ -158,6 +159,49 @@ int main() {
 			light_show(LIGHTS_OFF);
 		}
 		//*/
+
+
+        /********** EGGIES!!! ***********/
+         // EGGIE INITS ///
+        uint8_t light_show_end=1;
+        uint32_t gpio_inputs=0;
+
+        head->next=NULL;
+        head->type=LIGHTS_OFF;
+
+        /* Current Easter Egg Codes:
+
+		1.	Triangle -> Circle -> X -> Square -> Triangle
+		2.	Right -> Down -> Left -> Up -> Right
+		3.	
+		4.	
+
+		*/
+
+        easter_eggie(&controller1);
+        easter_eggie(&controller2);
+        //easter_eggie(&controller3);
+        //easter_eggie(&controller4);
+        gpio_inputs = MSS_GPIO_get_inputs();
+
+        if(gpio_inputs == 0x10) { //GPIO 4??
+            light_show_end=1;
+        }
+
+        else {
+            light_show_end=0;
+        }
+        /*while(list not empty && light_show_end
+            keep popping off light shows
+            and call light_show functions
+            light show function gets called in pop
+        */
+       show_t * current = head;
+     while((current != NULL) && light_show_end){
+            pop(head);
+            current=current->next;
+        }
+
 
 		/********** CHECK SCORING STATUS **********/
 

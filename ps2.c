@@ -27,6 +27,11 @@ void controller_init(controller_t * controller, uint8_t select) {
 	controller->select = select;
 	controller->vibration = 0;
 
+	// Iterate through the states and set them to zero
+	for(int i = 0; i < NUM_EASTER_EGGS; i++){
+		controller->state[i] = 0;
+	}
+
 	// Clear slave buffer
 	int i;
 	for (i = 0; i < MAX_BUFFER_SIZE; ++i) {
@@ -221,3 +226,4 @@ void button_setup(uint8_t * slave_buffer) {
 	    (uint8_t *) slave_buffer, 0
 	);
 }
+
