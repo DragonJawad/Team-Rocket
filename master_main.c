@@ -71,6 +71,58 @@ void send_data_to_car(controller_t * controller) {
     MSS_UART_polled_tx(&g_mss_uart1, tx_buff, 4);
 }
 
+void goal_scored() {
+	
+    // Pause timer?
+
+    // team's light show
+    light_show(LIGHTS_BLUE);
+	
+    // Update score
+
+    // Display score
+
+    // Vibrate all controllers on and off four times
+    int i = 0;
+    for (i = 0; i < 4; ++i) {
+	
+        set_vibration(&controller1, 0xff);
+        set_vibration(&controller2, 0xff);
+        set_vibration(&controller3, 0xff);
+        set_vibration(&controller4, 0xff);
+
+        int j = 0;
+        for (j = 0; j < 1000; j++);
+	
+        set_vibration(&controller1, 0);
+        set_vibration(&controller2, 0);
+        set_vibration(&controller3, 0);
+        set_vibration(&controller4, 0);
+
+        for (j = 0; j < 1000; j++);
+    }
+
+    // Wait for all controllers to press and hold X
+    while ( controller1.slave_buffer[10] < flip(10) &&
+            controller2.slave_buffer[10] < flip(10) &&
+            controller3.slave_buffer[10] < flip(10) &&
+            controller4.slave_buffer[10] < flip(10)) {
+	
+        full_capture(&controller1);
+        full_capture(&controller2);
+        full_capture(&controller3);
+        full_capture(&controller4);
+    }
+
+    // Start of game light show
+    light_show(LIGHTS_START);
+	
+    // Drop the ball (pwn signal)
+    // drop_ball();
+	
+    // Return to star the game
+    return;
+}
 
 int main() {
 
