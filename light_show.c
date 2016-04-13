@@ -6,12 +6,19 @@
  * Last modified:  4 April 2016
 \**************************************/
 
+
 #include "light_show.h"
 #include "linked_list.h"
-#include "ps2.h"
+#include "drivers/mss_gpio/mss_gpio.h"
+#include <assert.h>
+#include <stdio.h>
 
+uint8_t eggies[NUM_EASTER_EGGS][MAX_EGGIE_LENGTH+1];
+uint32_t GPIO_eggie[NUM_EASTER_EGGS];
 // Initialize the light show (run only once)
 void init_lights(void) {
+
+	int i;
 
     MSS_GPIO_init();
 
@@ -22,7 +29,8 @@ void init_lights(void) {
     MSS_GPIO_config(LIGHTS_START, MSS_GPIO_OUTPUT_MODE);
 
     // Iterate through the light shows for each GPIO pin
-    for(int i = 5; i < 5 + NUM_EASTER_EGGS){
+
+    for(i = 5; i < (5+NUM_EASTER_EGGS); i++){
     	assert(i < NUM_GPIO_PINS);
 	    MSS_GPIO_config(i, MSS_GPIO_OUTPUT_MODE);
 	}
@@ -37,7 +45,7 @@ void init_lights(void) {
     MSS_GPIO_set_output(LIGHTS_START, 1);
 
     // Iterate through the GPIO outputs, setting them all to high
-    for(int i = 5; i < 5 + NUM_EASTER_EGGS){
+    for(i = 5; i < (5 + NUM_EASTER_EGGS); i++){
     	assert(i < NUM_GPIO_PINS);
 	    MSS_GPIO_set_output(i, 1);
 	}
@@ -59,6 +67,7 @@ void init_easter_eggie(uint8_t * press_sequence, uint8_t num_eggie, uint8_t eggi
 
 		// Assign the value at the correct place in the array to the press sequence
 		eggies[num_eggie][i] = press_sequence[i];
+		//printf("eggies %d\n", eggies[num_eggie][i]);
 
 		i++;
 
@@ -97,72 +106,34 @@ void light_show(mss_gpio_id_t gpio_id) {
 
 
 void easter_eggie(controller_t * controller){
-
-	// Switch the current state of the controller
-    switch(controller->state) {
-
-        case 0 : // Starting in state 0
-        	// If the triangle button was pressed
-            if(controller->slave_buffer[8]>0){
-                controller->state=1;
-            }
-
-            // If the right button (D Pad) was pressed
-            else if(controller->slave_buffer[4]>0){
-                controller->state=2;
-            }
-            break;
-
-        case 1 : // If the controller is currently in state 1 (Triangle was pressed)
-
-        	// If circle was pressed
-            if(controller->slave_buffer[9] > 0 && other_pressed(controller, 9)){
-                controller->state=2;
-            }
-
-            // OR if Left button (D Pad) was pressed
-            else if(controller->slave_buffer[5]>0){
-                controller->state=2;
-            }
-            break;
-
-
-        case 2 :
-            if(controller->slave_buffer[10]>0){
-                controller->state=3;
-            }
-            else if(controller->slave_buffer[6]>0){
-                controller->state=3;
-            }
-            break;
-        case 3 :
-           if(controller->slave_buffer[11]>0){
-                controller->state=4;
-            }
-            else if(controller->slave_buffer[7]>0){
-                controller->state=4;
-            }
-        case 4 :
-            if(controller->slave_buffer[8]>0){
-                controller->state=0;
-                //light_show(LIGHTS_EGG1);
-                // insert light_show into linked list
-                push(head, LIGHTS_EGG1);
-            }
-            else if(controller->slave_buffer[4]>0){
-                controller->state=0;
-                //light_show(LIGHTS_EGG2);
-                // insert light_show into linked list
-                push(head, LIGHTS_EGG2);
-            }
-            break;
-        default:
-            controller->state=0;
-            //if(light_show_end) light_show(LIGHTS_OFF);
-            break;
-
-    }// end switch
+	//Iterate through to check all eggs
+	int i;
+	for(i=0; i<NUM_EASTER_EGGS; i++){
+	    // increase state until we've reached sequence end
+		uint8_t * j = controller->state + i;
+		printf("state: %d\n\r", *j);
+		printf("buffer value: %d\n\r", controller->slave_buffer[eggies[i][*j]]);
+		printf("other pressed ret value: %d\n\r",other_pressed(controller->slave_buffer,eggies[i][*j]));
+	    // check that next in sequence is pressed and nothing else
+	    // checks by checking slave buffer at desired seq index
+	    if((controller->slave_buffer[eggies[i][*j]] > 0) && !other_pressed(controller->slave_buffer,eggies[i][*j])){
+	            // increase state if following eggie sequence
+	            controller->state[i]=controller->state[i]+1;
+	            // if now reached end of sequence push onto list
+	            if(eggies[i][*j] == -1){
+	            	printf("reached -1");
+	                // light show type to push is num_eggie + 5 for correct GPIO
+	                push(i+5);
+	                // reset state back to zero
+	                controller->state[i]=0;
+	            }//inner if
+	        }//outer if
+	    else if(other_pressed(controller->slave_buffer, *j)){
+	            controller->state[i]=0;
+	        }// end elseif
+	    }// end for
 }// end func
+
 
 
 

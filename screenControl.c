@@ -6,14 +6,14 @@ UART_instance_t target_uart;
 void
 SCREENCONTROL_init() {
 	// Formula from core_uart_apb.h: baud_value = (clock /(baud_rate * 16)) - 1
-	//		clock = 100MHz, baud_rate = MSS_UART_115200_BAUD
-	//		so baud_value = (100*10^6/(115200*16)) - 1 = 53.2534722222
-	uint16_t baud_value = 53;
+	//		clock = 20MHz, baud_rate = MSS_UART_115200_BAUD
+	//		so baud_value = (20*10^6/(115200*16)) - 1 = 9.85069
+	uint16_t baud_value = 10;
 
 	UART_init
 	(
 	    &target_uart,
-	    0x40050000, // APB address for this UART
+	    0x40050100, // APB address for this UART
 	    baud_value,
 	    DATA_8_BITS | NO_PARITY
 	);

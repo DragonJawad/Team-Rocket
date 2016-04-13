@@ -15,7 +15,7 @@
 // Includes the type of the show
 typedef struct show {
     uint32_t type;
-    struct show * next;
+    struct show* next;
 } show_t;
 
 // Adds to end of list

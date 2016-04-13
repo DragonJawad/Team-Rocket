@@ -18,18 +18,20 @@
 #include "drivers/CoreUARTapb/core_uart_apb.h"
 #include "ps2.h"
 #include "arena.h"
-//#include "screenControl.h"
+#include "screenControl.h"
 #include "light_show.h"
 #include "linked_list.h"
 #include "defines.h"
 
 /********** GLOBAL VARIABLES **********/
 
+#define COUNT_START 10
+
 // Global controller structs
 controller_t controller1;
 controller_t controller2;
-//controller_t controller3;
-//controller_t controller4;
+controller_t controller3;
+controller_t controller4;
 
 int counter = 0;
 
@@ -49,15 +51,19 @@ void xbee_receive_data( mss_uart_instance_t * this_uart ){
 
     // Read in data from rx_buff
 	int num_bytes = MSS_UART_get_rx( this_uart, rx_buff, 4 );
-	assert(num_bytes == 4);
+
+	// Transmission failed
+	if (num_bytes != 4) {
+		return;
+	}
 
 	int car_select = rx_buff[0];
 	int vibration = rx_buff[1];
 
 	// Set the vibration value
 	switch (car_select) {
-		case 1: set_vibration(&controller1, vibration); break;
-		case 2: set_vibration(&controller2, vibration); break;
+		case 1: set_vibration(&controller1, 0xFF); controller1.counter = COUNT_START; break;
+		case 2: set_vibration(&controller2, 0xFF); controller1.counter = COUNT_START; break;
 		//case 3: set_vibration(&controller3, vibration, 100); break;
 		//case 4: set_vibration(&controller4, vibration, 100); break;
 		default: break;
@@ -73,12 +79,10 @@ void send_data_to_car(controller_t * controller) {
 	
 	// Data sent to cars
 	uint8_t tx_buff[4] = { 	controller->select,
-							flip(controller->slave_buffer[1]) & 0xFE,
-							flip(controller->slave_buffer[3]) | 0x01,
-							0 };
-
-	// Debugging
-	printf("sending: %x, %x, %x\r\n", tx_buff[0], tx_buff[1], tx_buff[2]);
+							flip(controller->slave_buffer[10]),
+							flip(controller->slave_buffer[4]),
+							flip(controller->slave_buffer[5])
+	};
 
     MSS_UART_polled_tx(&g_mss_uart1, tx_buff, 4);
 }
@@ -88,11 +92,12 @@ __attribute__ ((interrupt)) void Fabric_IRQHandler( void )
 {
     // Get the interrupt status (which also clears the internal interrupt on our hardware)
     uint32_t status = ARENA_getInterruptStatus();
+    printf("Interrupt status: %u\n\r", (unsigned int) status);
 
     // Check that it was really a timer interrupt
     if(status & 0x02) {
     	// Simply increment the timer
-
+    	timerActivatedFlag++;
 	}
 
     // If it was a button interrupt at all, there's an issue here (as not wired atm)
@@ -108,26 +113,18 @@ __attribute__ ((interrupt)) void Fabric_IRQHandler( void )
 
 // Doesn't return until all 4 controllers press and hold X at the same time
 void buttonWait() {
-	/* OLD CODE, HERE JUST IN CASE
-	// Just busy wait until the button flag is true
-	while(1) {
-		if(buttonPressedFlag) {
-			return;
-		}
-	}
-	*/
 
 	// Wait for all controllers to press and hold X
-	while ( controller1.slave_buffer[10] < flip(10)
-			&& controller2.slave_buffer[10] < flip(10)
-			// && controller3.slave_buffer[10] < flip(10)
-			// && controller4.slave_buffer[10] < flip(10)
+	while ( flip(controller1.slave_buffer[10]) < 10
+			// || flip(controller2.slave_buffer[10]) < 10
+			//|| flip(controller2.slave_buffer[10]) < 10
+			//|| flip(controller2.slave_buffer[10]) < 10
 			) {
 
 		full_capture(&controller1);
 		full_capture(&controller2);
-		//full_capture(&controller3);
-		//full_capture(&controller4);
+		full_capture(&controller3);
+		full_capture(&controller4);
 	}
 }
 
@@ -137,10 +134,16 @@ void stopCars() {
 }
 
 void initGameSystem() {
-	/********** INITIALIZATION **********/
-
 
 	/********** SETUP UART **********/
+
+	SCREENCONTROL_init();
+/*
+	MSS_UART_init (
+		&g_mss_uart0,
+		MSS_UART_57600_BAUD,
+		(MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT)
+	);*/
 
 	MSS_UART_init (
 		&g_mss_uart1,
@@ -159,7 +162,7 @@ void initGameSystem() {
 
 	/********** SETUP LIGHT SHOW **********/
 
-	init_lights();
+	//init_lights();
 
 
 	/********** SETUP ACE/GOALS **********/
@@ -168,7 +171,7 @@ void initGameSystem() {
 
 	ARENA_initTeam(&teamMaize, "ADCDirectInput_4");
 	ARENA_initTeam(&teamBlue, "ADCDirectInput_5");
-	ARENA_outputScoreToScreen(&teamMaize, &teamBlue);
+	//ARENA_outputScoreToScreen(&teamMaize, &teamBlue);
 
 
 	/********** SETUP CONTROLLERS **********/
@@ -176,14 +179,14 @@ void initGameSystem() {
 	MSS_SPI_init( &g_mss_spi1 );
 
 	controller_init(&controller1, MSS_SPI_SLAVE_1);
-	//controller_init(&controller2, MSS_SPI_SLAVE_2);
-	//controller_init(&controller3, MSS_SPI_SLAVE_3);
-	//controller_init(&controller4, MSS_SPI_SLAVE_4);
+	controller_init(&controller2, MSS_SPI_SLAVE_2);
+	controller_init(&controller3, MSS_SPI_SLAVE_3);
+	controller_init(&controller4, MSS_SPI_SLAVE_4);
 
 	setup_all(&controller1);
-	//setup_all(&controller2);
-	//setup_all(&controller3);
-	//setup_all(&controller4);
+	setup_all(&controller2);
+	setup_all(&controller3);
+	setup_all(&controller4);
 }
 
 // Returns 0 if no team won yet, returns 1 if a team won
@@ -235,9 +238,6 @@ int gameScore(int teamScoredFlag) {
 			for (j = 0; j < 1000; j++);
 		}
 
-		// Start of game light show
-		light_show(LIGHTS_START);
-
 		// Return 0 as no team won yet
 		return 0;
 	}
@@ -254,6 +254,9 @@ void startGame() {
 	// Make sure cars don't move
 	stopCars();
 
+	// Prepare the ball to drop
+	ARENA_closeBallRelease();
+
 	// Wait for button to be pressed before continuing
 	buttonWait();
 
@@ -261,33 +264,36 @@ void startGame() {
 	countdownCounter = GAMELENGTH;
 	timerActivatedFlag = 0;
 
+	// Drop the ball
+	light_show(LIGHTS_START);
+	ARENA_openBallRelease();
+
 	// Enable fabint, particularly for 1 sec interrupts from fabric
 	NVIC_EnableIRQ(Fabric_IRQn);
 
+	ARENA_outputScoreToScreen(&teamMaize, &teamBlue);
+	ARENA_outputTimeLeft(countdownCounter);
 	// TODO: Count down or something till game starts?
 }
 
 // Runs game, doesn't return until game is over or button is pressed to reset game (? for latter)
 void runGame() {
+
+	//int scoreFlag = -1; // Probably not necessary but nice to have
+
 	/********** LOOP **********/
-	int scoreFlag = -1; // Probably not necessary but nice to have
 	while(1) {
+
 		/********** CAPTURE CONTROLLER DATA ********/
-		//printf("Responses %d:\r\n", i);
 		full_capture(&controller1);
-		//full_capture(&controller2);
-		//full_capture(&controller3);
-		//full_capture(&controller4);
+		full_capture(&controller2);
+		full_capture(&controller3);
+		full_capture(&controller4);
 
-
-	 //   printf("Controller1: %d\r\n", (int) controller1.slave_buffer[0]);
-	 //   printf("Controller2: %d\r\n", (int) controller2.slave_buffer[0]);
-
-		//printf("\r\nResponses %d:\r\n", i);
-		//for (j = 0; j < 5; ++j) {
-		//    printf("Buffer[%d]: %d\r\n", j, (unsigned int) flip(controller1.slave_buffer[j]));
-		//}
-
+		printf("Controller1: %d\r\n", (int) controller1.slave_buffer[10]);
+		printf("Controller2: %d\r\n", (int) controller2.slave_buffer[10]);
+		printf("Controller3: %d\r\n", (int) controller3.slave_buffer[10]);
+		printf("Controller4: %d\r\n", (int) controller4.slave_buffer[10]);
 
 		/********** SEND DATA TO CARS ********/
 		send_data_to_car(&controller1);
@@ -297,59 +303,58 @@ void runGame() {
 
 		// Vibration data is updated automagically by interrupts
 
-
-
 		/********** EGGIES!!! ***********/
 
-		 // EGGIE INITS ///
-		uint8_t light_show_end=1;
-		uint32_t gpio_inputs=0;
+		// EGGIE INITS ///
+		//uint8_t light_show_end=1;
+		//uint32_t gpio_inputs=0;
 
 
-		/*Current Easter Egg Codes:
-
-		1.	Triangle -> Circle -> X -> Square -> Triangle
-		2.	Right -> Down -> Left -> Up -> Right
-		3.
-		4.
+		/*	Current Easter Egg Codes:
+			1.	Triangle -> Circle -> X -> Square -> Triangle
+			2.	Right -> Down -> Left -> Up -> Right
+			3.
+			4.
 		 */
 
 
-	  uint8_t press_seq0[]= {8,9,10,11,8};
+		//uint8_t press_seq0[]= {8,9,10,11,8};
 		//uint8_t press_seq1[]={4,7,5,6,4};
-		init_easter_eggie(press_seq0,0,5);
+		//init_easter_eggie(press_seq0,0,5);
 		//init_easter_eggie(press_seq1,1,5);
-/*      controller_t c_array[15];
-	  for (int a=0; a<15; a++){
-		  c_array[a].state[0]=0;
-		  c_array[a].state[1]=
-	  }*/
-		easter_eggie(&controller1);
+		//controller_t c_array[15];
+		//for (int a=0; a<15; a++){
+		//	c_array[a].state[0]=0;
+		//	c_array[a].state[1]=
+		//}
+
+		//easter_eggie(&controller1);
 		//easter_eggie(&controller2);
 		//easter_eggie(&controller3);
 		//easter_eggie(&controller4);
-	   gpio_inputs = MSS_GPIO_get_inputs();
 
-		if(gpio_inputs == 0x10) { //GPIO 4??
-			light_show_end=1;
-		}
+		//gpio_inputs = MSS_GPIO_get_inputs();
 
-		else {
-			light_show_end=0;
-		}
+		//if(gpio_inputs == 0x10) { //GPIO 4??
+		//	light_show_end=1;
+		//}
+
+		//else {
+		//	light_show_end=0;
+		//}
 		/*while(list not empty && light_show_end
 			keep popping off light shows
 			and call light_show functions
 			light show function gets called in pop
 		*/
 		//SET TO HIGH FOR DEBUGGING W/O UNO
-		light_show_end=1;
-		show_t * current = head;
-		while((current != NULL) && light_show_end){
-			current=current->next;
-			pop();
-			play();
-		}
+		//light_show_end=1;
+		//show_t * current = head;
+		//while((current != NULL) && light_show_end){
+		//	current=current->next;
+		//	pop();
+		//	play();
+		//}
 
 		/********** CHECK SCORING STATUS **********/
 
@@ -357,26 +362,54 @@ void runGame() {
 		//set_vibration(&controller1,0xFF);
 		//set_vibration(&controller2,0xFF);
 
-		/*
-		if (controller1.slave_buffer[10] > 0) {
+		/* Vibration debugging
+		if (flip(controller1.slave_buffer[10]) > 100) {
 			set_vibration(&controller1, 0xff);
-			counter = 0;
-		}
-		*/
-		//*
-		//for (j = 0; j < 10000; ++j); // Delay
-	   // counter++;
-		//int x = counter;
+			ARENA_openBallRelease();
 
-		/*
+//			counter = 0;
+		}
+		else {
+			set_vibration(&controller1, 0x00);
+			ARENA_closeBallRelease();
+		}
+
+		if (flip(controller2.slave_buffer[10]) > 100) {
+			set_vibration(&controller2, 0xff);
+//			counter = 0;
+		}
+		else {
+			set_vibration(&controller2, 0x00);
+		}
+
+		if (flip(controller3.slave_buffer[10]) > 100) {
+			set_vibration(&controller3, 0xff);
+//			counter = 0;
+		}
+		else {
+			set_vibration(&controller3, 0x00);
+		}
+
+		if (flip(controller4.slave_buffer[10]) > 100) {
+			set_vibration(&controller4, 0xff);
+//			counter = 0;
+		}
+		else {
+			set_vibration(&controller4, 0x00);
+		}
+
 		if (counter > 50) {
 			set_vibration(&controller1, 0);
 			set_vibration(&controller2, 0);
+			set_vibration(&controller3, 0);
+			set_vibration(&controller4, 0);
 		}
-		*/
+		//*/
 
 
 		//////////////////// How do the above lines fit into check scoring status?
+
+		/*
 
 		// Check if one of the teams scored
 		if (ARENA_checkIfScored(&teamMaize)) {
@@ -427,6 +460,9 @@ void runGame() {
 			}
 		}
 
+		*/
+
+		///*
 		// If timer interrupt came by..
 		if(timerActivatedFlag) {
 			// TODO: ASSERT == 1, cuz if > 1 somehow missed an entire second
@@ -438,13 +474,7 @@ void runGame() {
 			countdownCounter--;
 
 			if(countdownCounter == 0) {
-				// TODO: Everything, properly
-
-				// Disable the timer interrupts
-				NVIC_DisableIRQ(Fabric_IRQn);
-
-				// Stop the cars
-				stopCars();
+				// TODO: Anything else? (endGame() does stuff)
 
 				// End the game
 				return;
@@ -454,27 +484,65 @@ void runGame() {
 				ARENA_outputTimeLeft(countdownCounter);
 			}
 		}
+
+		 //*/
 	}
 }
 
 // Outputs game over stuff and cleans up as necessary
 void endGame() {
+	// Disable the timer interrupts
+	NVIC_DisableIRQ(Fabric_IRQn);
+
+	// Stop the cars
+	stopCars();
+
 	// TODO: Output game over message on screen
 
 	// TODO: Stop all cars explicitly, or just assume cars still stopped from before?
+
+	int whoWon = 0;
+	if(teamBlue.score == SCOREMAX) {
+		whoWon = LIGHTS_BLUE;
+	}
+	else if(teamMaize.score == SCOREMAX) {
+		whoWon = LIGHTS_MAIZE;
+	}
+	else {
+		if(teamBlue.score > teamMaize.score) {
+			whoWon = LIGHTS_BLUE;
+		}
+		else if(teamMaize.score > teamBlue.score) {
+			whoWon = LIGHTS_MAIZE;
+		}
+		else {
+			//??
+		}
+	}
+
+	ARENA_outputEndToScreen(whoWon);
 
 	// Simply return to show that done with end game stuff
 	return;
 }
 
-int main() {
+int main(){
+
+	// Initialize necessary game systems
 	initGameSystem();
 
-	// Setup game and wait till button is pressed to start game
-	startGame(); // Only returns once button is pressed, clears flag
+	/*
+	set_vibration(&controller2, 0xff);
+	full_capture(&controller2);
+	set_vibration(&controller2, 0x00);
+	full_capture(&controller2);
+	*/
 
-	// Actually play the game!
-	runGame(); // Won't return until game is over or button is pressed in normal run (won't clear flag in latter case)
+	// Setup game and wait till button is pressed to start game
+	startGame();
+
+	// Play the game. Returns when one team scores
+	runGame();
 
 	// Do end game stuff
 	endGame();

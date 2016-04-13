@@ -7,6 +7,8 @@
 \**************************************/
 
 #include "ps2.h"
+#include "light_show.h"
+#include <stdio.h>
 
 /********** CONTROLLER STRUCT **********/
 
@@ -26,16 +28,21 @@ void controller_init(controller_t * controller, uint8_t select) {
 	// Initialize all values
 	controller->select = select;
 	controller->vibration = 0;
+	controller->counter = 0;
 
 	// Iterate through the states and set them to zero
-	for(int i = 0; i < NUM_EASTER_EGGS; i++){
+	int i;
+	for(i = 0; i < NUM_EASTER_EGGS; i++){
 		controller->state[i] = 0;
 	}
 
 	// Clear slave buffer
-	int i;
 	for (i = 0; i < MAX_BUFFER_SIZE; ++i) {
 		controller->slave_buffer[i] = 0;
+	}
+
+	for (i = 0; i < MAX_BUFFER_SIZE; ++i) {
+		controller->prev_buffer[i] = 0;
 	}
 }
 
@@ -104,10 +111,16 @@ void digital_capture(controller_t * controller) {
 // Poll for all values
 void full_capture(controller_t * controller) {
 
+	// Only vibrate for a certain amount of time
 	int vibration = 0;
-	if (controller->vibration > 0) {
-		vibration = 0xff;
+	if (controller->counter > 0) {
+		controller->counter -= 1;
+		vibration = controller->vibration;
 	}
+
+	//if (controller->vibration > 0) {
+	//	vibration = 0xff;
+	//}
 
 	// Select controller
 	MSS_SPI_set_slave_select( &g_mss_spi1, controller->select );
@@ -122,6 +135,12 @@ void full_capture(controller_t * controller) {
 
 	// Select controller
 	MSS_SPI_clear_slave_select( &g_mss_spi1, controller->select );
+
+	//int i =0;
+	//printf("Controller->slave[] = %d\r\n", controller->slave_buffer[1]);
+	//printf("Controller->slave[] = %d\r\n", controller->slave_buffer[3]);
+
+	//printf("\n\n\n\n\n\n\n\n");
 }
 
 // Perform all setup tasks on this controller
@@ -227,3 +246,13 @@ void button_setup(uint8_t * slave_buffer) {
 	);
 }
 
+//check if other buttons besides desired are pressed
+uint8_t other_pressed(uint8_t * slave_buffer, uint8_t index){
+	uint8_t pressed=0;
+	printf("index: %d\n\r", index);
+	int i;
+	for(i=4; i < MAX_BUFFER_SIZE; i++){
+		if((slave_buffer[i]>0) && (i!=index)) pressed=1;
+	}
+	return pressed;
+}

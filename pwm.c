@@ -46,12 +46,12 @@ uint32_t calc_HBridgeRight(uint8_t input, uint8_t buff_val){
 
 	if(buff_val > 128){
 		// printf("Right return 1: %x\r\n", (input | 0x1));
-		return (input | 0x1);
+		return (input | 0x2);
 	}
 
 	else if(buff_val < 128){
 		// printf("Right return 2: %x\r\n", (input | 0x2));
-		return (input | 0x2);
+		return (input | 0x1);
 	}
 
 	else{
@@ -101,7 +101,7 @@ void setPWMDuty(uint8_t buff_val) {
 
 	//Calculate the duty cycle
 	uint32_t duty = calc_duty(buff_val);
-	
+
 
 	//If we are trying to control the right wheel
 	if(!(buff_val & 0x01)){
@@ -167,7 +167,7 @@ void setHBridgeInputs(uint8_t buff_val) {
 
 	// Write to offset 0
 	volatile uint32_t * addr_ptr = (uint32_t *) APB_BASE_ADDR;
-	
+
 	//This moves addr_ptr to the value for the location of the H-Bridge inputs
 	addr_ptr += 1;
 
@@ -175,7 +175,7 @@ void setHBridgeInputs(uint8_t buff_val) {
 	uint32_t targetVal = *addr_ptr;
 	targetVal &= 0x0000000F;
 
-	printf("targetVal = %x\r\n", targetVal);
+	printf("targetVal = %x\r\n", (unsigned int) targetVal);
 
 	//If we are trying to control the right wheel
 	if(!(buff_val & 0x01)){
@@ -256,6 +256,6 @@ void initPWM( void ) {
 
 	// Return the value at offset 4
 	volatile uint32_t * addr_ptr = (uint32_t *) APB_BASE_ADDR;
-	
+
 	*addr_ptr = 0x0;
 }

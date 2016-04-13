@@ -6,12 +6,13 @@
  * Last modified:  4 April 2016
 \**************************************/
 
-#ifndef PS2_H
-#define PS2_H
+#ifndef PS2_H_
+#define PS2_H_
+
+#include "defines.h"
 
 #include <inttypes.h>
 #include "drivers/mss_spi/mss_spi.h"
-#include "light_show.h"
 
 #define MAX_BUFFER_SIZE 21
 #define BUFFER_SIZE 16
@@ -43,8 +44,10 @@
 typedef struct controller {
 	uint8_t select;		// Controller ID
 	uint8_t vibration;
+	uint8_t counter;
 	uint8_t slave_buffer[MAX_BUFFER_SIZE];
 	uint8_t state[NUM_EASTER_EGGS];
+	uint8_t prev_buffer[MAX_BUFFER_SIZE];
 } controller_t;
 
 
@@ -72,7 +75,7 @@ void setup_all(controller_t * controller);
 // Set the controller to vibrate for a certain amount of time
 void set_vibration(controller_t * controller, uint8_t vibration);
 
+uint8_t other_pressed(uint8_t * slave_buffer, uint8_t index);
 
 
-#endif /* PS2_H */
-
+#endif

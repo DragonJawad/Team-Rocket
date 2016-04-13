@@ -10,6 +10,8 @@
 #include <stdlib.h>
 #include "drivers/mss_gpio/mss_gpio.h"
 
+show_t * head = NULL;
+
 // Adds to end of list
 void push(uint32_t type) {
     show_t * current = head;
@@ -45,3 +47,5 @@ void play( void ){
 	// Play the show
 	light_show(head->type);
 }
+
+

@@ -1,12 +1,14 @@
 #include "arena.h"
 #include "screenControl.h"
+#include "light_show.h"
 #include <stdio.h>
+#include <string.h>
 
 #define LASER_ADC_THRESHOLD 130
 #define BASE_APB_ADDRESS 0x40050000
 
 // Duty cycle for ball release to release the ball/be open
-#define RELEASEOPENDUTY 11  // 0.105 of period (2100us/20ms), ~11%
+#define RELEASEOPENDUTY 30  // 0.105 of period (2100us/20ms), ~11%
 #define RELEASECLOSEDDUTY 5 // 0.045 of period (900us/20ms), ~5%
 
 void
@@ -67,20 +69,20 @@ ARENA_outputScoreToScreen(team_struct_t* teamPtrA, team_struct_t* teamPtrB) {
 void
 ARENA_outputTimeLeft(uint32_t timeLeftInSeconds) {
 	// Calculate the minute and seconds places independently
-	uint32_t minDigit = timeLeftInSeconds/60;
-	uint32_t secondsLeftOver = timeLeftInSeconds%60;
+	unsigned int minDigit = timeLeftInSeconds/60;
+	unsigned int secondsLeftOver = timeLeftInSeconds%60;
 
 	// Create the actual string to output
-	char timeOut[6];
+	char timeOut[12];
 	if(secondsLeftOver < 10) {
-		sprintf(timeOut, "%u:0%u", minDigit, secondsLeftOver);
+		sprintf(timeOut, "%u:0%u      ", minDigit, secondsLeftOver);
 	}
 	else {
-		sprintf(timeOut, "%u:%u", minDigit, secondsLeftOver);
+		sprintf(timeOut, "%u:%u      ", minDigit, secondsLeftOver);
 	}
 
 	// Output the string
-	SCREENCONTROL_setXAndY(0, 0);
+	SCREENCONTROL_setXAndY(0, 127); // Output to top left corner
 	SCREENCONTROL_printStr(timeOut);
 }
 
@@ -88,14 +90,25 @@ ARENA_outputTimeLeft(uint32_t timeLeftInSeconds) {
 void
 ARENA_outputStartToScreen() {
 	SCREENCONTROL_clearScreen();
-	SCREENCONTROL_printStr("Game Start");
+	char message[] = "Game Start";
+	SCREENCONTROL_printStr(message);
 }
 
 // Outputs end message to screen
 void
 ARENA_outputEndToScreen(int teamWonFlag) {
 	SCREENCONTROL_clearScreen();
-	SCREENCONTROL_printStr("End Game");
+	char message[27];
+	if (teamWonFlag == LIGHTS_BLUE) {
+		strcpy(message, "Game Over: Blue Team Wins!");
+	}
+	else if (teamWonFlag == LIGHTS_MAIZE) {
+		strcpy(message, "Game Over: Maize Team Wins!");
+	}
+	else {
+		strcpy(message, "Game Over: Tie Game :(");
+	}
+	SCREENCONTROL_printStr(message);
 }
 
 uint32_t
@@ -113,7 +126,7 @@ ARENA_openBallRelease() {
 	volatile uint32_t * addr_ptr = (uint32_t *) BASE_APB_ADDRESS;
 
 	// Write the duty cycle
-	*addr_ptr = RELEASECLOSEDDUTY;
+	*addr_ptr = RELEASEOPENDUTY;
 }
 
 // Outputs PWM signal to close the ball release system
@@ -123,5 +136,5 @@ ARENA_closeBallRelease() {
 	volatile uint32_t * addr_ptr = (uint32_t *) BASE_APB_ADDRESS;
 
 	// Write the duty cycle
-	*addr_ptr = RELEASEOPENDUTY;
+	*addr_ptr = RELEASECLOSEDDUTY;
 }

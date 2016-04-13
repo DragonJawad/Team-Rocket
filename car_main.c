@@ -1,3 +1,4 @@
+
 /********************************************\
  * File Name:      		main.c
  * Project Name:   		EECS373 Final Project
@@ -34,11 +35,11 @@
 #define GPIO_ADDR		0x40050000
 
 // Define thresholds to turn on the controller vibration
-#define X_LOW			120
-#define X_HIGH			200
+#define X_LOW			100
+#define X_HIGH			220
 
-#define Y_LOW			120
-#define Y_HIGH			200
+#define Y_LOW			100
+#define Y_HIGH			220
 
 
 // UART1 buffer for input
@@ -72,6 +73,54 @@ ace_channel_handle_t adc_handler3_y;
 *	g_tx_buff[0] = CAR ID
 *	g_tx_buff[1] = Accel data
 ************************************ */
+
+// Order of bytes:
+// Byte 1: Car ID
+// Byte 2: X Data
+// Byte 3: Left Data
+// Byte 4: Right Data
+void uart1_rx_handler( mss_uart_instance_t * this_uart ) {
+
+	uint8_t rx_buff[4];
+	int num_bytes = MSS_UART_get_rx(this_uart, rx_buff, 4);
+
+	if (num_bytes != 4) return; // transmission failed
+	if (rx_buff[0] != CAR_ID) return; // wrong car
+
+	int left = rx_buff[2], right = rx_buff[3];
+
+
+	// Percentage of pwm on each side
+	int left_scale = 100, right_scale = 100;
+
+	// Turn if one of the two is non-zero and the other is zero
+	if (left > 0 && right == 0) {
+		left_scale = ((255 - (int) left) * 100) / 255;
+	}
+
+	if (left == 0 && right > 0) {
+		right_scale = ((255 - (int) right) * 100) / 255;
+	}
+
+	// Calculate left and right pwm values by scaling from X input
+	// Moving slower (lower pwm) on one side will cause the car
+	// to turn more in that direction
+	left = ((int) rx_buff[1] * left_scale) / 100;
+	right = ((int) rx_buff[1] * right_scale) / 100;
+
+	// Set values
+	setPWMDuty((left / 2 + 128) & 0xFE);
+	setPWMDuty((right / 2 + 128) | 0x01);
+	setHBridgeInputs((left / 2 + 128) & 0xFE);
+	setHBridgeInputs((right / 2 + 128) | 0x01);
+
+
+	// Add in H-bridge stuff for going backwards
+	// Also add adc and vibration stuff
+}
+
+
+/*
 void uart1_rx_handler( mss_uart_instance_t * this_uart ){
 	int data_received = 0;
 
@@ -104,6 +153,14 @@ void uart1_rx_handler( mss_uart_instance_t * this_uart ){
 
     	setPWMDuty(g_rx_buff[2]);
     	setHBridgeInputs(g_rx_buff[2]);
+
+    	// Testing crap
+    	if(g_rx_buff[1] == 128) {
+    		MSS_GPIO_set_output(0, 1);
+    	}
+    	else {
+    		MSS_GPIO_set_output(0, 0);
+    	}
     }
 
     else{
@@ -114,7 +171,6 @@ void uart1_rx_handler( mss_uart_instance_t * this_uart ){
 
     // Take ADC inputs here
 	// X is connected to ADC2, Y to ADC3
-    int shouldSendData = 0;
 	uint16_t adcx, adcy;
 	uint8_t tx_output = 0;
 	adcx = ACE_get_ppe_sample(adc_handler2_x);
@@ -149,6 +205,7 @@ void uart1_rx_handler( mss_uart_instance_t * this_uart ){
 		MSS_UART_polled_tx(&g_mss_uart1, g_tx_buff, sizeof(g_tx_buff));
 	}
 }
+*/
 
 
 /* ***************************************************** */
@@ -200,13 +257,14 @@ int main() {
 		// Reset the RX Buffer
 		g_tx_buff[1] &= 0x00;
 
-		uint16_t adcx, adcy;
+		/*uint16_t adcx, adcy;
 		adcx = ACE_get_ppe_sample(adc_handler2_x);
 		adcy = ACE_get_ppe_sample(adc_handler3_y);
 
 		// Shift over the first 4 useless bits
 		adcx = adcx>>4;
 		adcy = adcy>>4;
+		*/
 
 		//printf("x: %u | y: %u\r\n", adcx, adcy);
 
@@ -237,7 +295,7 @@ int main() {
 		// If the count makes it to 10000, turn the car off
 		// (No signals were received in this time)
 
-		if(count == 10000){
+		if(count == 1000){
 			initHBridge();
 			initPWM();
 		}
