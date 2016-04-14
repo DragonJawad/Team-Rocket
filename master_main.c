@@ -23,7 +23,7 @@
 #include "linked_list.h"
 #include "defines.h"
 
-/********** GLOBAL VARIABLES **********/
+/********** GLOBAL VARIABLES AND DEFINITIONS **********/
 
 #define COUNT_START 10
 
@@ -32,8 +32,6 @@ controller_t controller1;
 controller_t controller2;
 controller_t controller3;
 controller_t controller4;
-
-int counter = 0;
 
 team_struct_t teamMaize;
 team_struct_t teamBlue;
@@ -69,8 +67,7 @@ void xbee_receive_data( mss_uart_instance_t * this_uart ){
 		default: break;
 	}
 	
-	counter = 0;
-	printf("Got some XBEE data: car %x, value %x\r\n", car_select, vibration);
+	//printf("Got some XBEE data: car %x, value %x\r\n", car_select, vibration);
 }
 
 
@@ -87,6 +84,7 @@ void send_data_to_car(controller_t * controller) {
     MSS_UART_polled_tx(&g_mss_uart1, tx_buff, 4);
 }
 
+
 // Fabint handler to handle, say, interrupts from fabric to MSS
 __attribute__ ((interrupt)) void Fabric_IRQHandler( void )
 {
@@ -101,15 +99,16 @@ __attribute__ ((interrupt)) void Fabric_IRQHandler( void )
 	}
 
     // If it was a button interrupt at all, there's an issue here (as not wired atm)
-    if(status & 0x01)
-    {
-        // TODO: Assert?
-    }
+    //if(status & 0x01)
+    //{
+    //    // TODO: Assert?
+    //}
 
     NVIC_ClearPendingIRQ( Fabric_IRQn );
 }
 
-/********** GAME CODE HANDLERS **********/
+
+/********** GAME CODE FUNCTIONS **********/
 
 // Doesn't return until all 4 controllers press and hold X at the same time
 void buttonWait() {
@@ -128,22 +127,26 @@ void buttonWait() {
 	}
 }
 
+
 // Sends messages to tell cars to stop
 void stopCars() {
-	// TODO: What goes here?
+
+	// Send all zeros to cars
+	int car_id;
+	uint8_t tx_buff[4] = {0, 0, 0, 0};
+
+	for (car_id = 1; car_id < 4; ++car_id) {
+		tx_buff[0] = car_id;
+		MSS_UART_polled_tx(&g_mss_uart1, tx_buff, 4);
+	}
 }
 
+// All necessary setup to begin the game
 void initGameSystem() {
 
-	/********** SETUP UART **********/
+	/********** SETUP SCREEN AND XBEES **********/
 
 	SCREENCONTROL_init();
-/*
-	MSS_UART_init (
-		&g_mss_uart0,
-		MSS_UART_57600_BAUD,
-		(MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT)
-	);*/
 
 	MSS_UART_init (
 		&g_mss_uart1,
@@ -162,7 +165,7 @@ void initGameSystem() {
 
 	/********** SETUP LIGHT SHOW **********/
 
-	//init_lights();
+	init_lights();
 
 
 	/********** SETUP ACE/GOALS **********/
@@ -189,10 +192,11 @@ void initGameSystem() {
 	setup_all(&controller4);
 }
 
+
 // Returns 0 if no team won yet, returns 1 if a team won
 // teamScoredFlag = 1 if Maize scored, = 2 if Blue scored
 //		NOTE: TECHNICALLY DOESN'T NEED TO BE A SEPARATE FUNCTION ANYMORE
-int gameScore(int teamScoredFlag) {
+int teamScored(int teamScoredFlag) {
 	// TODO: Assert flag == LIGHTS_MAIZE or == LIGHTS_BLUE
 
 	/****** Game-now-paused stuff ******/
@@ -243,6 +247,7 @@ int gameScore(int teamScoredFlag) {
 	}
 }
 
+
 void startGame() {
 	// Reset the teams
 	teamMaize.score = 0;
@@ -265,7 +270,7 @@ void startGame() {
 	timerActivatedFlag = 0;
 
 	// Drop the ball
-	light_show(LIGHTS_START);
+	light_show(START);
 	ARENA_openBallRelease();
 
 	// Enable fabint, particularly for 1 sec interrupts from fabric
@@ -290,10 +295,10 @@ void runGame() {
 		full_capture(&controller3);
 		full_capture(&controller4);
 
-		printf("Controller1: %d\r\n", (int) controller1.slave_buffer[10]);
-		printf("Controller2: %d\r\n", (int) controller2.slave_buffer[10]);
-		printf("Controller3: %d\r\n", (int) controller3.slave_buffer[10]);
-		printf("Controller4: %d\r\n", (int) controller4.slave_buffer[10]);
+		//printf("Controller1: %d\r\n", (int) controller1.slave_buffer[10]);
+		//printf("Controller2: %d\r\n", (int) controller2.slave_buffer[10]);
+		//printf("Controller3: %d\r\n", (int) controller3.slave_buffer[10]);
+		//printf("Controller4: %d\r\n", (int) controller4.slave_buffer[10]);
 
 		/********** SEND DATA TO CARS ********/
 		send_data_to_car(&controller1);
@@ -302,6 +307,17 @@ void runGame() {
 		//send_data_to_car(&controller4);
 
 		// Vibration data is updated automagically by interrupts
+
+		/********** CHECK SCORING **********/
+		if (ARENA_checkIfScored(&teamMaize)) {
+			teamScored(MAIZE);
+		}
+		else if (ARENA_checkIfScored(&teamBlue)) {
+			teamScored(BLUE);
+		}
+
+		// Debugging
+		//if (controller1.slave_buffer)
 
 		/********** EGGIES!!! ***********/
 
@@ -356,55 +372,8 @@ void runGame() {
 		//	play();
 		//}
 
-		/********** CHECK SCORING STATUS **********/
 
 
-		//set_vibration(&controller1,0xFF);
-		//set_vibration(&controller2,0xFF);
-
-		/* Vibration debugging
-		if (flip(controller1.slave_buffer[10]) > 100) {
-			set_vibration(&controller1, 0xff);
-			ARENA_openBallRelease();
-
-//			counter = 0;
-		}
-		else {
-			set_vibration(&controller1, 0x00);
-			ARENA_closeBallRelease();
-		}
-
-		if (flip(controller2.slave_buffer[10]) > 100) {
-			set_vibration(&controller2, 0xff);
-//			counter = 0;
-		}
-		else {
-			set_vibration(&controller2, 0x00);
-		}
-
-		if (flip(controller3.slave_buffer[10]) > 100) {
-			set_vibration(&controller3, 0xff);
-//			counter = 0;
-		}
-		else {
-			set_vibration(&controller3, 0x00);
-		}
-
-		if (flip(controller4.slave_buffer[10]) > 100) {
-			set_vibration(&controller4, 0xff);
-//			counter = 0;
-		}
-		else {
-			set_vibration(&controller4, 0x00);
-		}
-
-		if (counter > 50) {
-			set_vibration(&controller1, 0);
-			set_vibration(&controller2, 0);
-			set_vibration(&controller3, 0);
-			set_vibration(&controller4, 0);
-		}
-		//*/
 
 
 		//////////////////// How do the above lines fit into check scoring status?
@@ -503,17 +472,17 @@ void endGame() {
 
 	int whoWon = 0;
 	if(teamBlue.score == SCOREMAX) {
-		whoWon = LIGHTS_BLUE;
+		whoWon = BLUE;
 	}
 	else if(teamMaize.score == SCOREMAX) {
-		whoWon = LIGHTS_MAIZE;
+		whoWon = MAIZE;
 	}
 	else {
 		if(teamBlue.score > teamMaize.score) {
-			whoWon = LIGHTS_BLUE;
+			whoWon = BLUE;
 		}
 		else if(teamMaize.score > teamBlue.score) {
-			whoWon = LIGHTS_MAIZE;
+			whoWon = MAIZE;
 		}
 		else {
 			//??

@@ -13,31 +13,24 @@
 
 void
 ARENA_initTeam(team_struct_t* teamPtr, const char* adc_name) {
-	//teamPtr->already_scored = 0;
 	teamPtr->score = 0;
 	teamPtr->team_ace_handler =ACE_get_channel_handle((const uint8_t *) adc_name);
 }
 
-// Returns 0 if didn't score
+// Returns 1 if team has scored, 0 otherwise
 uint8_t
 ARENA_checkIfScored(team_struct_t* teamPtr) {
+
 	// Get the ADC val for the laser detection circuit
 	uint16_t adc_val = ACE_get_ppe_sample(teamPtr->team_ace_handler);
 	adc_val = adc_val >> 4; // Not exactly sure why but assuming cuz first 4 bits are unused
 
-	// If the value is below the threshold, count it as a laser break
-		// aka goallllll
+	// If the value is below the threshold, laser is broken
 	if(adc_val < LASER_ADC_THRESHOLD) {
-		// Increment score
-		//teamPtr->score += 1;
-
-		// Return 1 to indicate score happened
-		return 1;
+		return 1; // Goal
 	}
-	// Otherwise, act as if laser is currently hitting the circuit
 	else {
-		// No goal, so return 0
-		return 0;
+		return 0; // No goal
 	}
 }
 
@@ -99,10 +92,10 @@ void
 ARENA_outputEndToScreen(int teamWonFlag) {
 	SCREENCONTROL_clearScreen();
 	char message[27];
-	if (teamWonFlag == LIGHTS_BLUE) {
+	if (teamWonFlag == BLUE) {
 		strcpy(message, "Game Over: Blue Team Wins!");
 	}
-	else if (teamWonFlag == LIGHTS_MAIZE) {
+	else if (teamWonFlag == MAIZE) {
 		strcpy(message, "Game Over: Maize Team Wins!");
 	}
 	else {
