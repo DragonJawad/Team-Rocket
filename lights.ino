@@ -4,7 +4,7 @@
 #endif
 
 #define DATA_OUT 13
-#define ACK 10
+#define ACK 11
 
 #define S1 2  //GPIO0
 #define S2 3  //GPIO1
@@ -53,11 +53,19 @@ void loop() {
 
   // Always keep ACK off when not in use
   digitalWrite(ACK, HIGH); // ACK off
-  
-  // Removed Blackout show - it was throwing me off...
 
+
+  // EGG 4 Doubles as the starting show when the game begins
+  
+    // EGG 4
+  if(!digitalRead(S7)){
+    digitalWrite(ACK, LOW); // ACK on 
+    startShow(7);         
+  } // EGG 4
+
+  
   // BLUE
-  if(!digitalRead(S1)){
+  else if(!digitalRead(S1)){
     digitalWrite(ACK, LOW); // ACK on 
     startShow(1);         
   } //BLUE
@@ -95,12 +103,6 @@ void loop() {
     digitalWrite(ACK, LOW); // ACK on 
     startShow(6);         
   } // EGG 3
-
-  // EGG 4
-  else if(!digitalRead(S7)){
-    digitalWrite(ACK, LOW); // ACK on 
-    startShow(7);         
-  } // EGG 4
 }
 
 
@@ -159,6 +161,23 @@ void theaterChase(uint32_t c, uint8_t wait) {
   }
 }
 
+void theaterChase2(uint32_t c, uint8_t wait) {
+  for (int j=0; j<10; j++) {  //do 10 cycles of chasing
+    for (int q=0; q < 1; q++) {
+      for (int i=0; i < strip.numPixels(); i=i+1) {
+        strip.setPixelColor(i+q, c);    //turn every third pixel on
+      }
+      strip.show();
+
+      delay(wait);
+
+      for (int i=0; i < strip.numPixels(); i=i+1) {
+        strip.setPixelColor(i+q, 0);        //turn every third pixel off
+      }
+    }
+  }
+}
+
 //Theatre-style crawling lights with rainbow effect
 void theaterChaseRainbow(uint8_t wait) {
   for (int j=0; j < 256; j++) {     // cycle all 256 colors in the wheel
@@ -199,22 +218,27 @@ void startShow(int i) {
             break;
     case 1: colorWipe(strip.Color(0, 0, 255), 5);  // Blue
             theaterChase(strip.Color(  0,   0, 127), 30); // Blue
-            colorWipe(strip.Color(0, 0, 0), 1); 
+             theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
     case 2: colorWipe(strip.Color(255, 255, 0), 5);  // Y
             theaterChase(strip.Color(  127,   127, 0), 30); // Y
-            colorWipe(strip.Color(0, 0, 0), 1); 
+             theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
-    case 3: colorWipe(strip.Color(255, 0, 0), 1); // Red
-             colorWipe(strip.Color(255,255,0), 1); // Yellow
+    case 3: //colorWipe(strip.Color(255, 0, 0), 0.001); // Red
+             //colorWipe(strip.Color(255,255,0), 0.001); // Yellow
+             //strip.Color(255, 0, 0);
+             //strip.Color(255,255,0);
+             theaterChase2(strip.Color(255, 0, 0), 80);
+             theaterChase2(strip.Color(255, 255, 0), 80);
              digitalWrite(ACK, HIGH);
              theaterChase(strip.Color(0, 255, 0), 40); // Green
-             colorWipe(strip.Color(0, 0, 0), 1); 
+             theaterChase2(strip.Color(0, 0, 0), 20);
+             //colorWipe(strip.Color(0, 0, 0), 1); 
             break;
     case 4: theaterChaseRainbow(20);
-            colorWipe(strip.Color(0, 0, 0), 1); 
+            theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
     case 5: colorWipe(strip.Color(255, 0, 0), 1); // Red
@@ -223,16 +247,16 @@ void startShow(int i) {
             colorWipe(strip.Color(0, 255, 0), 1); // Green
             colorWipe(strip.Color(0, 0, 255), 1); // Blue
             colorWipe(strip.Color(127,0,255), 1); // Violet
-            colorWipe(strip.Color(0, 0, 0), 1); 
+             theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
     case 6: rainbowCycle(8);
-            colorWipe(strip.Color(0, 0, 0), 1); 
+            theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
     case 7: rainbow(5);
             theaterChase(strip.Color(255,0,255), 10); //PINK
-            colorWipe(strip.Color(0, 0, 0), 1); 
+            theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
   }
