@@ -207,11 +207,11 @@ void startShow(int i) {
             colorWipe(strip.Color(0, 0, 0), 1); 
             digitalWrite(ACK, HIGH);
             break;
-    case 3: colorWipe(strip.Color(255, 0, 0), 0.01); // Red
-             colorWipe(strip.Color(255,255,0), 0.01); // Yellow
+    case 3: colorWipe(strip.Color(255, 0, 0), 1); // Red
+             colorWipe(strip.Color(255,255,0), 1); // Yellow
+             digitalWrite(ACK, HIGH);
              theaterChase(strip.Color(0, 255, 0), 40); // Green
              colorWipe(strip.Color(0, 0, 0), 1); 
-             digitalWrite(ACK, HIGH);
             break;
     case 4: theaterChaseRainbow(20);
             colorWipe(strip.Color(0, 0, 0), 1); 
@@ -226,7 +226,7 @@ void startShow(int i) {
             colorWipe(strip.Color(0, 0, 0), 1); 
             digitalWrite(ACK, HIGH);
             break;
-    case 6: rainbowCycle(10);
+    case 6: rainbowCycle(8);
             colorWipe(strip.Color(0, 0, 0), 1); 
             digitalWrite(ACK, HIGH);
             break;
