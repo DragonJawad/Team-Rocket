@@ -23,7 +23,7 @@
 //   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(150, DATA_OUT, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(450, DATA_OUT, NEO_GRB + NEO_KHZ800);
 
 // IMPORTANT: To reduce NeoPixel burnout risk, add 1000 uF capacitor across
 // pixel power leads, add 300 - 500 Ohm resistor on first pixel's data input
@@ -197,18 +197,18 @@ void startShow(int i) {
   switch(i){
     case 0: colorWipe(strip.Color(0, 0, 0), 1);    // Black/off
             break;
-    case 1: colorWipe(strip.Color(0, 0, 255), 10);  // Blue
+    case 1: colorWipe(strip.Color(0, 0, 255), 5);  // Blue
             theaterChase(strip.Color(  0,   0, 127), 30); // Blue
             colorWipe(strip.Color(0, 0, 0), 1); 
             digitalWrite(ACK, HIGH);
             break;
-    case 2: colorWipe(strip.Color(255, 255, 0), 10);  // Y
+    case 2: colorWipe(strip.Color(255, 255, 0), 5);  // Y
             theaterChase(strip.Color(  127,   127, 0), 30); // Y
             colorWipe(strip.Color(0, 0, 0), 1); 
             digitalWrite(ACK, HIGH);
             break;
-    case 3: colorWipe(strip.Color(255, 0, 0), 10); // Red
-             colorWipe(strip.Color(255,255,0), 10); // Yellow
+    case 3: colorWipe(strip.Color(255, 0, 0), 0.01); // Red
+             colorWipe(strip.Color(255,255,0), 0.01); // Yellow
              theaterChase(strip.Color(0, 255, 0), 40); // Green
              colorWipe(strip.Color(0, 0, 0), 1); 
              digitalWrite(ACK, HIGH);
@@ -217,12 +217,12 @@ void startShow(int i) {
             colorWipe(strip.Color(0, 0, 0), 1); 
             digitalWrite(ACK, HIGH);
             break;
-    case 5: colorWipe(strip.Color(255, 0, 0), 5); // Red
-            colorWipe(strip.Color(255, 127, 0), 5); // Orange
-            colorWipe(strip.Color(255,255,0), 5); // Yellow
-            colorWipe(strip.Color(0, 255, 0), 5); // Green
-            colorWipe(strip.Color(0, 0, 255), 5); // Blue
-            colorWipe(strip.Color(127,0,255), 5); // Violet
+    case 5: colorWipe(strip.Color(255, 0, 0), 1); // Red
+            colorWipe(strip.Color(255, 127, 0), 1); // Orange
+            colorWipe(strip.Color(255,255,0), 1); // Yellow
+            colorWipe(strip.Color(0, 255, 0), 1); // Green
+            colorWipe(strip.Color(0, 0, 255), 1); // Blue
+            colorWipe(strip.Color(127,0,255), 1); // Violet
             colorWipe(strip.Color(0, 0, 0), 1); 
             digitalWrite(ACK, HIGH);
             break;
