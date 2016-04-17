@@ -5,6 +5,9 @@
 
 #define DATA_OUT 13
 #define ACK 11
+#define INTERRUPT 12
+
+
 
 #define S1 2  //GPIO0
 #define S2 3  //GPIO1
@@ -44,15 +47,23 @@ void setup() {
   pinMode(S7, INPUT_PULLUP);
   pinMode(S8, INPUT_PULLUP);
   pinMode(ACK, OUTPUT);
+  pinMode(INTERRUPT, INPUT_PULLUP);
 
+ //attachInterrupt(INTERRUPT, goal_scored, FALLING);
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
 }
 
+/*void goal_scored(){
+  //theaterChase2(strip.Color(0, 0, 0), 1);
+  Serial.println("Interrupted");
+  loop();
+}*/
 void loop() {
-
+ Serial.println("LOOP");
   // Always keep ACK off when not in use
   digitalWrite(ACK, HIGH); // ACK off
+  delay(50);
 
 
   // EGG 4 Doubles as the starting show when the game begins
@@ -87,16 +98,16 @@ void loop() {
   // EASTER EGG SHOWS
   
   // EGG 1
-  else if(!digitalRead(S4)){
+  else if(!digitalRead(S5)){
     digitalWrite(ACK, LOW); // ACK on 
     startShow(4);         
   } // EGG 1
 
   // EGG 2
-  else if(!digitalRead(S5)){
+  else if(!digitalRead(S4)){
     digitalWrite(ACK, LOW); // ACK on 
     startShow(5);         
-  } // EGG 2
+  } // TIE
 
   // EGG 3
   else if(!digitalRead(S6)){
@@ -139,7 +150,7 @@ void rainbowCycle(uint8_t wait) {
       strip.setPixelColor(i, Wheel(((i * 256 / strip.numPixels()) + j) & 255));
     }
     strip.show();
-    delay(wait);
+    //delay(wait);
   }
 }
 
@@ -237,20 +248,21 @@ void startShow(int i) {
              theaterChase2(strip.Color(0, 0, 0), 20);
              //colorWipe(strip.Color(0, 0, 0), 1); 
             break;
-    case 4: theaterChaseRainbow(20);
+    case 4: theaterChase2(strip.Color(155,48,255),20);//PURPLE
+            theaterChase2(strip.Color(255,0,255),20); //PINK
+            theaterChase2(strip.Color(155,48,255),20);//PURPLE
+            theaterChase2(strip.Color(255,0,255),20); //PINK
             theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
-    case 5: colorWipe(strip.Color(255, 0, 0), 1); // Red
-            colorWipe(strip.Color(255, 127, 0), 1); // Orange
-            colorWipe(strip.Color(255,255,0), 1); // Yellow
-            colorWipe(strip.Color(0, 255, 0), 1); // Green
-            colorWipe(strip.Color(0, 0, 255), 1); // Blue
-            colorWipe(strip.Color(127,0,255), 1); // Violet
+    case 5: theaterChase(strip.Color(  127,   127, 0), 30);
+            theaterChase(strip.Color(  0,   0, 127), 30);
+            theaterChase(strip.Color(  127,   127, 0), 30);
+            theaterChase(strip.Color(  0,   0, 127), 30);
              theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
-    case 6: rainbowCycle(8);
+    case 6: rainbow(10);
             theaterChase2(strip.Color(0, 0, 0), 20);
             digitalWrite(ACK, HIGH);
             break;
